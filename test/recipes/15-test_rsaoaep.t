@@ -9,7 +9,7 @@
 use strict;
 use warnings;
 
-use OpenSSL::Test qw(:DEFAULT data_file bldtop_dir srctop_file srctop_dir bldtop_file);
+use OpenSSL::Test qw(:DEFAULT data_file bldtop_dir srctop_file srctop_dir bldtop_file shlib_dir);
 use OpenSSL::Test::Utils;
 use File::Compare qw/compare_text/;
 
@@ -27,7 +27,8 @@ plan tests =>
 
 my @prov = ( );
 my $provconf = srctop_file("test", "fips-and-base.cnf");
-my $provpath = bldtop_dir("providers");
+#my $provpath = bldtop_dir("providers");
+my $provpath = shlib_dir();
 my $msg_file = data_file("plain_text");
 my $enc1_file = "enc1.bin";
 my $enc2_file = "enc2.bin";

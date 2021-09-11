@@ -14,7 +14,7 @@ use File::Spec::Functions qw/catfile/;
 use File::Copy;
 use File::Compare qw/compare_text/;
 use File::Basename;
-use OpenSSL::Test qw/:DEFAULT srctop_file bldtop_dir/;
+use OpenSSL::Test qw/:DEFAULT srctop_file bldtop_dir shlib_dir/;
 use OpenSSL::Test::Utils;
 
 setup("test_enc");
@@ -29,7 +29,8 @@ my $testsrc = srctop_file("test","recipes",basename($0));
 my $test = catfile(".", "p");
 
 my $cmd = "openssl";
-my $provpath = bldtop_dir("providers");
+#my $provpath = bldtop_dir("providers");
+my $provpath = shlib_dir();
 my @prov = ("-provider-path", $provpath, "-provider", "default");
 push @prov, ("-provider", "legacy") unless disabled("legacy");
 my $ciphersstatus = undef;

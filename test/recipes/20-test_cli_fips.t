@@ -13,7 +13,7 @@ use File::Spec;
 use File::Spec::Functions qw/curdir abs2rel/;
 use File::Copy;
 use OpenSSL::Glob;
-use OpenSSL::Test qw/:DEFAULT srctop_dir bldtop_dir bldtop_file srctop_file data_file/;
+use OpenSSL::Test qw/:DEFAULT srctop_dir bldtop_dir bldtop_file srctop_file data_file shlib_file/;
 use OpenSSL::Test::Utils;
 
 BEGIN {
@@ -28,7 +28,8 @@ plan skip_all => "Test only supported in a fips build with security checks"
     if $no_check;
 plan tests => 11;
 
-my $fipsmodule = bldtop_file('providers', platform->dso('fips'));
+#my $fipsmodule = bldtop_file('providers', platform->dso('fips'));
+my $fipsmodule = shlib_file(platform->dso('fips'));
 my $fipsconf = srctop_file("test", "fips-and-base.cnf");
 my $defaultconf = srctop_file("test", "default.cnf");
 my $tbs_data = $fipsmodule;

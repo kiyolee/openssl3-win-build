@@ -11,7 +11,7 @@ use strict;
 use warnings;
 
 use File::Spec;
-use OpenSSL::Test qw/:DEFAULT srctop_file srctop_dir bldtop_dir bldtop_file/;
+use OpenSSL::Test qw/:DEFAULT srctop_file srctop_dir bldtop_dir bldtop_file shlib_dir/;
 use OpenSSL::Test::Utils;
 
 BEGIN {
@@ -106,7 +106,8 @@ ok(run(app([ 'openssl', 'rsa', '-check', '-in', 'genrsatest.pem', '-noout' ])),
 
 unless ($no_fips) {
     my $provconf = srctop_file("test", "fips-and-base.cnf");
-    my $provpath = bldtop_dir("providers");
+    #my $provpath = bldtop_dir("providers");
+    my $provpath = shlib_dir();
     my @prov = ( "-provider-path", $provpath,
                  "-config", $provconf);
 

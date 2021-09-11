@@ -13,7 +13,7 @@ use warnings;
 use POSIX;
 use File::Spec::Functions qw/catfile/;
 use File::Compare qw/compare_text compare/;
-use OpenSSL::Test qw/:DEFAULT srctop_dir srctop_file bldtop_dir bldtop_file/;
+use OpenSSL::Test qw/:DEFAULT srctop_dir srctop_file bldtop_dir bldtop_file shlib_dir/;
 
 use OpenSSL::Test::Utils;
 
@@ -29,7 +29,8 @@ my $no_fips = disabled('fips') || ($ENV{NO_FIPS} // 0);
 plan skip_all => "CMS is not supported by this OpenSSL build"
     if disabled("cms");
 
-my $provpath = bldtop_dir("providers");
+#my $provpath = bldtop_dir("providers");
+my $provpath = shlib_dir();
 
 # Some tests require legacy algorithms to be included.
 my @legacyprov = ("-provider-path", $provpath,

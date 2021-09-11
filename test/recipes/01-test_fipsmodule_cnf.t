@@ -12,7 +12,7 @@
 use strict;
 use warnings;
 
-use OpenSSL::Test qw/:DEFAULT srctop_dir bldtop_dir bldtop_file srctop_file data_file/;
+use OpenSSL::Test qw/:DEFAULT srctop_dir bldtop_dir bldtop_file srctop_file data_file shlib_file/;
 use OpenSSL::Test::Utils;
 
 BEGIN {
@@ -28,7 +28,8 @@ plan skip_all => "Test only supported in a fips build"
     if $no_check;
 plan tests => 1;
 
-my $fipsmodule = bldtop_file('providers', platform->dso('fips'));
+#my $fipsmodule = bldtop_file('providers', platform->dso('fips'));
+my $fipsmodule = shlib_file(platform->dso('fips'));
 my $fipsmoduleconf = bldtop_file('test', 'fipsmodule.cnf');
 
 # verify the $fipsconf file
