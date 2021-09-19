@@ -1627,7 +1627,21 @@ CA_DB *load_index(const char *dbfile, DB_ATTR *db_attr)
 
 #ifndef OPENSSL_NO_POSIX_IO
     BIO_get_fp(in, &dbfp);
-    if (fstat(fileno(dbfp), &dbst) == -1) {
+    if (
+#if !defined(_MSC_VER) || defined(_DLL) || defined(OPENSSL_STATIC_LIB)
+        fstat(fileno(dbfp), &dbst) == -1
+#else
+        /*
+         * When using static VC runtime (/MT) in libcrypto.dll, BIO_get_fp()
+         * returns file pointers from the VC runtime instance in the DLL that
+         * cannot be used here as the VC runtime here is of a different
+         * instance and won't recognize the file pointers and fstat() will
+         * crash. Simply call stat() instead with filename, not ideal
+         * solution but it works.
+         */
+        stat(dbfile, &dbst) == -1
+#endif
+        ) {
         ERR_raise_data(ERR_LIB_SYS, errno,
                        "calling fstat(%s)", dbfile);
         goto err;
