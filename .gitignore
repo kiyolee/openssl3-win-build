@@ -25,6 +25,14 @@
 /build-*/fuzz/*/Release
 /build-*/fuzz/*/x64/Debug
 /build-*/fuzz/*/x64/Release
+/build-*/providers/*/ARM/Debug
+/build-*/providers/*/ARM/Release
+/build-*/providers/*/ARM64/Debug
+/build-*/providers/*/ARM64/Release
+/build-*/providers/*/Debug
+/build-*/providers/*/Release
+/build-*/providers/*/x64/Debug
+/build-*/providers/*/x64/Release
 /build-*/tests/*/ARM/Debug
 /build-*/tests/*/ARM/Release
 /build-*/tests/*/ARM64/Debug
