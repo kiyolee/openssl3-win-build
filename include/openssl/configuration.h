@@ -118,7 +118,7 @@ extern "C" {
 # ifndef OPENSSL_NO_UNIT_TEST
 #  define OPENSSL_NO_UNIT_TEST
 # endif
-#ifdef OPENSSL_STATIC_LIB
+#if defined(OPENSSL_STATIC_LIB) || defined(_M_ARM) || defined(_M_ARM64)
 # ifndef OPENSSL_NO_UPLINK
 #  define OPENSSL_NO_UPLINK
 # endif
