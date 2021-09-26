@@ -334,7 +334,7 @@ static int test_property(void)
     OSSL_METHOD_STORE *store;
     size_t i;
     int ret = 0;
-    void *result;
+    void *result = NULL;
 
     if (!TEST_ptr(store = ossl_method_store_new(NULL))
         || !add_property_names("fast", "colour", "sky", "furry", NULL))
