@@ -38,7 +38,7 @@ our %config = (
     "MTFLAGS" => [
         "-nologo"
     ],
-    "PERL" => "C:\\Perl\\bin\\perl.exe",
+    "PERL" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "RC" => "rc",
     "RCFLAGS" => [],
     "afalgeng" => "",
@@ -163,7 +163,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.0",
+    "full_version" => "3.0.1",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -214,10 +214,10 @@ our %config = (
     "openssl_sys_defines" => [],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\ARM\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-asm no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-shared no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "0",
+    "patch" => "1",
     "perl_archname" => "MSWin32-x64-multi-thread",
-    "perl_cmd" => "C:\\Perl\\bin\\perl.exe",
-    "perl_version" => "5.28.1",
+    "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
+    "perl_version" => "5.32.1",
     "perlargv" => [
         "--prefix=C:\\Program Files\\OpenSSL-3",
         "--with-zlib-include=..\\zlib",
@@ -267,11 +267,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned char",
-    "release_date" => "7 sep 2021",
+    "release_date" => "14 Dec 2021",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN32-ARM",
-    "version" => "3.0.0"
+    "version" => "3.0.1"
 );
 our %target = (
     "AR" => "lib",
@@ -284,7 +284,7 @@ our %target = (
     "LDFLAGS" => "/nologo /debug",
     "MT" => "mt",
     "MTFLAGS" => "-nologo",
-    "RANLIB" => "CODE(0x2615ca0)",
+    "RANLIB" => "CODE(0x68e8f8)",
     "RC" => "rc",
     "_conf_fname_int" => [
         ".\\Configurations\\00-base-templates.conf",
@@ -1408,6 +1408,9 @@ our %unified_info = (
             "test\\provider_internal_test" => {
                 "noinst" => "1"
             },
+            "test\\provider_pkey_test" => {
+                "noinst" => "1"
+            },
             "test\\provider_status_test" => {
                 "noinst" => "1"
             },
@@ -1415,6 +1418,9 @@ our %unified_info = (
                 "noinst" => "1"
             },
             "test\\rand_status_test" => {
+                "noinst" => "1"
+            },
+            "test\\rand_test" => {
                 "noinst" => "1"
             },
             "test\\rc2test" => {
@@ -2694,8 +2700,8 @@ our %unified_info = (
         "doc\\html\\man3\\EVP_RAND.html" => [
             ".\\doc\\man3\\EVP_RAND.pod"
         ],
-        "doc\\html\\man3\\EVP_SIGNATURE_free.html" => [
-            ".\\doc\\man3\\EVP_SIGNATURE_free.pod"
+        "doc\\html\\man3\\EVP_SIGNATURE.html" => [
+            ".\\doc\\man3\\EVP_SIGNATURE.pod"
         ],
         "doc\\html\\man3\\EVP_SealInit.html" => [
             ".\\doc\\man3\\EVP_SealInit.pod"
@@ -5243,8 +5249,8 @@ our %unified_info = (
         "doc\\man\\man3\\EVP_RAND.3" => [
             ".\\doc\\man3\\EVP_RAND.pod"
         ],
-        "doc\\man\\man3\\EVP_SIGNATURE_free.3" => [
-            ".\\doc\\man3\\EVP_SIGNATURE_free.pod"
+        "doc\\man\\man3\\EVP_SIGNATURE.3" => [
+            ".\\doc\\man3\\EVP_SIGNATURE.pod"
         ],
         "doc\\man\\man3\\EVP_SealInit.3" => [
             ".\\doc\\man3\\EVP_SealInit.pod"
@@ -7712,6 +7718,10 @@ our %unified_info = (
             "libcrypto.a",
             "test\\libtestutil.a"
         ],
+        "test\\provider_pkey_test" => [
+            "libcrypto",
+            "test\\libtestutil.a"
+        ],
         "test\\provider_status_test" => [
             "libcrypto.a",
             "test\\libtestutil.a"
@@ -7721,6 +7731,10 @@ our %unified_info = (
             "test\\libtestutil.a"
         ],
         "test\\rand_status_test" => [
+            "libcrypto",
+            "test\\libtestutil.a"
+        ],
+        "test\\rand_test" => [
             "libcrypto",
             "test\\libtestutil.a"
         ],
@@ -7939,6 +7953,9 @@ our %unified_info = (
         },
         "apps\\lib" => {
             "deps" => [
+                "apps\\lib\\openssl-bin-cmp_mock_srv.o",
+                "apps\\lib\\cmp_client_test-bin-cmp_mock_srv.o",
+                "apps\\lib\\uitest-bin-apps_ui.o",
                 "apps\\lib\\libapps-lib-app_libctx.o",
                 "apps\\lib\\libapps-lib-app_params.o",
                 "apps\\lib\\libapps-lib-app_provider.o",
@@ -7958,10 +7975,7 @@ our %unified_info = (
                 "apps\\lib\\libapps-lib-tlssrp_depr.o",
                 "apps\\lib\\libapps-lib-win32_init.o",
                 "apps\\lib\\libtestutil-lib-opt.o",
-                "apps\\lib\\libtestutil-lib-win32_init.o",
-                "apps\\lib\\openssl-bin-cmp_mock_srv.o",
-                "apps\\lib\\cmp_client_test-bin-cmp_mock_srv.o",
-                "apps\\lib\\uitest-bin-apps_ui.o"
+                "apps\\lib\\libtestutil-lib-win32_init.o"
             ],
             "products" => {
                 "bin" => [
@@ -9526,6 +9540,7 @@ our %unified_info = (
                 "providers\\implementations\\digests\\libdefault-lib-blake2s_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-md5_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-md5_sha1_prov.o",
+                "providers\\implementations\\digests\\libdefault-lib-null_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-sha2_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-sha3_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-sm3_prov.o",
@@ -11228,8 +11243,8 @@ our %unified_info = (
         "doc\\html\\man3\\EVP_RAND.html" => [
             ".\\doc\\man3\\EVP_RAND.pod"
         ],
-        "doc\\html\\man3\\EVP_SIGNATURE_free.html" => [
-            ".\\doc\\man3\\EVP_SIGNATURE_free.pod"
+        "doc\\html\\man3\\EVP_SIGNATURE.html" => [
+            ".\\doc\\man3\\EVP_SIGNATURE.pod"
         ],
         "doc\\html\\man3\\EVP_SealInit.html" => [
             ".\\doc\\man3\\EVP_SealInit.pod"
@@ -13724,8 +13739,8 @@ our %unified_info = (
         "doc\\man\\man3\\EVP_RAND.3" => [
             ".\\doc\\man3\\EVP_RAND.pod"
         ],
-        "doc\\man\\man3\\EVP_SIGNATURE_free.3" => [
-            ".\\doc\\man3\\EVP_SIGNATURE_free.pod"
+        "doc\\man\\man3\\EVP_SIGNATURE.3" => [
+            ".\\doc\\man3\\EVP_SIGNATURE.pod"
         ],
         "doc\\man\\man3\\EVP_SealInit.3" => [
             ".\\doc\\man3\\EVP_SealInit.pod"
@@ -15949,7 +15964,7 @@ our %unified_info = (
             "doc\\html\\man3\\EVP_PKEY_verify.html",
             "doc\\html\\man3\\EVP_PKEY_verify_recover.html",
             "doc\\html\\man3\\EVP_RAND.html",
-            "doc\\html\\man3\\EVP_SIGNATURE_free.html",
+            "doc\\html\\man3\\EVP_SIGNATURE.html",
             "doc\\html\\man3\\EVP_SealInit.html",
             "doc\\html\\man3\\EVP_SignInit.html",
             "doc\\html\\man3\\EVP_VerifyInit.html",
@@ -18877,6 +18892,12 @@ our %unified_info = (
             ".\\apps\\include",
             "."
         ],
+        "test\\provider_pkey_test" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
+        ],
         "test\\provider_status_test" => [
             "include",
             "apps\\include",
@@ -18892,6 +18913,12 @@ our %unified_info = (
             "."
         ],
         "test\\rand_status_test" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
+        ],
+        "test\\rand_test" => [
             "include",
             "apps\\include",
             ".\\include",
@@ -19493,7 +19520,7 @@ our %unified_info = (
             "doc\\man\\man3\\EVP_PKEY_verify.3",
             "doc\\man\\man3\\EVP_PKEY_verify_recover.3",
             "doc\\man\\man3\\EVP_RAND.3",
-            "doc\\man\\man3\\EVP_SIGNATURE_free.3",
+            "doc\\man\\man3\\EVP_SIGNATURE.3",
             "doc\\man\\man3\\EVP_SealInit.3",
             "doc\\man\\man3\\EVP_SignInit.3",
             "doc\\man\\man3\\EVP_VerifyInit.3",
@@ -20207,9 +20234,11 @@ our %unified_info = (
         "test\\provfetchtest",
         "test\\provider_fallback_test",
         "test\\provider_internal_test",
+        "test\\provider_pkey_test",
         "test\\provider_status_test",
         "test\\provider_test",
         "test\\rand_status_test",
+        "test\\rand_test",
         "test\\rc2test",
         "test\\rc4test",
         "test\\rc5test",
@@ -24034,6 +24063,9 @@ our %unified_info = (
         "providers\\implementations\\digests\\libdefault-lib-md5_sha1_prov.o" => [
             ".\\providers\\implementations\\digests\\md5_sha1_prov.c"
         ],
+        "providers\\implementations\\digests\\libdefault-lib-null_prov.o" => [
+            ".\\providers\\implementations\\digests\\null_prov.c"
+        ],
         "providers\\implementations\\digests\\libdefault-lib-sha2_prov.o" => [
             ".\\providers\\implementations\\digests\\sha2_prov.c"
         ],
@@ -24344,6 +24376,7 @@ our %unified_info = (
             "providers\\implementations\\digests\\libdefault-lib-blake2s_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-md5_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-md5_sha1_prov.o",
+            "providers\\implementations\\digests\\libdefault-lib-null_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-sha2_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-sha3_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-sm3_prov.o",
@@ -25805,6 +25838,16 @@ our %unified_info = (
         "test\\provider_internal_test-bin-provider_internal_test.o" => [
             ".\\test\\provider_internal_test.c"
         ],
+        "test\\provider_pkey_test" => [
+            "test\\provider_pkey_test-bin-fake_rsaprov.o",
+            "test\\provider_pkey_test-bin-provider_pkey_test.o"
+        ],
+        "test\\provider_pkey_test-bin-fake_rsaprov.o" => [
+            ".\\test\\fake_rsaprov.c"
+        ],
+        "test\\provider_pkey_test-bin-provider_pkey_test.o" => [
+            ".\\test\\provider_pkey_test.c"
+        ],
         "test\\provider_status_test" => [
             "test\\provider_status_test-bin-provider_status_test.o"
         ],
@@ -25826,6 +25869,12 @@ our %unified_info = (
         ],
         "test\\rand_status_test-bin-rand_status_test.o" => [
             ".\\test\\rand_status_test.c"
+        ],
+        "test\\rand_test" => [
+            "test\\rand_test-bin-rand_test.o"
+        ],
+        "test\\rand_test-bin-rand_test.o" => [
+            ".\\test\\rand_test.c"
         ],
         "test\\rc2test" => [
             "test\\rc2test-bin-rc2test.o"

@@ -2,7 +2,7 @@
 
 openssl-3 Windows build with Visual Studio.
 
-This version is openssl-3.0.0.
+This version is openssl-3.0.1.
 
 To build, simply open the required solution file, and
 you know how to use Visual Studio, right?
@@ -39,8 +39,8 @@ The following third party tools are required:
 1. Perl
 
    Any reasonably recent version should be fine.\
-   ActivePerl from ActiveState is used to develop this project.\
-   Download ActivePerl from https://www.activestate.com/activeperl/.
+   Strawberry Perl is used to develop this project.\
+   Download Strawberry Perl from https://strawberryperl.com/.
 
 2. NASM (Assembler)
 

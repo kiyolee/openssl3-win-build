@@ -438,5 +438,8 @@
     <ClCompile Include="..\..\..\providers\implementations\encode_decode\decode_spki2typespki.c">
       <Filter>Source Files\providers\implementations\encode_decode</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\digests\null_prov.c">
+      <Filter>Source Files\providers\implementations\digests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
