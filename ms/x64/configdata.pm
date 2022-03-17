@@ -167,7 +167,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.1",
+    "full_version" => "3.0.2",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -218,7 +218,7 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\x64\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "1",
+    "patch" => "2",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.32.1",
@@ -270,11 +270,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "14 Dec 2021",
+    "release_date" => "15 Mar 2022",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN64A-masm",
-    "version" => "3.0.1"
+    "version" => "3.0.2"
 );
 our %target = (
     "AR" => "lib",
@@ -289,7 +289,7 @@ our %target = (
     "LDFLAGS" => "/nologo /debug",
     "MT" => "mt",
     "MTFLAGS" => "-nologo",
-    "RANLIB" => "CODE(0x260ea50)",
+    "RANLIB" => "CODE(0x2540430)",
     "RC" => "rc",
     "_conf_fname_int" => [
         ".\\Configurations\\00-base-templates.conf",
@@ -3622,6 +3622,9 @@ our %unified_info = (
         "doc\\html\\man3\\SSL_get_all_async_fds.html" => [
             ".\\doc\\man3\\SSL_get_all_async_fds.pod"
         ],
+        "doc\\html\\man3\\SSL_get_certificate.html" => [
+            ".\\doc\\man3\\SSL_get_certificate.pod"
+        ],
         "doc\\html\\man3\\SSL_get_ciphers.html" => [
             ".\\doc\\man3\\SSL_get_ciphers.pod"
         ],
@@ -3720,6 +3723,9 @@ our %unified_info = (
         ],
         "doc\\html\\man3\\SSL_set_fd.html" => [
             ".\\doc\\man3\\SSL_set_fd.pod"
+        ],
+        "doc\\html\\man3\\SSL_set_retry_verify.html" => [
+            ".\\doc\\man3\\SSL_set_retry_verify.pod"
         ],
         "doc\\html\\man3\\SSL_set_session.html" => [
             ".\\doc\\man3\\SSL_set_session.pod"
@@ -6171,6 +6177,9 @@ our %unified_info = (
         "doc\\man\\man3\\SSL_get_all_async_fds.3" => [
             ".\\doc\\man3\\SSL_get_all_async_fds.pod"
         ],
+        "doc\\man\\man3\\SSL_get_certificate.3" => [
+            ".\\doc\\man3\\SSL_get_certificate.pod"
+        ],
         "doc\\man\\man3\\SSL_get_ciphers.3" => [
             ".\\doc\\man3\\SSL_get_ciphers.pod"
         ],
@@ -6269,6 +6278,9 @@ our %unified_info = (
         ],
         "doc\\man\\man3\\SSL_set_fd.3" => [
             ".\\doc\\man3\\SSL_set_fd.pod"
+        ],
+        "doc\\man\\man3\\SSL_set_retry_verify.3" => [
+            ".\\doc\\man3\\SSL_set_retry_verify.pod"
         ],
         "doc\\man\\man3\\SSL_set_session.3" => [
             ".\\doc\\man3\\SSL_set_session.pod"
@@ -8049,6 +8061,9 @@ our %unified_info = (
         },
         "apps\\lib" => {
             "deps" => [
+                "apps\\lib\\openssl-bin-cmp_mock_srv.o",
+                "apps\\lib\\cmp_client_test-bin-cmp_mock_srv.o",
+                "apps\\lib\\uitest-bin-apps_ui.o",
                 "apps\\lib\\libapps-lib-app_libctx.o",
                 "apps\\lib\\libapps-lib-app_params.o",
                 "apps\\lib\\libapps-lib-app_provider.o",
@@ -8068,10 +8083,7 @@ our %unified_info = (
                 "apps\\lib\\libapps-lib-tlssrp_depr.o",
                 "apps\\lib\\libapps-lib-win32_init.o",
                 "apps\\lib\\libtestutil-lib-opt.o",
-                "apps\\lib\\libtestutil-lib-win32_init.o",
-                "apps\\lib\\openssl-bin-cmp_mock_srv.o",
-                "apps\\lib\\cmp_client_test-bin-cmp_mock_srv.o",
-                "apps\\lib\\uitest-bin-apps_ui.o"
+                "apps\\lib\\libtestutil-lib-win32_init.o"
             ],
             "products" => {
                 "bin" => [
@@ -8087,6 +8099,7 @@ our %unified_info = (
         },
         "crypto" => {
             "deps" => [
+                "crypto\\tls13secretstest-bin-packet.o",
                 "crypto\\libcrypto-lib-asn1_dsa.o",
                 "crypto\\libcrypto-lib-bsearch.o",
                 "crypto\\libcrypto-lib-context.o",
@@ -8187,8 +8200,7 @@ our %unified_info = (
                 "crypto\\libssl-shlib-packet.o",
                 "crypto\\liblegacy-lib-cpuid.o",
                 "crypto\\liblegacy-lib-ctype.o",
-                "crypto\\liblegacy-lib-x86_64cpuid.o",
-                "crypto\\tls13secretstest-bin-packet.o"
+                "crypto\\liblegacy-lib-x86_64cpuid.o"
             ],
             "products" => {
                 "bin" => [
@@ -10286,10 +10298,10 @@ our %unified_info = (
         },
         "ms" => {
             "deps" => [
-                "ms\\libcrypto-lib-uplink.o",
-                "ms\\libcrypto-shlib-uplink.o",
                 "ms\\openssl-bin-applink.o",
-                "ms\\ec_internal_test-bin-applink.o"
+                "ms\\ec_internal_test-bin-applink.o",
+                "ms\\libcrypto-lib-uplink.o",
+                "ms\\libcrypto-shlib-uplink.o"
             ],
             "products" => {
                 "bin" => [
@@ -10639,6 +10651,7 @@ our %unified_info = (
         },
         "ssl" => {
             "deps" => [
+                "ssl\\tls13secretstest-bin-tls13_enc.o",
                 "ssl\\libssl-lib-bio_ssl.o",
                 "ssl\\libssl-lib-d1_lib.o",
                 "ssl\\libssl-lib-d1_msg.o",
@@ -10700,8 +10713,7 @@ our %unified_info = (
                 "ssl\\libssl-shlib-tls13_enc.o",
                 "ssl\\libssl-shlib-tls_depr.o",
                 "ssl\\libssl-shlib-tls_srp.o",
-                "ssl\\libdefault-lib-s3_cbc.o",
-                "ssl\\tls13secretstest-bin-tls13_enc.o"
+                "ssl\\libdefault-lib-s3_cbc.o"
             ],
             "products" => {
                 "bin" => [
@@ -13052,6 +13064,9 @@ our %unified_info = (
         "doc\\html\\man3\\SSL_get_all_async_fds.html" => [
             ".\\doc\\man3\\SSL_get_all_async_fds.pod"
         ],
+        "doc\\html\\man3\\SSL_get_certificate.html" => [
+            ".\\doc\\man3\\SSL_get_certificate.pod"
+        ],
         "doc\\html\\man3\\SSL_get_ciphers.html" => [
             ".\\doc\\man3\\SSL_get_ciphers.pod"
         ],
@@ -13150,6 +13165,9 @@ our %unified_info = (
         ],
         "doc\\html\\man3\\SSL_set_fd.html" => [
             ".\\doc\\man3\\SSL_set_fd.pod"
+        ],
+        "doc\\html\\man3\\SSL_set_retry_verify.html" => [
+            ".\\doc\\man3\\SSL_set_retry_verify.pod"
         ],
         "doc\\html\\man3\\SSL_set_session.html" => [
             ".\\doc\\man3\\SSL_set_session.pod"
@@ -15548,6 +15566,9 @@ our %unified_info = (
         "doc\\man\\man3\\SSL_get_all_async_fds.3" => [
             ".\\doc\\man3\\SSL_get_all_async_fds.pod"
         ],
+        "doc\\man\\man3\\SSL_get_certificate.3" => [
+            ".\\doc\\man3\\SSL_get_certificate.pod"
+        ],
         "doc\\man\\man3\\SSL_get_ciphers.3" => [
             ".\\doc\\man3\\SSL_get_ciphers.pod"
         ],
@@ -15646,6 +15667,9 @@ our %unified_info = (
         ],
         "doc\\man\\man3\\SSL_set_fd.3" => [
             ".\\doc\\man3\\SSL_set_fd.pod"
+        ],
+        "doc\\man\\man3\\SSL_set_retry_verify.3" => [
+            ".\\doc\\man3\\SSL_set_retry_verify.pod"
         ],
         "doc\\man\\man3\\SSL_set_session.3" => [
             ".\\doc\\man3\\SSL_set_session.pod"
@@ -17219,6 +17243,7 @@ our %unified_info = (
             "doc\\html\\man3\\SSL_get0_peer_scts.html",
             "doc\\html\\man3\\SSL_get_SSL_CTX.html",
             "doc\\html\\man3\\SSL_get_all_async_fds.html",
+            "doc\\html\\man3\\SSL_get_certificate.html",
             "doc\\html\\man3\\SSL_get_ciphers.html",
             "doc\\html\\man3\\SSL_get_client_random.html",
             "doc\\html\\man3\\SSL_get_current_cipher.html",
@@ -17252,6 +17277,7 @@ our %unified_info = (
             "doc\\html\\man3\\SSL_set_bio.html",
             "doc\\html\\man3\\SSL_set_connect_state.html",
             "doc\\html\\man3\\SSL_set_fd.html",
+            "doc\\html\\man3\\SSL_set_retry_verify.html",
             "doc\\html\\man3\\SSL_set_session.html",
             "doc\\html\\man3\\SSL_set_shutdown.html",
             "doc\\html\\man3\\SSL_set_verify_result.html",
@@ -20861,6 +20887,7 @@ our %unified_info = (
             "doc\\man\\man3\\SSL_get0_peer_scts.3",
             "doc\\man\\man3\\SSL_get_SSL_CTX.3",
             "doc\\man\\man3\\SSL_get_all_async_fds.3",
+            "doc\\man\\man3\\SSL_get_certificate.3",
             "doc\\man\\man3\\SSL_get_ciphers.3",
             "doc\\man\\man3\\SSL_get_client_random.3",
             "doc\\man\\man3\\SSL_get_current_cipher.3",
@@ -20894,6 +20921,7 @@ our %unified_info = (
             "doc\\man\\man3\\SSL_set_bio.3",
             "doc\\man\\man3\\SSL_set_connect_state.3",
             "doc\\man\\man3\\SSL_set_fd.3",
+            "doc\\man\\man3\\SSL_set_retry_verify.3",
             "doc\\man\\man3\\SSL_set_session.3",
             "doc\\man\\man3\\SSL_set_shutdown.3",
             "doc\\man\\man3\\SSL_set_verify_result.3",
