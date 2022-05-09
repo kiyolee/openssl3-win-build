@@ -163,7 +163,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.2",
+    "full_version" => "3.0.3",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -214,7 +214,7 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files (x86)\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "2",
+    "patch" => "3",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.32.1",
@@ -266,11 +266,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "15 Mar 2022",
+    "release_date" => "3 May 2022",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN32",
-    "version" => "3.0.2"
+    "version" => "3.0.3"
 );
 our %target = (
     "AR" => "lib",
@@ -285,7 +285,7 @@ our %target = (
     "LDFLAGS" => "/nologo /debug",
     "MT" => "mt",
     "MTFLAGS" => "-nologo",
-    "RANLIB" => "CODE(0x2540370)",
+    "RANLIB" => "CODE(0x264f730)",
     "RC" => "rc",
     "_conf_fname_int" => [
         ".\\Configurations\\00-base-templates.conf",
@@ -1287,6 +1287,9 @@ our %unified_info = (
             "test\\evp_libctx_test" => {
                 "noinst" => "1"
             },
+            "test\\evp_pkey_ctx_new_from_name" => {
+                "noinst" => "1"
+            },
             "test\\evp_pkey_dparams_test" => {
                 "noinst" => "1"
             },
@@ -1330,6 +1333,9 @@ our %unified_info = (
                 "noinst" => "1"
             },
             "test\\lhash_test" => {
+                "noinst" => "1"
+            },
+            "test\\localetest" => {
                 "noinst" => "1"
             },
             "test\\mdc2_internal_test" => {
@@ -2952,6 +2958,9 @@ our %unified_info = (
         ],
         "doc\\html\\man3\\OPENSSL_secure_malloc.html" => [
             ".\\doc\\man3\\OPENSSL_secure_malloc.pod"
+        ],
+        "doc\\html\\man3\\OPENSSL_strcasecmp.html" => [
+            ".\\doc\\man3\\OPENSSL_strcasecmp.pod"
         ],
         "doc\\html\\man3\\OSSL_CMP_CTX_new.html" => [
             ".\\doc\\man3\\OSSL_CMP_CTX_new.pod"
@@ -5508,6 +5517,9 @@ our %unified_info = (
         "doc\\man\\man3\\OPENSSL_secure_malloc.3" => [
             ".\\doc\\man3\\OPENSSL_secure_malloc.pod"
         ],
+        "doc\\man\\man3\\OPENSSL_strcasecmp.3" => [
+            ".\\doc\\man3\\OPENSSL_strcasecmp.pod"
+        ],
         "doc\\man\\man3\\OSSL_CMP_CTX_new.3" => [
             ".\\doc\\man3\\OSSL_CMP_CTX_new.pod"
         ],
@@ -7647,6 +7659,9 @@ our %unified_info = (
             "libcrypto.a",
             "test\\libtestutil.a"
         ],
+        "test\\evp_pkey_ctx_new_from_name" => [
+            "libcrypto"
+        ],
         "test\\evp_pkey_dparams_test" => [
             "libcrypto",
             "test\\libtestutil.a"
@@ -7710,6 +7725,10 @@ our %unified_info = (
         ],
         "test\\libtestutil.a" => [
             "libcrypto"
+        ],
+        "test\\localetest" => [
+            "libcrypto",
+            "test\\libtestutil.a"
         ],
         "test\\mdc2_internal_test" => [
             "libcrypto.a",
@@ -8055,6 +8074,9 @@ our %unified_info = (
         },
         "apps\\lib" => {
             "deps" => [
+                "apps\\lib\\openssl-bin-cmp_mock_srv.o",
+                "apps\\lib\\cmp_client_test-bin-cmp_mock_srv.o",
+                "apps\\lib\\uitest-bin-apps_ui.o",
                 "apps\\lib\\libapps-lib-app_libctx.o",
                 "apps\\lib\\libapps-lib-app_params.o",
                 "apps\\lib\\libapps-lib-app_provider.o",
@@ -8074,10 +8096,7 @@ our %unified_info = (
                 "apps\\lib\\libapps-lib-tlssrp_depr.o",
                 "apps\\lib\\libapps-lib-win32_init.o",
                 "apps\\lib\\libtestutil-lib-opt.o",
-                "apps\\lib\\libtestutil-lib-win32_init.o",
-                "apps\\lib\\openssl-bin-cmp_mock_srv.o",
-                "apps\\lib\\cmp_client_test-bin-cmp_mock_srv.o",
-                "apps\\lib\\uitest-bin-apps_ui.o"
+                "apps\\lib\\libtestutil-lib-win32_init.o"
             ],
             "products" => {
                 "bin" => [
@@ -8093,6 +8112,7 @@ our %unified_info = (
         },
         "crypto" => {
             "deps" => [
+                "crypto\\tls13secretstest-bin-packet.o",
                 "crypto\\libcrypto-lib-asn1_dsa.o",
                 "crypto\\libcrypto-lib-bsearch.o",
                 "crypto\\libcrypto-lib-context.o",
@@ -8191,8 +8211,7 @@ our %unified_info = (
                 "crypto\\libssl-shlib-packet.o",
                 "crypto\\liblegacy-lib-cpuid.o",
                 "crypto\\liblegacy-lib-ctype.o",
-                "crypto\\liblegacy-lib-x86cpuid.o",
-                "crypto\\tls13secretstest-bin-packet.o"
+                "crypto\\liblegacy-lib-x86cpuid.o"
             ],
             "products" => {
                 "bin" => [
@@ -10259,10 +10278,10 @@ our %unified_info = (
         },
         "ms" => {
             "deps" => [
-                "ms\\libcrypto-lib-uplink.o",
-                "ms\\libcrypto-shlib-uplink.o",
                 "ms\\openssl-bin-applink.o",
-                "ms\\ec_internal_test-bin-applink.o"
+                "ms\\ec_internal_test-bin-applink.o",
+                "ms\\libcrypto-lib-uplink.o",
+                "ms\\libcrypto-shlib-uplink.o"
             ],
             "products" => {
                 "bin" => [
@@ -10612,6 +10631,7 @@ our %unified_info = (
         },
         "ssl" => {
             "deps" => [
+                "ssl\\tls13secretstest-bin-tls13_enc.o",
                 "ssl\\libssl-lib-bio_ssl.o",
                 "ssl\\libssl-lib-d1_lib.o",
                 "ssl\\libssl-lib-d1_msg.o",
@@ -10673,8 +10693,7 @@ our %unified_info = (
                 "ssl\\libssl-shlib-tls13_enc.o",
                 "ssl\\libssl-shlib-tls_depr.o",
                 "ssl\\libssl-shlib-tls_srp.o",
-                "ssl\\libdefault-lib-s3_cbc.o",
-                "ssl\\tls13secretstest-bin-tls13_enc.o"
+                "ssl\\libdefault-lib-s3_cbc.o"
             ],
             "products" => {
                 "bin" => [
@@ -11042,7 +11061,7 @@ our %unified_info = (
         "crypto\\chacha\\chacha-c64xplus.S" => [
             ".\\crypto\\chacha\\asm\\chacha-c64xplus.pl"
         ],
-        "crypto\\chacha\\chacha-ia64.S" => [
+        "crypto\\chacha\\chacha-ia64.s" => [
             ".\\crypto\\chacha\\asm\\chacha-ia64.pl"
         ],
         "crypto\\chacha\\chacha-ppc.s" => [
@@ -12361,6 +12380,9 @@ our %unified_info = (
         ],
         "doc\\html\\man3\\OPENSSL_secure_malloc.html" => [
             ".\\doc\\man3\\OPENSSL_secure_malloc.pod"
+        ],
+        "doc\\html\\man3\\OPENSSL_strcasecmp.html" => [
+            ".\\doc\\man3\\OPENSSL_strcasecmp.pod"
         ],
         "doc\\html\\man3\\OSSL_CMP_CTX_new.html" => [
             ".\\doc\\man3\\OSSL_CMP_CTX_new.pod"
@@ -14864,6 +14886,9 @@ our %unified_info = (
         "doc\\man\\man3\\OPENSSL_secure_malloc.3" => [
             ".\\doc\\man3\\OPENSSL_secure_malloc.pod"
         ],
+        "doc\\man\\man3\\OPENSSL_strcasecmp.3" => [
+            ".\\doc\\man3\\OPENSSL_strcasecmp.pod"
+        ],
         "doc\\man\\man3\\OSSL_CMP_CTX_new.3" => [
             ".\\doc\\man3\\OSSL_CMP_CTX_new.pod"
         ],
@@ -16983,6 +17008,7 @@ our %unified_info = (
             "doc\\html\\man3\\OPENSSL_malloc.html",
             "doc\\html\\man3\\OPENSSL_s390xcap.html",
             "doc\\html\\man3\\OPENSSL_secure_malloc.html",
+            "doc\\html\\man3\\OPENSSL_strcasecmp.html",
             "doc\\html\\man3\\OSSL_CMP_CTX_new.html",
             "doc\\html\\man3\\OSSL_CMP_HDR_get0_transactionID.html",
             "doc\\html\\man3\\OSSL_CMP_ITAV_set0.html",
@@ -19461,6 +19487,12 @@ our %unified_info = (
             ".\\include",
             ".\\apps\\include"
         ],
+        "test\\evp_pkey_ctx_new_from_name" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
+        ],
         "test\\evp_pkey_dparams_test" => [
             "include",
             "apps\\include",
@@ -19746,6 +19778,12 @@ our %unified_info = (
             ".\\include",
             ".\\apps\\include",
             "."
+        ],
+        "test\\localetest" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
         ],
         "test\\mdc2_internal_test" => [
             ".",
@@ -20627,6 +20665,7 @@ our %unified_info = (
             "doc\\man\\man3\\OPENSSL_malloc.3",
             "doc\\man\\man3\\OPENSSL_s390xcap.3",
             "doc\\man\\man3\\OPENSSL_secure_malloc.3",
+            "doc\\man\\man3\\OPENSSL_strcasecmp.3",
             "doc\\man\\man3\\OSSL_CMP_CTX_new.3",
             "doc\\man\\man3\\OSSL_CMP_HDR_get0_transactionID.3",
             "doc\\man\\man3\\OSSL_CMP_ITAV_set0.3",
@@ -21246,6 +21285,7 @@ our %unified_info = (
         "test\\evp_fetch_prov_test",
         "test\\evp_kdf_test",
         "test\\evp_libctx_test",
+        "test\\evp_pkey_ctx_new_from_name",
         "test\\evp_pkey_dparams_test",
         "test\\evp_pkey_provided_test",
         "test\\evp_test",
@@ -21261,6 +21301,7 @@ our %unified_info = (
         "test\\igetest",
         "test\\keymgmt_internal_test",
         "test\\lhash_test",
+        "test\\localetest",
         "test\\mdc2_internal_test",
         "test\\mdc2test",
         "test\\memleaktest",
@@ -29854,6 +29895,12 @@ our %unified_info = (
         "test\\evp_libctx_test-bin-evp_libctx_test.o" => [
             ".\\test\\evp_libctx_test.c"
         ],
+        "test\\evp_pkey_ctx_new_from_name" => [
+            "test\\evp_pkey_ctx_new_from_name-bin-evp_pkey_ctx_new_from_name.o"
+        ],
+        "test\\evp_pkey_ctx_new_from_name-bin-evp_pkey_ctx_new_from_name.o" => [
+            ".\\test\\evp_pkey_ctx_new_from_name.c"
+        ],
         "test\\evp_pkey_dparams_test" => [
             "test\\evp_pkey_dparams_test-bin-evp_pkey_dparams_test.o"
         ],
@@ -30043,6 +30090,12 @@ our %unified_info = (
             "test\\testutil\\libtestutil-lib-test_options.o",
             "test\\testutil\\libtestutil-lib-tests.o",
             "test\\testutil\\libtestutil-lib-testutil_init.o"
+        ],
+        "test\\localetest" => [
+            "test\\localetest-bin-localetest.o"
+        ],
+        "test\\localetest-bin-localetest.o" => [
+            ".\\test\\localetest.c"
         ],
         "test\\mdc2_internal_test" => [
             "test\\mdc2_internal_test-bin-mdc2_internal_test.o"
