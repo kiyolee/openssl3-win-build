@@ -1,5 +1,5 @@
 #! /usr/bin/env perl
-# Copyright 2018-2021 The OpenSSL Project Authors. All Rights Reserved.
+# Copyright 2018-2022 The OpenSSL Project Authors. All Rights Reserved.
 #
 # Licensed under the Apache License 2.0 (the "License").  You may not use
 # this file except in compliance with the License.  You can obtain a copy
@@ -30,6 +30,7 @@ my $libname_opt = undef;        # specific library name
 my $ordinals_file = undef;      # the ordinals file to use
 my $version = undef;            # the version to use for the library
 my $OS = undef;                 # the operating system family
+my $type = 'lib';               # either lib or dso
 my $verbose = 0;
 my $ctest = 0;
 my $debug = 0;
@@ -42,6 +43,7 @@ GetOptions('name=s'     => \$name,
            'ordinals=s' => \$ordinals_file,
            'version=s'  => \$version,
            'OS=s'       => \$OS,
+           'type=s'     => \$type,
            'ctest'      => \$ctest,
            'verbose'    => \$verbose,
            # For VMS
@@ -50,6 +52,8 @@ GetOptions('name=s'     => \$name,
 
 die "Please supply arguments\n"
     unless $name && $ordinals_file && $OS;
+die "--type argument must be equal to 'lib' or 'dso'"
+    if $type ne 'lib' && $type ne 'dso';
 
 # When building a "variant" shared library, with a custom SONAME, also customize
 # all the symbol versions.  This produces a shared object that can coexist
@@ -103,7 +107,7 @@ die "Please supply arguments\n"
 #
 (my $SO_VARIANT = uc($target{"shlib_variant"} // '')) =~ s/\W/_/g;
 
-my $libname = $libname_opt // platform->sharedname($name);
+my $libname = $libname_opt // ( $type eq 'lib' ? platform->sharedname($name) : platform->dsoname($name) );
 
 my %OS_data = (
     solaris     => { writer     => \&writer_linux,
