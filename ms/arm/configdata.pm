@@ -22,7 +22,7 @@ our %config = (
     "CFLAGS" => [
         "/W3 /wd4090 /nologo /O2"
     ],
-    "CPP" => "\"\$(CC)\" /EP /C",
+    "CPP" => "\$(CC) /EP /C",
     "CPPDEFINES" => [],
     "CPPFLAGS" => [],
     "CPPINCLUDES" => [],
@@ -163,7 +163,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.5",
+    "full_version" => "3.0.6",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -172,7 +172,7 @@ our %config = (
     "libdir" => "",
     "major" => "3",
     "makedep_scheme" => "VC",
-    "makedepcmd" => "\"\$(CC)\" /Zs /showIncludes",
+    "makedepcmd" => "\$(CC) /Zs /showIncludes",
     "minor" => "0",
     "openssl_api_defines" => [
         "OPENSSL_CONFIGURED_API=30000"
@@ -214,7 +214,7 @@ our %config = (
     "openssl_sys_defines" => [],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\ARM\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-asm no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "5",
+    "patch" => "6",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.32.1",
@@ -266,24 +266,24 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned char",
-    "release_date" => "5 Jul 2022",
+    "release_date" => "11 Oct 2022",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN32-ARM",
-    "version" => "3.0.5"
+    "version" => "3.0.6"
 );
 our %target = (
     "AR" => "lib",
     "ARFLAGS" => "/nologo",
     "CC" => "cl",
     "CFLAGS" => "/W3 /wd4090 /nologo /O2",
-    "CPP" => "\"\$(CC)\" /EP /C",
+    "CPP" => "\$(CC) /EP /C",
     "HASHBANGPERL" => "/usr/bin/env perl",
     "LD" => "link",
     "LDFLAGS" => "/nologo /debug",
     "MT" => "mt",
     "MTFLAGS" => "-nologo",
-    "RANLIB" => "CODE(0x261f830)",
+    "RANLIB" => "CODE(0x690190)",
     "RC" => "rc",
     "_conf_fname_int" => [
         ".\\Configurations\\00-base-templates.conf",
@@ -342,7 +342,7 @@ our %target = (
         "L_ENDIAN"
     ],
     "makedep_scheme" => "VC",
-    "makedepcmd" => "\"\$(CC)\" /Zs /showIncludes",
+    "makedepcmd" => "\$(CC) /Zs /showIncludes",
     "module_cflags" => "",
     "module_cxxflags" => undef,
     "module_ldflags" => "/dll",
@@ -1306,10 +1306,16 @@ our %unified_info = (
             "test\\exptest" => {
                 "noinst" => "1"
             },
+            "test\\ext_internal_test" => {
+                "noinst" => "1"
+            },
             "test\\fatalerrtest" => {
                 "noinst" => "1"
             },
             "test\\ffc_internal_test" => {
+                "noinst" => "1"
+            },
+            "test\\fips_version_test" => {
                 "noinst" => "1"
             },
             "test\\gmdifftest" => {
@@ -1615,9 +1621,6 @@ our %unified_info = (
     "defines" => {
         "providers\\libfips.a" => [
             "FIPS_MODULE"
-        ],
-        "test\\evp_extra_test" => [
-            "NO_FIPS_MODULE"
         ],
         "test\\provider_internal_test" => [
             "PROVIDER_INIT_FUNCTION_NAME=p_test_init"
@@ -2866,6 +2869,9 @@ our %unified_info = (
         ],
         "doc\\html\\man3\\OPENSSL_fork_prepare.html" => [
             ".\\doc\\man3\\OPENSSL_fork_prepare.pod"
+        ],
+        "doc\\html\\man3\\OPENSSL_gmtime.html" => [
+            ".\\doc\\man3\\OPENSSL_gmtime.pod"
         ],
         "doc\\html\\man3\\OPENSSL_hexchar2int.html" => [
             ".\\doc\\man3\\OPENSSL_hexchar2int.pod"
@@ -5425,6 +5431,9 @@ our %unified_info = (
         "doc\\man\\man3\\OPENSSL_fork_prepare.3" => [
             ".\\doc\\man3\\OPENSSL_fork_prepare.pod"
         ],
+        "doc\\man\\man3\\OPENSSL_gmtime.3" => [
+            ".\\doc\\man3\\OPENSSL_gmtime.pod"
+        ],
         "doc\\man\\man3\\OPENSSL_hexchar2int.3" => [
             ".\\doc\\man3\\OPENSSL_hexchar2int.pod"
         ],
@@ -7617,6 +7626,11 @@ our %unified_info = (
             "libcrypto",
             "test\\libtestutil.a"
         ],
+        "test\\ext_internal_test" => [
+            "libcrypto.a",
+            "libssl.a",
+            "test\\libtestutil.a"
+        ],
         "test\\fatalerrtest" => [
             "libcrypto",
             "libssl",
@@ -7624,6 +7638,10 @@ our %unified_info = (
         ],
         "test\\ffc_internal_test" => [
             "libcrypto.a",
+            "test\\libtestutil.a"
+        ],
+        "test\\fips_version_test" => [
+            "libcrypto",
             "test\\libtestutil.a"
         ],
         "test\\gmdifftest" => [
@@ -12247,6 +12265,9 @@ our %unified_info = (
         "doc\\html\\man3\\OPENSSL_fork_prepare.html" => [
             ".\\doc\\man3\\OPENSSL_fork_prepare.pod"
         ],
+        "doc\\html\\man3\\OPENSSL_gmtime.html" => [
+            ".\\doc\\man3\\OPENSSL_gmtime.pod"
+        ],
         "doc\\html\\man3\\OPENSSL_hexchar2int.html" => [
             ".\\doc\\man3\\OPENSSL_hexchar2int.pod"
         ],
@@ -14752,6 +14773,9 @@ our %unified_info = (
         "doc\\man\\man3\\OPENSSL_fork_prepare.3" => [
             ".\\doc\\man3\\OPENSSL_fork_prepare.pod"
         ],
+        "doc\\man\\man3\\OPENSSL_gmtime.3" => [
+            ".\\doc\\man3\\OPENSSL_gmtime.pod"
+        ],
         "doc\\man\\man3\\OPENSSL_hexchar2int.3" => [
             ".\\doc\\man3\\OPENSSL_hexchar2int.pod"
         ],
@@ -16896,6 +16920,7 @@ our %unified_info = (
             "doc\\html\\man3\\OPENSSL_LH_stats.html",
             "doc\\html\\man3\\OPENSSL_config.html",
             "doc\\html\\man3\\OPENSSL_fork_prepare.html",
+            "doc\\html\\man3\\OPENSSL_gmtime.html",
             "doc\\html\\man3\\OPENSSL_hexchar2int.html",
             "doc\\html\\man3\\OPENSSL_ia32cap.html",
             "doc\\html\\man3\\OPENSSL_init_crypto.html",
@@ -19420,6 +19445,14 @@ our %unified_info = (
             ".\\include",
             ".\\apps\\include"
         ],
+        "test\\ext_internal_test" => [
+            ".",
+            "include",
+            "apps\\include",
+            ".",
+            ".\\include",
+            ".\\apps\\include"
+        ],
         "test\\fatalerrtest" => [
             "include",
             "apps\\include",
@@ -19431,6 +19464,12 @@ our %unified_info = (
             "include",
             "apps\\include",
             ".",
+            ".\\include",
+            ".\\apps\\include"
+        ],
+        "test\\fips_version_test" => [
+            "include",
+            "apps\\include",
             ".\\include",
             ".\\apps\\include"
         ],
@@ -20553,6 +20592,7 @@ our %unified_info = (
             "doc\\man\\man3\\OPENSSL_LH_stats.3",
             "doc\\man\\man3\\OPENSSL_config.3",
             "doc\\man\\man3\\OPENSSL_fork_prepare.3",
+            "doc\\man\\man3\\OPENSSL_gmtime.3",
             "doc\\man\\man3\\OPENSSL_hexchar2int.3",
             "doc\\man\\man3\\OPENSSL_ia32cap.3",
             "doc\\man\\man3\\OPENSSL_init_crypto.3",
@@ -21188,8 +21228,10 @@ our %unified_info = (
         "test\\evp_test",
         "test\\exdatatest",
         "test\\exptest",
+        "test\\ext_internal_test",
         "test\\fatalerrtest",
         "test\\ffc_internal_test",
+        "test\\fips_version_test",
         "test\\gmdifftest",
         "test\\hexstr_test",
         "test\\hmactest",
@@ -29704,6 +29746,12 @@ our %unified_info = (
         "test\\exptest-bin-exptest.o" => [
             ".\\test\\exptest.c"
         ],
+        "test\\ext_internal_test" => [
+            "test\\ext_internal_test-bin-ext_internal_test.o"
+        ],
+        "test\\ext_internal_test-bin-ext_internal_test.o" => [
+            ".\\test\\ext_internal_test.c"
+        ],
         "test\\fatalerrtest" => [
             "test\\fatalerrtest-bin-fatalerrtest.o",
             "test\\helpers\\fatalerrtest-bin-ssltestlib.o"
@@ -29716,6 +29764,12 @@ our %unified_info = (
         ],
         "test\\ffc_internal_test-bin-ffc_internal_test.o" => [
             ".\\test\\ffc_internal_test.c"
+        ],
+        "test\\fips_version_test" => [
+            "test\\fips_version_test-bin-fips_version_test.o"
+        ],
+        "test\\fips_version_test-bin-fips_version_test.o" => [
+            ".\\test\\fips_version_test.c"
         ],
         "test\\gmdifftest" => [
             "test\\gmdifftest-bin-gmdifftest.o"
