@@ -441,5 +441,8 @@
     <ClCompile Include="..\..\..\providers\implementations\digests\null_prov.c">
       <Filter>Source Files\providers\implementations\digests</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\digests\ripemd_prov.c">
+      <Filter>Source Files\providers\implementations\digests</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

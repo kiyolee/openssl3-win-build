@@ -167,7 +167,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.6",
+    "full_version" => "3.0.7",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -219,7 +219,7 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\x64\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-shared no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "6",
+    "patch" => "7",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.32.1",
@@ -272,11 +272,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "11 Oct 2022",
+    "release_date" => "1 Nov 2022",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN64A-masm",
-    "version" => "3.0.6"
+    "version" => "3.0.7"
 );
 our %target = (
     "AR" => "lib",
@@ -291,7 +291,7 @@ our %target = (
     "LDFLAGS" => "/nologo /debug",
     "MT" => "mt",
     "MTFLAGS" => "-nologo",
-    "RANLIB" => "CODE(0x68ffd8)",
+    "RANLIB" => "CODE(0x690ba8)",
     "RC" => "rc",
     "_conf_fname_int" => [
         ".\\Configurations\\00-base-templates.conf",
@@ -1442,6 +1442,9 @@ our %unified_info = (
                 "noinst" => "1"
             },
             "test\\provider_test" => {
+                "noinst" => "1"
+            },
+            "test\\punycode_test" => {
                 "noinst" => "1"
             },
             "test\\rand_status_test" => {
@@ -7859,6 +7862,10 @@ our %unified_info = (
             "libcrypto.a",
             "test\\libtestutil.a"
         ],
+        "test\\punycode_test" => [
+            "libcrypto.a",
+            "test\\libtestutil.a"
+        ],
         "test\\rand_status_test" => [
             "libcrypto",
             "test\\libtestutil.a"
@@ -9704,6 +9711,7 @@ our %unified_info = (
                 "providers\\implementations\\digests\\libdefault-lib-md5_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-md5_sha1_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-null_prov.o",
+                "providers\\implementations\\digests\\libdefault-lib-ripemd_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-sha2_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-sha3_prov.o",
                 "providers\\implementations\\digests\\libdefault-lib-sm3_prov.o",
@@ -19136,6 +19144,12 @@ our %unified_info = (
             ".\\apps\\include",
             "."
         ],
+        "test\\punycode_test" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
+        ],
         "test\\rand_status_test" => [
             "include",
             "apps\\include",
@@ -20469,6 +20483,7 @@ our %unified_info = (
         "test\\provider_pkey_test",
         "test\\provider_status_test",
         "test\\provider_test",
+        "test\\punycode_test",
         "test\\rand_status_test",
         "test\\rand_test",
         "test\\rc2test",
@@ -24425,6 +24440,9 @@ our %unified_info = (
         "providers\\implementations\\digests\\libdefault-lib-null_prov.o" => [
             ".\\providers\\implementations\\digests\\null_prov.c"
         ],
+        "providers\\implementations\\digests\\libdefault-lib-ripemd_prov.o" => [
+            ".\\providers\\implementations\\digests\\ripemd_prov.c"
+        ],
         "providers\\implementations\\digests\\libdefault-lib-sha2_prov.o" => [
             ".\\providers\\implementations\\digests\\sha2_prov.c"
         ],
@@ -24740,6 +24758,7 @@ our %unified_info = (
             "providers\\implementations\\digests\\libdefault-lib-md5_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-md5_sha1_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-null_prov.o",
+            "providers\\implementations\\digests\\libdefault-lib-ripemd_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-sha2_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-sha3_prov.o",
             "providers\\implementations\\digests\\libdefault-lib-sm3_prov.o",
@@ -26259,6 +26278,12 @@ our %unified_info = (
         ],
         "test\\provider_test-bin-provider_test.o" => [
             ".\\test\\provider_test.c"
+        ],
+        "test\\punycode_test" => [
+            "test\\punycode_test-bin-punycode_test.o"
+        ],
+        "test\\punycode_test-bin-punycode_test.o" => [
+            ".\\test\\punycode_test.c"
         ],
         "test\\rand_status_test" => [
             "test\\rand_status_test-bin-rand_status_test.o"

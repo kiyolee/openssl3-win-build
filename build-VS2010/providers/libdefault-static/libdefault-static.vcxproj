@@ -152,6 +152,7 @@
     <ClCompile Include="..\..\..\providers\implementations\digests\md5_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\digests\md5_sha1_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\digests\null_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\ripemd_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\digests\sha2_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\digests\sha3_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\digests\sm3_prov.c" />
