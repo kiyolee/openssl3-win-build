@@ -144,9 +144,6 @@
     <ClCompile Include="..\..\..\crypto\mem_clr.c">
       <Filter>Source Files\crypto</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\crypto\bn\bn_asm.c">
-      <Filter>Source Files\crypto\bn</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\crypto\des\des_enc.c">
       <Filter>Source Files\crypto\des</Filter>
     </ClCompile>

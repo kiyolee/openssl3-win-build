@@ -94,18 +94,6 @@
     <Link />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\crypto\bn\bn_asm.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\crypto\bn\rsaz_exp.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\crypto\bn\rsaz_exp_x2.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="..\..\..\crypto\cpuid.c" />
     <ClCompile Include="..\..\..\crypto\ctype.c" />
     <ClCompile Include="..\..\..\crypto\des\des_enc.c">
@@ -152,13 +140,13 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename).obj</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename).obj</Outputs>
     </CustomBuild>
@@ -167,88 +155,28 @@ $(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) masm $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) masm $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\bn-586.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\co-586.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\x86-gf2m.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\x86-mont.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\crypto\des\asm\crypt586.pl">
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename).obj</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename).obj</Outputs>
     </CustomBuild>
@@ -257,118 +185,28 @@ $(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename).obj</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\rsaz-avx2.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\rsaz-avx512.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\rsaz-x86_64.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\x86_64-gf2m.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\x86_64-mont.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
-    </CustomBuild>
-    <CustomBuild Include="..\..\..\crypto\bn\asm\x86_64-mont5.pl">
-      <FileType>Document</FileType>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
-set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\..\crypto\md5\asm\md5-x86_64.pl">
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) masm $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=ml64
-$(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) masm $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename).obj</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename).obj</Outputs>
     </CustomBuild>
@@ -377,13 +215,13 @@ $(PERL) %(FullPath) masm $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; ml64 /
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">mkdir $(OutDir)_work 2&gt;nul
-mkdir $(OutDir)_work\legacy 2&gt;nul
+mkdir $(OutDir)_work\liblegacy-static 2&gt;nul
 set ASM=nasm
-$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\legacy\%(Filename).asm</Command>
+$(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\liblegacy-static\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\liblegacy-static\%(Filename).asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename).obj</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename).obj</Outputs>
     </CustomBuild>
@@ -392,8 +230,8 @@ $(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\legacy\%(Filename
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <Target Name="AfterClean">
-    <Exec Command="if exist $(OutDir)_work\legacy\ del $(OutDir)_work\legacy\*.asm /F /Q 2&gt;nul" />
-    <Exec Command="if exist $(OutDir)_work\legacy\ rmdir $(OutDir)_work\legacy 2&gt;nul" />
+    <Exec Command="if exist $(OutDir)_work\liblegacy-static\ del $(OutDir)_work\liblegacy-static\*.asm /F /Q 2&gt;nul" />
+    <Exec Command="if exist $(OutDir)_work\liblegacy-static\ rmdir $(OutDir)_work\liblegacy-static 2&gt;nul" />
     <Exec Command="if exist $(OutDir)_work\ rmdir $(OutDir)_work 2&gt;nul" />
   </Target>
 </Project>

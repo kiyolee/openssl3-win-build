@@ -22,6 +22,9 @@
     <Filter Include="Source Files\ssl\statem">
       <UniqueIdentifier>{2b961571-3e98-4b5f-9667-8751229f693c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\crypto">
+      <UniqueIdentifier>{ed857bd2-1692-4b9d-a7e8-ad2eb5875ffe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\ssl\ssl_err.c">

@@ -94,7 +94,6 @@
     <Link />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\crypto\bn\bn_asm.c" />
     <ClCompile Include="..\..\..\crypto\cpuid.c" />
     <ClCompile Include="..\..\..\crypto\ctype.c" />
     <ClCompile Include="..\..\..\crypto\des\des_enc.c" />
@@ -134,8 +133,8 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
   <Target Name="AfterClean">
-    <Exec Command="if exist $(OutDir)_work\legacy\ del $(OutDir)_work\legacy\*.asm /F /Q 2&gt;nul" />
-    <Exec Command="if exist $(OutDir)_work\legacy\ rmdir $(OutDir)_work\legacy 2&gt;nul" />
+    <Exec Command="if exist $(OutDir)_work\liblegacy-static\ del $(OutDir)_work\liblegacy-static\*.asm /F /Q 2&gt;nul" />
+    <Exec Command="if exist $(OutDir)_work\liblegacy-static\ rmdir $(OutDir)_work\liblegacy-static 2&gt;nul" />
     <Exec Command="if exist $(OutDir)_work\ rmdir $(OutDir)_work 2&gt;nul" />
   </Target>
 </Project>
