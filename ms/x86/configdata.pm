@@ -43,7 +43,7 @@ our %config = (
     "RC" => "rc",
     "RCFLAGS" => [],
     "afalgeng" => "",
-    "api" => "30000",
+    "api" => "30100",
     "b32" => "1",
     "b64" => "0",
     "b64l" => "0",
@@ -163,7 +163,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.8",
+    "full_version" => "3.1.0",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -173,9 +173,9 @@ our %config = (
     "major" => "3",
     "makedep_scheme" => "VC",
     "makedepcmd" => "\$(CC) /Zs /showIncludes",
-    "minor" => "0",
+    "minor" => "1",
     "openssl_api_defines" => [
-        "OPENSSL_CONFIGURED_API=30000"
+        "OPENSSL_CONFIGURED_API=30100"
     ],
     "openssl_feature_defines" => [
         "OPENSSL_RAND_SEED_OS",
@@ -214,7 +214,7 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files (x86)\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "8",
+    "patch" => "0",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.32.1",
@@ -266,11 +266,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "7 Feb 2023",
+    "release_date" => "14 Mar 2023",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN32",
-    "version" => "3.0.8"
+    "version" => "3.1.0"
 );
 our %target = (
     "AR" => "lib",
@@ -285,7 +285,7 @@ our %target = (
     "LDFLAGS" => "/nologo /debug",
     "MT" => "mt",
     "MTFLAGS" => "-nologo",
-    "RANLIB" => "CODE(0xd8f7f0)",
+    "RANLIB" => "CODE(0x6b0698)",
     "RC" => "rc",
     "_conf_fname_int" => [
         ".\\Configurations\\00-base-templates.conf",
@@ -863,6 +863,9 @@ our %unified_info = (
             "fuzz\\ct-test" => {
                 "noinst" => "1"
             },
+            "fuzz\\punycode-test" => {
+                "noinst" => "1"
+            },
             "fuzz\\server-test" => {
                 "noinst" => "1"
             },
@@ -936,6 +939,9 @@ our %unified_info = (
                 "noinst" => "1"
             },
             "test\\bntest" => {
+                "noinst" => "1"
+            },
+            "test\\build_wincrypt_test" => {
                 "noinst" => "1"
             },
             "test\\buildtest_c_aes" => {
@@ -1367,6 +1373,9 @@ our %unified_info = (
             "test\\namemap_internal_test" => {
                 "noinst" => "1"
             },
+            "test\\nodefltctxtest" => {
+                "noinst" => "1"
+            },
             "test\\ocspapitest" => {
                 "noinst" => "1"
             },
@@ -1457,7 +1466,7 @@ our %unified_info = (
             "test\\rc5test" => {
                 "noinst" => "1"
             },
-            "test\\rdrand_sanitytest" => {
+            "test\\rdcpu_sanitytest" => {
                 "noinst" => "1"
             },
             "test\\recordlentest" => {
@@ -1548,6 +1557,9 @@ our %unified_info = (
                 "noinst" => "1"
             },
             "test\\time_offset_test" => {
+                "noinst" => "1"
+            },
+            "test\\timing_load_creds" => {
                 "noinst" => "1"
             },
             "test\\tls13ccstest" => {
@@ -1663,6 +1675,9 @@ our %unified_info = (
         "libssl" => [
             "AES_ASM"
         ],
+        "providers\\legacy" => [
+            "OPENSSL_CPUID_OBJ"
+        ],
         "providers\\libcommon.a" => [
             "OPENSSL_BN_ASM_GF2m",
             "OPENSSL_BN_ASM_MONT",
@@ -1697,8 +1712,10 @@ our %unified_info = (
             "VPAES_ASM"
         ],
         "providers\\liblegacy.a" => [
-            "MD5_ASM",
-            "OPENSSL_CPUID_OBJ"
+            "MD5_ASM"
+        ],
+        "test\\endecode_test" => [
+            "STATIC_LEGACY"
         ],
         "test\\provider_internal_test" => [
             "PROVIDER_INIT_FUNCTION_NAME=p_test_init"
@@ -4025,6 +4042,9 @@ our %unified_info = (
         "doc\\html\\man7\\EVP_CIPHER-IDEA.html" => [
             ".\\doc\\man7\\EVP_CIPHER-IDEA.pod"
         ],
+        "doc\\html\\man7\\EVP_CIPHER-NULL.html" => [
+            ".\\doc\\man7\\EVP_CIPHER-NULL.pod"
+        ],
         "doc\\html\\man7\\EVP_CIPHER-RC2.html" => [
             ".\\doc\\man7\\EVP_CIPHER-RC2.pod"
         ],
@@ -4132,6 +4152,9 @@ our %unified_info = (
         ],
         "doc\\html\\man7\\EVP_MD-MDC2.html" => [
             ".\\doc\\man7\\EVP_MD-MDC2.pod"
+        ],
+        "doc\\html\\man7\\EVP_MD-NULL.html" => [
+            ".\\doc\\man7\\EVP_MD-NULL.pod"
         ],
         "doc\\html\\man7\\EVP_MD-RIPEMD160.html" => [
             ".\\doc\\man7\\EVP_MD-RIPEMD160.pod"
@@ -6610,6 +6633,9 @@ our %unified_info = (
         "doc\\man\\man7\\EVP_CIPHER-IDEA.7" => [
             ".\\doc\\man7\\EVP_CIPHER-IDEA.pod"
         ],
+        "doc\\man\\man7\\EVP_CIPHER-NULL.7" => [
+            ".\\doc\\man7\\EVP_CIPHER-NULL.pod"
+        ],
         "doc\\man\\man7\\EVP_CIPHER-RC2.7" => [
             ".\\doc\\man7\\EVP_CIPHER-RC2.pod"
         ],
@@ -6717,6 +6743,9 @@ our %unified_info = (
         ],
         "doc\\man\\man7\\EVP_MD-MDC2.7" => [
             ".\\doc\\man7\\EVP_MD-MDC2.pod"
+        ],
+        "doc\\man\\man7\\EVP_MD-NULL.7" => [
+            ".\\doc\\man7\\EVP_MD-NULL.pod"
         ],
         "doc\\man\\man7\\EVP_MD-RIPEMD160.7" => [
             ".\\doc\\man7\\EVP_MD-RIPEMD160.pod"
@@ -6984,6 +7013,9 @@ our %unified_info = (
         "fuzz\\ct-test" => [
             "libcrypto"
         ],
+        "fuzz\\punycode-test" => [
+            "libcrypto.a"
+        ],
         "fuzz\\server-test" => [
             "libcrypto",
             "libssl"
@@ -7249,6 +7281,10 @@ our %unified_info = (
         "test\\bntest" => [
             "libcrypto",
             "test\\libtestutil.a"
+        ],
+        "test\\build_wincrypt_test" => [
+            "libcrypto",
+            "libssl"
         ],
         "test\\buildtest_c_aes" => [
             "libcrypto",
@@ -7695,6 +7731,8 @@ our %unified_info = (
         ],
         "test\\endecode_test" => [
             "libcrypto.a",
+            "providers\\libcommon.a",
+            "providers\\liblegacy.a",
             "test\\libtestutil.a"
         ],
         "test\\endecoder_legacy_test" => [
@@ -7829,6 +7867,10 @@ our %unified_info = (
             "libcrypto.a",
             "test\\libtestutil.a"
         ],
+        "test\\nodefltctxtest" => [
+            "libcrypto.a",
+            "test\\libtestutil.a"
+        ],
         "test\\ocspapitest" => [
             "libcrypto",
             "test\\libtestutil.a"
@@ -7949,7 +7991,7 @@ our %unified_info = (
             "libcrypto.a",
             "test\\libtestutil.a"
         ],
-        "test\\rdrand_sanitytest" => [
+        "test\\rdcpu_sanitytest" => [
             "libcrypto.a",
             "test\\libtestutil.a"
         ],
@@ -8074,6 +8116,9 @@ our %unified_info = (
         "test\\time_offset_test" => [
             "libcrypto",
             "test\\libtestutil.a"
+        ],
+        "test\\timing_load_creds" => [
+            "libcrypto.a"
         ],
         "test\\tls13ccstest" => [
             "libcrypto",
@@ -8200,6 +8245,9 @@ our %unified_info = (
         "crypto" => {
             "deps" => [
                 "crypto\\tls13secretstest-bin-packet.o",
+                "crypto\\legacy-dso-cpuid.o",
+                "crypto\\legacy-dso-ctype.o",
+                "crypto\\legacy-dso-x86cpuid.o",
                 "crypto\\libcrypto-lib-asn1_dsa.o",
                 "crypto\\libcrypto-lib-bsearch.o",
                 "crypto\\libcrypto-lib-context.o",
@@ -8295,21 +8343,19 @@ our %unified_info = (
                 "crypto\\libcrypto-shlib-trace.o",
                 "crypto\\libcrypto-shlib-uid.o",
                 "crypto\\libcrypto-shlib-x86cpuid.o",
-                "crypto\\libssl-lib-sparse_array.o",
                 "crypto\\libssl-shlib-packet.o",
-                "crypto\\libssl-shlib-sparse_array.o",
-                "crypto\\liblegacy-lib-cpuid.o",
-                "crypto\\liblegacy-lib-ctype.o",
-                "crypto\\liblegacy-lib-x86cpuid.o"
+                "crypto\\libssl-shlib-sparse_array.o"
             ],
             "products" => {
                 "bin" => [
                     "test\\tls13secretstest"
                 ],
+                "dso" => [
+                    "providers\\legacy"
+                ],
                 "lib" => [
                     "libcrypto",
-                    "libssl",
-                    "providers\\liblegacy.a"
+                    "libssl"
                 ]
             }
         },
@@ -10357,6 +10403,7 @@ our %unified_info = (
                     "fuzz\\conf-test",
                     "fuzz\\crl-test",
                     "fuzz\\ct-test",
+                    "fuzz\\punycode-test",
                     "fuzz\\server-test",
                     "fuzz\\x509-test"
                 ]
@@ -10381,6 +10428,7 @@ our %unified_info = (
         },
         "providers" => {
             "deps" => [
+                "providers\\endecode_test-bin-legacyprov.o",
                 "providers\\libcrypto-lib-baseprov.o",
                 "providers\\libcrypto-lib-defltprov.o",
                 "providers\\libcrypto-lib-nullprov.o",
@@ -10393,6 +10441,9 @@ our %unified_info = (
                 "providers\\libdefault.a"
             ],
             "products" => {
+                "bin" => [
+                    "test\\endecode_test"
+                ],
                 "dso" => [
                     "providers\\legacy"
                 ],
@@ -10501,6 +10552,10 @@ our %unified_info = (
                 "providers\\implementations\\ciphers\\libdefault-lib-cipher_cts.o",
                 "providers\\implementations\\ciphers\\libdefault-lib-cipher_null.o",
                 "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4.o",
+                "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_ccm.o",
+                "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_ccm_hw.o",
+                "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_gcm.o",
+                "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_gcm_hw.o",
                 "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_hw.o",
                 "providers\\implementations\\ciphers\\libdefault-lib-cipher_tdes.o",
                 "providers\\implementations\\ciphers\\libdefault-lib-cipher_tdes_common.o",
@@ -10964,6 +11019,15 @@ our %unified_info = (
         "crypto\\aes\\aes-ppc.s" => [
             ".\\crypto\\aes\\asm\\aes-ppc.pl"
         ],
+        "crypto\\aes\\aes-riscv32-zkn.s" => [
+            ".\\crypto\\aes\\asm\\aes-riscv32-zkn.pl"
+        ],
+        "crypto\\aes\\aes-riscv64-zkn.s" => [
+            ".\\crypto\\aes\\asm\\aes-riscv64-zkn.pl"
+        ],
+        "crypto\\aes\\aes-riscv64.s" => [
+            ".\\crypto\\aes\\asm\\aes-riscv64.pl"
+        ],
         "crypto\\aes\\aes-s390x.S" => [
             ".\\crypto\\aes\\asm\\aes-s390x.pl"
         ],
@@ -11003,11 +11067,17 @@ our %unified_info = (
         "crypto\\aes\\bsaes-armv7.S" => [
             ".\\crypto\\aes\\asm\\bsaes-armv7.pl"
         ],
+        "crypto\\aes\\bsaes-armv8.S" => [
+            ".\\crypto\\aes\\asm\\bsaes-armv8.pl"
+        ],
         "crypto\\aes\\bsaes-x86_64.s" => [
             ".\\crypto\\aes\\asm\\bsaes-x86_64.pl"
         ],
         "crypto\\aes\\vpaes-armv8.S" => [
             ".\\crypto\\aes\\asm\\vpaes-armv8.pl"
+        ],
+        "crypto\\aes\\vpaes-loongarch64.S" => [
+            ".\\crypto\\aes\\asm\\vpaes-loongarch64.pl"
         ],
         "crypto\\aes\\vpaes-ppc.s" => [
             ".\\crypto\\aes\\asm\\vpaes-ppc.pl"
@@ -11069,14 +11139,23 @@ our %unified_info = (
         "crypto\\bn\\ppc-mont.s" => [
             ".\\crypto\\bn\\asm\\ppc-mont.pl"
         ],
+        "crypto\\bn\\ppc64-mont-fixed.s" => [
+            ".\\crypto\\bn\\asm\\ppc64-mont-fixed.pl"
+        ],
         "crypto\\bn\\ppc64-mont.s" => [
             ".\\crypto\\bn\\asm\\ppc64-mont.pl"
         ],
+        "crypto\\bn\\rsaz-2k-avx512.s" => [
+            ".\\crypto\\bn\\asm\\rsaz-2k-avx512.pl"
+        ],
+        "crypto\\bn\\rsaz-3k-avx512.s" => [
+            ".\\crypto\\bn\\asm\\rsaz-3k-avx512.pl"
+        ],
+        "crypto\\bn\\rsaz-4k-avx512.s" => [
+            ".\\crypto\\bn\\asm\\rsaz-4k-avx512.pl"
+        ],
         "crypto\\bn\\rsaz-avx2.s" => [
             ".\\crypto\\bn\\asm\\rsaz-avx2.pl"
-        ],
-        "crypto\\bn\\rsaz-avx512.s" => [
-            ".\\crypto\\bn\\asm\\rsaz-avx512.pl"
         ],
         "crypto\\bn\\rsaz-x86_64.s" => [
             ".\\crypto\\bn\\asm\\rsaz-x86_64.pl"
@@ -11139,6 +11218,9 @@ our %unified_info = (
         "crypto\\chacha\\chacha-armv4.S" => [
             ".\\crypto\\chacha\\asm\\chacha-armv4.pl"
         ],
+        "crypto\\chacha\\chacha-armv8-sve.S" => [
+            ".\\crypto\\chacha\\asm\\chacha-armv8-sve.pl"
+        ],
         "crypto\\chacha\\chacha-armv8.S" => [
             ".\\crypto\\chacha\\asm\\chacha-armv8.pl"
         ],
@@ -11162,6 +11244,9 @@ our %unified_info = (
         ],
         "crypto\\chacha\\chacha-x86_64.s" => [
             ".\\crypto\\chacha\\asm\\chacha-x86_64.pl"
+        ],
+        "crypto\\chacha\\chachap10-ppc.s" => [
+            ".\\crypto\\chacha\\asm\\chachap10-ppc.pl"
         ],
         "crypto\\des\\crypt586.S" => [
             ".\\crypto\\des\\asm\\crypt586.pl"
@@ -11208,8 +11293,14 @@ our %unified_info = (
         "crypto\\ia64cpuid.s" => [
             ".\\crypto\\ia64cpuid.S"
         ],
+        "crypto\\loongarch64cpuid.s" => [
+            ".\\crypto\\loongarch64cpuid.pl"
+        ],
         "crypto\\md5\\md5-586.S" => [
             ".\\crypto\\md5\\asm\\md5-586.pl"
+        ],
+        "crypto\\md5\\md5-aarch64.s" => [
+            ".\\crypto\\md5\\asm\\md5-aarch64.pl"
         ],
         "crypto\\md5\\md5-sparcv9.S" => [
             ".\\crypto\\md5\\asm\\md5-sparcv9.pl"
@@ -11217,8 +11308,17 @@ our %unified_info = (
         "crypto\\md5\\md5-x86_64.s" => [
             ".\\crypto\\md5\\asm\\md5-x86_64.pl"
         ],
+        "crypto\\modes\\aes-gcm-armv8-unroll8_64.S" => [
+            ".\\crypto\\modes\\asm\\aes-gcm-armv8-unroll8_64.pl"
+        ],
         "crypto\\modes\\aes-gcm-armv8_64.S" => [
             ".\\crypto\\modes\\asm\\aes-gcm-armv8_64.pl"
+        ],
+        "crypto\\modes\\aes-gcm-avx512.s" => [
+            ".\\crypto\\modes\\asm\\aes-gcm-avx512.pl"
+        ],
+        "crypto\\modes\\aes-gcm-ppc.s" => [
+            ".\\crypto\\modes\\asm\\aes-gcm-ppc.pl"
         ],
         "crypto\\modes\\aesni-gcm-x86_64.s" => [
             ".\\crypto\\modes\\asm\\aesni-gcm-x86_64.pl"
@@ -11237,6 +11337,9 @@ our %unified_info = (
         ],
         "crypto\\modes\\ghash-parisc.s" => [
             ".\\crypto\\modes\\asm\\ghash-parisc.pl"
+        ],
+        "crypto\\modes\\ghash-riscv64.s" => [
+            ".\\crypto\\modes\\asm\\ghash-riscv64.pl"
         ],
         "crypto\\modes\\ghash-s390x.S" => [
             ".\\crypto\\modes\\asm\\ghash-s390x.pl"
@@ -11315,6 +11418,12 @@ our %unified_info = (
         ],
         "crypto\\ripemd\\rmd-586.S" => [
             ".\\crypto\\ripemd\\asm\\rmd-586.pl"
+        ],
+        "crypto\\riscv32cpuid.s" => [
+            ".\\crypto\\riscv32cpuid.pl"
+        ],
+        "crypto\\riscv64cpuid.s" => [
+            ".\\crypto\\riscv64cpuid.pl"
         ],
         "crypto\\s390xcpuid.S" => [
             ".\\crypto\\s390xcpuid.pl"
@@ -11471,6 +11580,15 @@ our %unified_info = (
         ],
         "crypto\\sha\\sha512p8-ppc.s" => [
             ".\\crypto\\sha\\asm\\sha512p8-ppc.pl"
+        ],
+        "crypto\\sm3\\sm3-armv8.S" => [
+            ".\\crypto\\sm3\\asm\\sm3-armv8.pl"
+        ],
+        "crypto\\sm4\\sm4-armv8.S" => [
+            ".\\crypto\\sm4\\asm\\sm4-armv8.pl"
+        ],
+        "crypto\\sm4\\vpsm4-armv8.S" => [
+            ".\\crypto\\sm4\\asm\\vpsm4-armv8.pl"
         ],
         "crypto\\uplink-ia64.s" => [
             ".\\ms\\uplink-ia64.pl"
@@ -13521,6 +13639,9 @@ our %unified_info = (
         "doc\\html\\man7\\EVP_CIPHER-IDEA.html" => [
             ".\\doc\\man7\\EVP_CIPHER-IDEA.pod"
         ],
+        "doc\\html\\man7\\EVP_CIPHER-NULL.html" => [
+            ".\\doc\\man7\\EVP_CIPHER-NULL.pod"
+        ],
         "doc\\html\\man7\\EVP_CIPHER-RC2.html" => [
             ".\\doc\\man7\\EVP_CIPHER-RC2.pod"
         ],
@@ -13628,6 +13749,9 @@ our %unified_info = (
         ],
         "doc\\html\\man7\\EVP_MD-MDC2.html" => [
             ".\\doc\\man7\\EVP_MD-MDC2.pod"
+        ],
+        "doc\\html\\man7\\EVP_MD-NULL.html" => [
+            ".\\doc\\man7\\EVP_MD-NULL.pod"
         ],
         "doc\\html\\man7\\EVP_MD-RIPEMD160.html" => [
             ".\\doc\\man7\\EVP_MD-RIPEMD160.pod"
@@ -16053,6 +16177,9 @@ our %unified_info = (
         "doc\\man\\man7\\EVP_CIPHER-IDEA.7" => [
             ".\\doc\\man7\\EVP_CIPHER-IDEA.pod"
         ],
+        "doc\\man\\man7\\EVP_CIPHER-NULL.7" => [
+            ".\\doc\\man7\\EVP_CIPHER-NULL.pod"
+        ],
         "doc\\man\\man7\\EVP_CIPHER-RC2.7" => [
             ".\\doc\\man7\\EVP_CIPHER-RC2.pod"
         ],
@@ -16160,6 +16287,9 @@ our %unified_info = (
         ],
         "doc\\man\\man7\\EVP_MD-MDC2.7" => [
             ".\\doc\\man7\\EVP_MD-MDC2.pod"
+        ],
+        "doc\\man\\man7\\EVP_MD-NULL.7" => [
+            ".\\doc\\man7\\EVP_MD-NULL.pod"
         ],
         "doc\\man\\man7\\EVP_MD-RIPEMD160.7" => [
             ".\\doc\\man7\\EVP_MD-RIPEMD160.pod"
@@ -17510,6 +17640,7 @@ our %unified_info = (
             "doc\\html\\man7\\EVP_CIPHER-CHACHA.html",
             "doc\\html\\man7\\EVP_CIPHER-DES.html",
             "doc\\html\\man7\\EVP_CIPHER-IDEA.html",
+            "doc\\html\\man7\\EVP_CIPHER-NULL.html",
             "doc\\html\\man7\\EVP_CIPHER-RC2.html",
             "doc\\html\\man7\\EVP_CIPHER-RC4.html",
             "doc\\html\\man7\\EVP_CIPHER-RC5.html",
@@ -17546,6 +17677,7 @@ our %unified_info = (
             "doc\\html\\man7\\EVP_MD-MD5-SHA1.html",
             "doc\\html\\man7\\EVP_MD-MD5.html",
             "doc\\html\\man7\\EVP_MD-MDC2.html",
+            "doc\\html\\man7\\EVP_MD-NULL.html",
             "doc\\html\\man7\\EVP_MD-RIPEMD160.html",
             "doc\\html\\man7\\EVP_MD-SHA1.html",
             "doc\\html\\man7\\EVP_MD-SHA2.html",
@@ -18021,6 +18153,14 @@ our %unified_info = (
             "crypto",
             ".\\crypto"
         ],
+        "crypto\\aes\\vpaes-armv8.o" => [
+            "crypto",
+            ".\\crypto"
+        ],
+        "crypto\\aes\\vpaes-loongarch64.o" => [
+            "crypto",
+            ".\\crypto"
+        ],
         "crypto\\arm64cpuid.o" => [
             "crypto",
             ".\\crypto"
@@ -18086,6 +18226,10 @@ our %unified_info = (
             ".\\crypto"
         ],
         "crypto\\chacha\\chacha-armv4.o" => [
+            "crypto",
+            ".\\crypto"
+        ],
+        "crypto\\chacha\\chacha-armv8-sve.o" => [
             "crypto",
             ".\\crypto"
         ],
@@ -18263,6 +18407,10 @@ our %unified_info = (
         "crypto\\info.o" => [
             "crypto"
         ],
+        "crypto\\legacy-dso-cpuid.o" => [
+            ".",
+            "."
+        ],
         "crypto\\libcrypto-lib-cpuid.o" => [
             ".",
             "."
@@ -18283,11 +18431,11 @@ our %unified_info = (
         "crypto\\libcrypto-shlib-info.o" => [
             "crypto"
         ],
-        "crypto\\liblegacy-lib-cpuid.o" => [
-            ".",
-            "."
-        ],
         "crypto\\md5\\md5-sparcv9.o" => [
+            "crypto",
+            ".\\crypto"
+        ],
+        "crypto\\modes\\aes-gcm-armv8-unroll8_64.o" => [
             "crypto",
             ".\\crypto"
         ],
@@ -18351,6 +18499,10 @@ our %unified_info = (
             "crypto",
             ".\\crypto"
         ],
+        "crypto\\sha\\keccak1600-armv8.o" => [
+            "crypto",
+            ".\\crypto"
+        ],
         "crypto\\sha\\sha1-armv4-large.o" => [
             "crypto",
             ".\\crypto"
@@ -18408,6 +18560,18 @@ our %unified_info = (
             ".\\crypto"
         ],
         "crypto\\sha\\sha512-sparcv9.o" => [
+            "crypto",
+            ".\\crypto"
+        ],
+        "crypto\\sm3\\sm3-armv8.o" => [
+            "crypto",
+            ".\\crypto"
+        ],
+        "crypto\\sm4\\sm4-armv8.o" => [
+            "crypto",
+            ".\\crypto"
+        ],
+        "crypto\\sm4\\vpsm4-armv8.o" => [
             "crypto",
             ".\\crypto"
         ],
@@ -18607,6 +18771,10 @@ our %unified_info = (
             ".\\include"
         ],
         "fuzz\\ct-test" => [
+            "include",
+            ".\\include"
+        ],
+        "fuzz\\punycode-test" => [
             "include",
             ".\\include"
         ],
@@ -19031,6 +19199,10 @@ our %unified_info = (
             "apps\\include",
             ".\\include",
             ".\\apps\\include"
+        ],
+        "test\\build_wincrypt_test" => [
+            "include",
+            ".\\include"
         ],
         "test\\buildtest_c_aes" => [
             "include",
@@ -19590,9 +19762,13 @@ our %unified_info = (
             ".",
             "include",
             "apps\\include",
+            "providers\\common\\include",
+            "providers\\implementations\\include",
             ".",
             ".\\include",
-            ".\\apps\\include"
+            ".\\apps\\include",
+            ".\\providers\\common\\include",
+            ".\\providers\\implementations\\include"
         ],
         "test\\endecoder_legacy_test" => [
             ".",
@@ -19998,6 +20174,12 @@ our %unified_info = (
             ".\\include",
             ".\\apps\\include"
         ],
+        "test\\nodefltctxtest" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
+        ],
         "test\\ocspapitest" => [
             "include",
             "apps\\include",
@@ -20194,11 +20376,13 @@ our %unified_info = (
             ".\\include",
             ".\\apps\\include"
         ],
-        "test\\rdrand_sanitytest" => [
+        "test\\rdcpu_sanitytest" => [
             "include",
             "apps\\include",
+            "crypto",
             ".\\include",
-            ".\\apps\\include"
+            ".\\apps\\include",
+            ".\\crypto"
         ],
         "test\\recordlentest" => [
             "include",
@@ -20393,6 +20577,10 @@ our %unified_info = (
             "apps\\include",
             ".\\include",
             ".\\apps\\include"
+        ],
+        "test\\timing_load_creds" => [
+            "include",
+            ".\\include"
         ],
         "test\\tls13ccstest" => [
             "include",
@@ -21204,6 +21392,7 @@ our %unified_info = (
             "doc\\man\\man7\\EVP_CIPHER-CHACHA.7",
             "doc\\man\\man7\\EVP_CIPHER-DES.7",
             "doc\\man\\man7\\EVP_CIPHER-IDEA.7",
+            "doc\\man\\man7\\EVP_CIPHER-NULL.7",
             "doc\\man\\man7\\EVP_CIPHER-RC2.7",
             "doc\\man\\man7\\EVP_CIPHER-RC4.7",
             "doc\\man\\man7\\EVP_CIPHER-RC5.7",
@@ -21240,6 +21429,7 @@ our %unified_info = (
             "doc\\man\\man7\\EVP_MD-MD5-SHA1.7",
             "doc\\man\\man7\\EVP_MD-MD5.7",
             "doc\\man\\man7\\EVP_MD-MDC2.7",
+            "doc\\man\\man7\\EVP_MD-NULL.7",
             "doc\\man\\man7\\EVP_MD-RIPEMD160.7",
             "doc\\man\\man7\\EVP_MD-SHA1.7",
             "doc\\man\\man7\\EVP_MD-SHA2.7",
@@ -21336,6 +21526,7 @@ our %unified_info = (
         "fuzz\\conf-test",
         "fuzz\\crl-test",
         "fuzz\\ct-test",
+        "fuzz\\punycode-test",
         "fuzz\\server-test",
         "fuzz\\x509-test",
         "test\\aborttest",
@@ -21361,6 +21552,7 @@ our %unified_info = (
         "test\\bioprinttest",
         "test\\bn_internal_test",
         "test\\bntest",
+        "test\\build_wincrypt_test",
         "test\\buildtest_c_aes",
         "test\\buildtest_c_async",
         "test\\buildtest_c_blowfish",
@@ -21504,6 +21696,7 @@ our %unified_info = (
         "test\\modes_internal_test",
         "test\\moduleloadtest",
         "test\\namemap_internal_test",
+        "test\\nodefltctxtest",
         "test\\ocspapitest",
         "test\\ossl_store_test",
         "test\\packettest",
@@ -21534,7 +21727,7 @@ our %unified_info = (
         "test\\rc2test",
         "test\\rc4test",
         "test\\rc5test",
-        "test\\rdrand_sanitytest",
+        "test\\rdcpu_sanitytest",
         "test\\recordlentest",
         "test\\rsa_complex",
         "test\\rsa_mp_test",
@@ -21565,6 +21758,7 @@ our %unified_info = (
         "test\\threadstest",
         "test\\threadstest_fips",
         "test\\time_offset_test",
+        "test\\timing_load_creds",
         "test\\tls13ccstest",
         "test\\tls13encryptiontest",
         "test\\tls13secretstest",
@@ -25417,6 +25611,15 @@ our %unified_info = (
         "crypto\\kdf\\libcrypto-shlib-kdf_err.o" => [
             ".\\crypto\\kdf\\kdf_err.c"
         ],
+        "crypto\\legacy-dso-cpuid.o" => [
+            ".\\crypto\\cpuid.c"
+        ],
+        "crypto\\legacy-dso-ctype.o" => [
+            ".\\crypto\\ctype.c"
+        ],
+        "crypto\\legacy-dso-x86cpuid.o" => [
+            "crypto\\x86cpuid.S"
+        ],
         "crypto\\lhash\\libcrypto-lib-lh_stats.o" => [
             ".\\crypto\\lhash\\lh_stats.c"
         ],
@@ -25713,18 +25916,6 @@ our %unified_info = (
         ],
         "crypto\\libcrypto-shlib-x86cpuid.o" => [
             "crypto\\x86cpuid.S"
-        ],
-        "crypto\\liblegacy-lib-cpuid.o" => [
-            ".\\crypto\\cpuid.c"
-        ],
-        "crypto\\liblegacy-lib-ctype.o" => [
-            ".\\crypto\\ctype.c"
-        ],
-        "crypto\\liblegacy-lib-x86cpuid.o" => [
-            "crypto\\x86cpuid.S"
-        ],
-        "crypto\\libssl-lib-sparse_array.o" => [
-            ".\\crypto\\sparse_array.c"
         ],
         "crypto\\libssl-shlib-packet.o" => [
             ".\\crypto\\packet.c"
@@ -27365,6 +27556,16 @@ our %unified_info = (
         "fuzz\\ct-test-bin-test-corpus.o" => [
             ".\\fuzz\\test-corpus.c"
         ],
+        "fuzz\\punycode-test" => [
+            "fuzz\\punycode-test-bin-punycode.o",
+            "fuzz\\punycode-test-bin-test-corpus.o"
+        ],
+        "fuzz\\punycode-test-bin-punycode.o" => [
+            ".\\fuzz\\punycode.c"
+        ],
+        "fuzz\\punycode-test-bin-test-corpus.o" => [
+            ".\\fuzz\\test-corpus.c"
+        ],
         "fuzz\\server-test" => [
             "fuzz\\server-test-bin-fuzz_rand.o",
             "fuzz\\server-test-bin-server.o",
@@ -28153,7 +28354,6 @@ our %unified_info = (
             "libcrypto.rc"
         ],
         "libssl" => [
-            "crypto\\libssl-lib-sparse_array.o",
             "ssl\\libssl-lib-bio_ssl.o",
             "ssl\\libssl-lib-d1_lib.o",
             "ssl\\libssl-lib-d1_msg.o",
@@ -28293,6 +28493,9 @@ our %unified_info = (
         "providers\\common\\liblegacy-lib-provider_util.o" => [
             ".\\providers\\common\\provider_util.c"
         ],
+        "providers\\endecode_test-bin-legacyprov.o" => [
+            ".\\providers\\legacyprov.c"
+        ],
         "providers\\implementations\\asymciphers\\libdefault-lib-rsa_enc.o" => [
             ".\\providers\\implementations\\asymciphers\\rsa_enc.c"
         ],
@@ -28415,6 +28618,18 @@ our %unified_info = (
         ],
         "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4.o" => [
             ".\\providers\\implementations\\ciphers\\cipher_sm4.c"
+        ],
+        "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_ccm.o" => [
+            ".\\providers\\implementations\\ciphers\\cipher_sm4_ccm.c"
+        ],
+        "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_ccm_hw.o" => [
+            ".\\providers\\implementations\\ciphers\\cipher_sm4_ccm_hw.c"
+        ],
+        "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_gcm.o" => [
+            ".\\providers\\implementations\\ciphers\\cipher_sm4_gcm.c"
+        ],
+        "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_gcm_hw.o" => [
+            ".\\providers\\implementations\\ciphers\\cipher_sm4_gcm_hw.c"
         ],
         "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_hw.o" => [
             ".\\providers\\implementations\\ciphers\\cipher_sm4_hw.c"
@@ -28729,6 +28944,9 @@ our %unified_info = (
             ".\\providers\\implementations\\storemgmt\\file_store_any2obj.c"
         ],
         "providers\\legacy" => [
+            "crypto\\legacy-dso-cpuid.o",
+            "crypto\\legacy-dso-ctype.o",
+            "crypto\\legacy-dso-x86cpuid.o",
             "providers\\legacy-dso-legacy.res",
             "providers\\legacy-dso-legacyprov.o",
             "providers\\legacy.ld"
@@ -28834,6 +29052,10 @@ our %unified_info = (
             "providers\\implementations\\ciphers\\libdefault-lib-cipher_cts.o",
             "providers\\implementations\\ciphers\\libdefault-lib-cipher_null.o",
             "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4.o",
+            "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_ccm.o",
+            "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_ccm_hw.o",
+            "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_gcm.o",
+            "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_gcm_hw.o",
             "providers\\implementations\\ciphers\\libdefault-lib-cipher_sm4_hw.o",
             "providers\\implementations\\ciphers\\libdefault-lib-cipher_tdes.o",
             "providers\\implementations\\ciphers\\libdefault-lib-cipher_tdes_common.o",
@@ -28921,9 +29143,6 @@ our %unified_info = (
         "providers\\liblegacy.a" => [
             "crypto\\des\\liblegacy-lib-crypt586.o",
             "crypto\\des\\liblegacy-lib-des-586.o",
-            "crypto\\liblegacy-lib-cpuid.o",
-            "crypto\\liblegacy-lib-ctype.o",
-            "crypto\\liblegacy-lib-x86cpuid.o",
             "crypto\\md5\\liblegacy-lib-md5-586.o",
             "crypto\\md5\\liblegacy-lib-md5_dgst.o",
             "crypto\\md5\\liblegacy-lib-md5_one.o",
@@ -29378,6 +29597,12 @@ our %unified_info = (
         ],
         "test\\bntest-bin-bntest.o" => [
             ".\\test\\bntest.c"
+        ],
+        "test\\build_wincrypt_test" => [
+            "test\\build_wincrypt_test-bin-build_wincrypt_test.o"
+        ],
+        "test\\build_wincrypt_test-bin-build_wincrypt_test.o" => [
+            ".\\test\\build_wincrypt_test.c"
         ],
         "test\\buildtest_c_aes" => [
             "test\\buildtest_c_aes-bin-buildtest_aes.o"
@@ -30047,6 +30272,7 @@ our %unified_info = (
             ".\\test\\ectest.c"
         ],
         "test\\endecode_test" => [
+            "providers\\endecode_test-bin-legacyprov.o",
             "test\\endecode_test-bin-endecode_test.o",
             "test\\helpers\\endecode_test-bin-predefined_dhparams.o"
         ],
@@ -30355,6 +30581,12 @@ our %unified_info = (
         "test\\namemap_internal_test-bin-namemap_internal_test.o" => [
             ".\\test\\namemap_internal_test.c"
         ],
+        "test\\nodefltctxtest" => [
+            "test\\nodefltctxtest-bin-nodefltctxtest.o"
+        ],
+        "test\\nodefltctxtest-bin-nodefltctxtest.o" => [
+            ".\\test\\nodefltctxtest.c"
+        ],
         "test\\ocspapitest" => [
             "test\\ocspapitest-bin-ocspapitest.o"
         ],
@@ -30555,11 +30787,11 @@ our %unified_info = (
         "test\\rc5test-bin-rc5test.o" => [
             ".\\test\\rc5test.c"
         ],
-        "test\\rdrand_sanitytest" => [
-            "test\\rdrand_sanitytest-bin-rdrand_sanitytest.o"
+        "test\\rdcpu_sanitytest" => [
+            "test\\rdcpu_sanitytest-bin-rdcpu_sanitytest.o"
         ],
-        "test\\rdrand_sanitytest-bin-rdrand_sanitytest.o" => [
-            ".\\test\\rdrand_sanitytest.c"
+        "test\\rdcpu_sanitytest-bin-rdcpu_sanitytest.o" => [
+            ".\\test\\rdcpu_sanitytest.c"
         ],
         "test\\recordlentest" => [
             "test\\helpers\\recordlentest-bin-ssltestlib.o",
@@ -30813,6 +31045,12 @@ our %unified_info = (
         ],
         "test\\time_offset_test-bin-time_offset_test.o" => [
             ".\\test\\time_offset_test.c"
+        ],
+        "test\\timing_load_creds" => [
+            "test\\timing_load_creds-bin-timing_load_creds.o"
+        ],
+        "test\\timing_load_creds-bin-timing_load_creds.o" => [
+            ".\\test\\timing_load_creds.c"
         ],
         "test\\tls13ccstest" => [
             "test\\helpers\\tls13ccstest-bin-ssltestlib.o",
@@ -31083,7 +31321,7 @@ unless (caller) {
     if (scalar @ARGV == 0) {
         # With no arguments, re-create the build file
         # We do that in two steps, where the first step emits perl
-        # snipets.
+        # snippets.
 
         my $buildfile = $config{build_file};
         my $buildfile_template = "$buildfile.in";

@@ -16,6 +16,9 @@
     <Filter Include="Source Files\helpers">
       <UniqueIdentifier>{071cce8b-0138-4561-a25a-4334ff328f89}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\providers">
+      <UniqueIdentifier>{77cdd8bd-1469-4b3f-a548-5a9108f23b41}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\test\endecode_test.c">
@@ -23,6 +26,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\test\helpers\predefined_dhparams.c">
       <Filter>Source Files\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\legacyprov.c">
+      <Filter>Source Files\providers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

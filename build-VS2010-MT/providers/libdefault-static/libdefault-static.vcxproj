@@ -138,6 +138,10 @@
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_cts.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_null.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_ccm.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_ccm_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_gcm.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_gcm_hw.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_hw.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_common.c" />

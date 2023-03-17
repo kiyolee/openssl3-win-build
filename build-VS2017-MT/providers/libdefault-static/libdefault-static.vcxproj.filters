@@ -444,5 +444,17 @@
     <ClCompile Include="..\..\..\providers\implementations\digests\ripemd_prov.c">
       <Filter>Source Files\providers\implementations\digests</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_ccm_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_gcm.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_gcm_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_ccm.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

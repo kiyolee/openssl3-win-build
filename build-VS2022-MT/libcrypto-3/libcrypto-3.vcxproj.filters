@@ -2483,6 +2483,9 @@
     <CustomBuild Include="..\..\crypto\modes\asm\aesni-gcm-x86_64.pl">
       <Filter>Source Files\asm\x64</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\..\crypto\modes\asm\aes-gcm-avx512.pl">
+      <Filter>Source Files\asm\x64</Filter>
+    </CustomBuild>
     <CustomBuild Include="..\..\crypto\aes\asm\aesni-mb-x86_64.pl">
       <Filter>Source Files\asm\x64</Filter>
     </CustomBuild>
@@ -2615,7 +2618,13 @@
     <CustomBuild Include="..\..\crypto\bn\asm\rsaz-avx2.pl">
       <Filter>Source Files\asm\x64</Filter>
     </CustomBuild>
-    <CustomBuild Include="..\..\crypto\bn\asm\rsaz-avx512.pl">
+    <CustomBuild Include="..\..\crypto\bn\asm\rsaz-2k-avx512.pl">
+      <Filter>Source Files\asm\x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\crypto\bn\asm\rsaz-3k-avx512.pl">
+      <Filter>Source Files\asm\x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\crypto\bn\asm\rsaz-4k-avx512.pl">
       <Filter>Source Files\asm\x64</Filter>
     </CustomBuild>
     <CustomBuild Include="..\..\crypto\chacha\asm\chacha-x86_64.pl">
