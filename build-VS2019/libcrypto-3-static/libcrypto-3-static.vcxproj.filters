@@ -2460,9 +2460,6 @@
     <ClCompile Include="..\..\crypto\property\property_query.c">
       <Filter>Source Files\crypto\property</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\crypto\bn\rsa_sup_mul.c">
-      <Filter>Source Files\crypto\bn</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\crypto\modes\asm\aesni-gcm-x86_64.pl">

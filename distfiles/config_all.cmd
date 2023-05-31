@@ -1,7 +1,7 @@
 setlocal
 
-set OPENSSL_VER=3.1.0
-set OPENSSL_VER_SED=3\.1\.0
+set OPENSSL_VER=3.1.1
+set OPENSSL_VER_SED=3\.1\.1
 set OPENSSL_BASE=openssl-%OPENSSL_VER%
 set OPENSSL_BASE_SED=openssl-%OPENSSL_VER_SED%
 set OPENSSL_DIR=..\%OPENSSL_BASE%
@@ -137,7 +137,7 @@ perl -I. -Mconfigdata %OPENSSL_DIR%\util\dofile.pl -omakefile %OPENSSL_DIR%\tool
 perl -I. -Mconfigdata %OPENSSL_DIR%\util\dofile.pl -omakefile %OPENSSL_DIR%\util\wrap.pl.in > util\wrap.pl
 ren configdata.pm configdata.pm.org
 @rem Redirection must be at front for "^^" to work. Strange.
->configdata.pm sed -e "s/%OPENSSL_DIR_SED%/\./g" -e "s/\(['\"]\)[A-Za-z]:[^^'\"]*\/%OPENSSL_BASE_SED%\(['\"\/]\)/\1\.\2/" configdata.pm.org
+>configdata.pm sed -e "s/%OPENSSL_DIR_SED%/\./g" -e "s/\(['\"]\)[A-Za-z]:[^^'\"]*\/%OPENSSL_BASE_SED%\(['\"\/]\)/\1\.\2/" -e "s/\"RANLIB\" =^> \"CODE(0x[0-9a-f]\+)\"/\"RANLIB\" =^> \"CODE(0xf1e2d3c4)\"/" -e "s/\(\"multilib\"\)/#\1/" configdata.pm.org
 dos2unix %_GEN_LIST%
 exit /b
 

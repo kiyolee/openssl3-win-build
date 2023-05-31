@@ -167,7 +167,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.1.0",
+    "full_version" => "3.1.1",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -219,7 +219,7 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\x64\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-shared no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "0",
+    "patch" => "1",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.32.1",
@@ -272,11 +272,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "14 Mar 2023",
+    "release_date" => "30 May 2023",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN64A-masm",
-    "version" => "3.1.0"
+    "version" => "3.1.1"
 );
 our %target = (
     "AR" => "lib",
@@ -291,7 +291,7 @@ our %target = (
     "LDFLAGS" => "/nologo /debug",
     "MT" => "mt",
     "MTFLAGS" => "-nologo",
-    "RANLIB" => "CODE(0x262f4c0)",
+    "RANLIB" => "CODE(0xf1e2d3c4)",
     "RC" => "rc",
     "_conf_fname_int" => [
         ".\\Configurations\\00-base-templates.conf",
@@ -8483,7 +8483,6 @@ our %unified_info = (
                 "crypto\\bn\\libcrypto-lib-bn_srp.o",
                 "crypto\\bn\\libcrypto-lib-bn_word.o",
                 "crypto\\bn\\libcrypto-lib-bn_x931p.o",
-                "crypto\\bn\\libcrypto-lib-rsa_sup_mul.o",
                 "crypto\\bn\\libcrypto-lib-rsaz-2k-avx512.o",
                 "crypto\\bn\\libcrypto-lib-rsaz-3k-avx512.o",
                 "crypto\\bn\\libcrypto-lib-rsaz-4k-avx512.o",
@@ -10441,7 +10440,7 @@ our %unified_info = (
         "crypto\\md5\\md5-586.S" => [
             ".\\crypto\\md5\\asm\\md5-586.pl"
         ],
-        "crypto\\md5\\md5-aarch64.s" => [
+        "crypto\\md5\\md5-aarch64.S" => [
             ".\\crypto\\md5\\asm\\md5-aarch64.pl"
         ],
         "crypto\\md5\\md5-sparcv9.S" => [
@@ -17511,6 +17510,10 @@ our %unified_info = (
         "crypto\\libcrypto-lib-info.o" => [
             "crypto"
         ],
+        "crypto\\md5\\md5-aarch64.o" => [
+            "crypto",
+            ".\\crypto"
+        ],
         "crypto\\md5\\md5-sparcv9.o" => [
             "crypto",
             ".\\crypto"
@@ -21598,9 +21601,6 @@ our %unified_info = (
         "crypto\\bn\\libcrypto-lib-bn_x931p.o" => [
             ".\\crypto\\bn\\bn_x931p.c"
         ],
-        "crypto\\bn\\libcrypto-lib-rsa_sup_mul.o" => [
-            ".\\crypto\\bn\\rsa_sup_mul.c"
-        ],
         "crypto\\bn\\libcrypto-lib-rsaz-2k-avx512.o" => [
             "crypto\\bn\\rsaz-2k-avx512.s"
         ],
@@ -23743,7 +23743,6 @@ our %unified_info = (
             "crypto\\bn\\libcrypto-lib-bn_srp.o",
             "crypto\\bn\\libcrypto-lib-bn_word.o",
             "crypto\\bn\\libcrypto-lib-bn_x931p.o",
-            "crypto\\bn\\libcrypto-lib-rsa_sup_mul.o",
             "crypto\\bn\\libcrypto-lib-rsaz-2k-avx512.o",
             "crypto\\bn\\libcrypto-lib-rsaz-3k-avx512.o",
             "crypto\\bn\\libcrypto-lib-rsaz-4k-avx512.o",
