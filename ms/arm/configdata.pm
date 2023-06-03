@@ -163,7 +163,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.8",
+    "full_version" => "3.0.9",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -214,7 +214,7 @@ our %config = (
     "openssl_sys_defines" => [],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\ARM\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-asm no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "8",
+    "patch" => "9",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.32.1",
@@ -266,11 +266,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned char",
-    "release_date" => "7 Feb 2023",
+    "release_date" => "30 May 2023",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN32-ARM",
-    "version" => "3.0.8"
+    "version" => "3.0.9"
 );
 our %target = (
     "AR" => "lib",
@@ -283,7 +283,7 @@ our %target = (
     "LDFLAGS" => "/nologo /debug",
     "MT" => "mt",
     "MTFLAGS" => "-nologo",
-    "RANLIB" => "CODE(0x25df630)",
+    "RANLIB" => "CODE(0xf1e2d3c4)",
     "RC" => "rc",
     "_conf_fname_int" => [
         ".\\Configurations\\00-base-templates.conf",
@@ -1361,6 +1361,9 @@ our %unified_info = (
                 "noinst" => "1"
             },
             "test\\namemap_internal_test" => {
+                "noinst" => "1"
+            },
+            "test\\nodefltctxtest" => {
                 "noinst" => "1"
             },
             "test\\ocspapitest" => {
@@ -3953,6 +3956,9 @@ our %unified_info = (
         "doc\\html\\man7\\EVP_CIPHER-IDEA.html" => [
             ".\\doc\\man7\\EVP_CIPHER-IDEA.pod"
         ],
+        "doc\\html\\man7\\EVP_CIPHER-NULL.html" => [
+            ".\\doc\\man7\\EVP_CIPHER-NULL.pod"
+        ],
         "doc\\html\\man7\\EVP_CIPHER-RC2.html" => [
             ".\\doc\\man7\\EVP_CIPHER-RC2.pod"
         ],
@@ -4060,6 +4066,9 @@ our %unified_info = (
         ],
         "doc\\html\\man7\\EVP_MD-MDC2.html" => [
             ".\\doc\\man7\\EVP_MD-MDC2.pod"
+        ],
+        "doc\\html\\man7\\EVP_MD-NULL.html" => [
+            ".\\doc\\man7\\EVP_MD-NULL.pod"
         ],
         "doc\\html\\man7\\EVP_MD-RIPEMD160.html" => [
             ".\\doc\\man7\\EVP_MD-RIPEMD160.pod"
@@ -6538,6 +6547,9 @@ our %unified_info = (
         "doc\\man\\man7\\EVP_CIPHER-IDEA.7" => [
             ".\\doc\\man7\\EVP_CIPHER-IDEA.pod"
         ],
+        "doc\\man\\man7\\EVP_CIPHER-NULL.7" => [
+            ".\\doc\\man7\\EVP_CIPHER-NULL.pod"
+        ],
         "doc\\man\\man7\\EVP_CIPHER-RC2.7" => [
             ".\\doc\\man7\\EVP_CIPHER-RC2.pod"
         ],
@@ -6645,6 +6657,9 @@ our %unified_info = (
         ],
         "doc\\man\\man7\\EVP_MD-MDC2.7" => [
             ".\\doc\\man7\\EVP_MD-MDC2.pod"
+        ],
+        "doc\\man\\man7\\EVP_MD-NULL.7" => [
+            ".\\doc\\man7\\EVP_MD-NULL.pod"
         ],
         "doc\\man\\man7\\EVP_MD-RIPEMD160.7" => [
             ".\\doc\\man7\\EVP_MD-RIPEMD160.pod"
@@ -7757,6 +7772,10 @@ our %unified_info = (
             "libcrypto.a",
             "test\\libtestutil.a"
         ],
+        "test\\nodefltctxtest" => [
+            "libcrypto.a",
+            "test\\libtestutil.a"
+        ],
         "test\\ocspapitest" => [
             "libcrypto",
             "test\\libtestutil.a"
@@ -8223,7 +8242,6 @@ our %unified_info = (
                 "crypto\\libcrypto-shlib-threads_win.o",
                 "crypto\\libcrypto-shlib-trace.o",
                 "crypto\\libcrypto-shlib-uid.o",
-                "crypto\\libssl-lib-sparse_array.o",
                 "crypto\\libssl-shlib-packet.o",
                 "crypto\\libssl-shlib-sparse_array.o",
                 "crypto\\liblegacy-lib-cpuid.o",
@@ -8561,7 +8579,6 @@ our %unified_info = (
                 "crypto\\bn\\libcrypto-lib-bn_srp.o",
                 "crypto\\bn\\libcrypto-lib-bn_word.o",
                 "crypto\\bn\\libcrypto-lib-bn_x931p.o",
-                "crypto\\bn\\libcrypto-lib-rsa_sup_mul.o",
                 "crypto\\bn\\libcrypto-shlib-bn_add.o",
                 "crypto\\bn\\libcrypto-shlib-bn_asm.o",
                 "crypto\\bn\\libcrypto-shlib-bn_blind.o",
@@ -8594,8 +8611,7 @@ our %unified_info = (
                 "crypto\\bn\\libcrypto-shlib-bn_sqrt.o",
                 "crypto\\bn\\libcrypto-shlib-bn_srp.o",
                 "crypto\\bn\\libcrypto-shlib-bn_word.o",
-                "crypto\\bn\\libcrypto-shlib-bn_x931p.o",
-                "crypto\\bn\\libcrypto-shlib-rsa_sup_mul.o"
+                "crypto\\bn\\libcrypto-shlib-bn_x931p.o"
             ],
             "products" => {
                 "lib" => [
@@ -13407,6 +13423,9 @@ our %unified_info = (
         "doc\\html\\man7\\EVP_CIPHER-IDEA.html" => [
             ".\\doc\\man7\\EVP_CIPHER-IDEA.pod"
         ],
+        "doc\\html\\man7\\EVP_CIPHER-NULL.html" => [
+            ".\\doc\\man7\\EVP_CIPHER-NULL.pod"
+        ],
         "doc\\html\\man7\\EVP_CIPHER-RC2.html" => [
             ".\\doc\\man7\\EVP_CIPHER-RC2.pod"
         ],
@@ -13514,6 +13533,9 @@ our %unified_info = (
         ],
         "doc\\html\\man7\\EVP_MD-MDC2.html" => [
             ".\\doc\\man7\\EVP_MD-MDC2.pod"
+        ],
+        "doc\\html\\man7\\EVP_MD-NULL.html" => [
+            ".\\doc\\man7\\EVP_MD-NULL.pod"
         ],
         "doc\\html\\man7\\EVP_MD-RIPEMD160.html" => [
             ".\\doc\\man7\\EVP_MD-RIPEMD160.pod"
@@ -15939,6 +15961,9 @@ our %unified_info = (
         "doc\\man\\man7\\EVP_CIPHER-IDEA.7" => [
             ".\\doc\\man7\\EVP_CIPHER-IDEA.pod"
         ],
+        "doc\\man\\man7\\EVP_CIPHER-NULL.7" => [
+            ".\\doc\\man7\\EVP_CIPHER-NULL.pod"
+        ],
         "doc\\man\\man7\\EVP_CIPHER-RC2.7" => [
             ".\\doc\\man7\\EVP_CIPHER-RC2.pod"
         ],
@@ -16046,6 +16071,9 @@ our %unified_info = (
         ],
         "doc\\man\\man7\\EVP_MD-MDC2.7" => [
             ".\\doc\\man7\\EVP_MD-MDC2.pod"
+        ],
+        "doc\\man\\man7\\EVP_MD-NULL.7" => [
+            ".\\doc\\man7\\EVP_MD-NULL.pod"
         ],
         "doc\\man\\man7\\EVP_MD-RIPEMD160.7" => [
             ".\\doc\\man7\\EVP_MD-RIPEMD160.pod"
@@ -17396,6 +17424,7 @@ our %unified_info = (
             "doc\\html\\man7\\EVP_CIPHER-CHACHA.html",
             "doc\\html\\man7\\EVP_CIPHER-DES.html",
             "doc\\html\\man7\\EVP_CIPHER-IDEA.html",
+            "doc\\html\\man7\\EVP_CIPHER-NULL.html",
             "doc\\html\\man7\\EVP_CIPHER-RC2.html",
             "doc\\html\\man7\\EVP_CIPHER-RC4.html",
             "doc\\html\\man7\\EVP_CIPHER-RC5.html",
@@ -17432,6 +17461,7 @@ our %unified_info = (
             "doc\\html\\man7\\EVP_MD-MD5-SHA1.html",
             "doc\\html\\man7\\EVP_MD-MD5.html",
             "doc\\html\\man7\\EVP_MD-MDC2.html",
+            "doc\\html\\man7\\EVP_MD-NULL.html",
             "doc\\html\\man7\\EVP_MD-RIPEMD160.html",
             "doc\\html\\man7\\EVP_MD-SHA1.html",
             "doc\\html\\man7\\EVP_MD-SHA2.html",
@@ -19884,6 +19914,12 @@ our %unified_info = (
             ".\\include",
             ".\\apps\\include"
         ],
+        "test\\nodefltctxtest" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
+        ],
         "test\\ocspapitest" => [
             "include",
             "apps\\include",
@@ -21090,6 +21126,7 @@ our %unified_info = (
             "doc\\man\\man7\\EVP_CIPHER-CHACHA.7",
             "doc\\man\\man7\\EVP_CIPHER-DES.7",
             "doc\\man\\man7\\EVP_CIPHER-IDEA.7",
+            "doc\\man\\man7\\EVP_CIPHER-NULL.7",
             "doc\\man\\man7\\EVP_CIPHER-RC2.7",
             "doc\\man\\man7\\EVP_CIPHER-RC4.7",
             "doc\\man\\man7\\EVP_CIPHER-RC5.7",
@@ -21126,6 +21163,7 @@ our %unified_info = (
             "doc\\man\\man7\\EVP_MD-MD5-SHA1.7",
             "doc\\man\\man7\\EVP_MD-MD5.7",
             "doc\\man\\man7\\EVP_MD-MDC2.7",
+            "doc\\man\\man7\\EVP_MD-NULL.7",
             "doc\\man\\man7\\EVP_MD-RIPEMD160.7",
             "doc\\man\\man7\\EVP_MD-SHA1.7",
             "doc\\man\\man7\\EVP_MD-SHA2.7",
@@ -21390,6 +21428,7 @@ our %unified_info = (
         "test\\modes_internal_test",
         "test\\moduleloadtest",
         "test\\namemap_internal_test",
+        "test\\nodefltctxtest",
         "test\\ocspapitest",
         "test\\ossl_store_test",
         "test\\packettest",
@@ -21621,7 +21660,6 @@ our %unified_info = (
             "crypto\\bn\\libcrypto-shlib-bn_srp.o",
             "crypto\\bn\\libcrypto-shlib-bn_word.o",
             "crypto\\bn\\libcrypto-shlib-bn_x931p.o",
-            "crypto\\bn\\libcrypto-shlib-rsa_sup_mul.o",
             "crypto\\buffer\\libcrypto-shlib-buf_err.o",
             "crypto\\buffer\\libcrypto-shlib-buffer.o",
             "crypto\\camellia\\libcrypto-shlib-camellia.o",
@@ -23360,9 +23398,6 @@ our %unified_info = (
         "crypto\\bn\\libcrypto-lib-bn_x931p.o" => [
             ".\\crypto\\bn\\bn_x931p.c"
         ],
-        "crypto\\bn\\libcrypto-lib-rsa_sup_mul.o" => [
-            ".\\crypto\\bn\\rsa_sup_mul.c"
-        ],
         "crypto\\bn\\libcrypto-shlib-bn_add.o" => [
             ".\\crypto\\bn\\bn_add.c"
         ],
@@ -23461,9 +23496,6 @@ our %unified_info = (
         ],
         "crypto\\bn\\libcrypto-shlib-bn_x931p.o" => [
             ".\\crypto\\bn\\bn_x931p.c"
-        ],
-        "crypto\\bn\\libcrypto-shlib-rsa_sup_mul.o" => [
-            ".\\crypto\\bn\\rsa_sup_mul.c"
         ],
         "crypto\\buffer\\libcrypto-lib-buf_err.o" => [
             ".\\crypto\\buffer\\buf_err.c"
@@ -25571,9 +25603,6 @@ our %unified_info = (
         "crypto\\liblegacy-lib-mem_clr.o" => [
             ".\\crypto\\mem_clr.c"
         ],
-        "crypto\\libssl-lib-sparse_array.o" => [
-            ".\\crypto\\sparse_array.c"
-        ],
         "crypto\\libssl-shlib-packet.o" => [
             ".\\crypto\\packet.c"
         ],
@@ -27335,7 +27364,6 @@ our %unified_info = (
             "crypto\\bn\\libcrypto-lib-bn_srp.o",
             "crypto\\bn\\libcrypto-lib-bn_word.o",
             "crypto\\bn\\libcrypto-lib-bn_x931p.o",
-            "crypto\\bn\\libcrypto-lib-rsa_sup_mul.o",
             "crypto\\buffer\\libcrypto-lib-buf_err.o",
             "crypto\\buffer\\libcrypto-lib-buffer.o",
             "crypto\\camellia\\libcrypto-lib-camellia.o",
@@ -27937,7 +27965,6 @@ our %unified_info = (
             "libcrypto.rc"
         ],
         "libssl" => [
-            "crypto\\libssl-lib-sparse_array.o",
             "ssl\\libssl-lib-bio_ssl.o",
             "ssl\\libssl-lib-d1_lib.o",
             "ssl\\libssl-lib-d1_msg.o",
@@ -30124,6 +30151,12 @@ our %unified_info = (
         ],
         "test\\namemap_internal_test-bin-namemap_internal_test.o" => [
             ".\\test\\namemap_internal_test.c"
+        ],
+        "test\\nodefltctxtest" => [
+            "test\\nodefltctxtest-bin-nodefltctxtest.o"
+        ],
+        "test\\nodefltctxtest-bin-nodefltctxtest.o" => [
+            ".\\test\\nodefltctxtest.c"
         ],
         "test\\ocspapitest" => [
             "test\\ocspapitest-bin-ocspapitest.o"

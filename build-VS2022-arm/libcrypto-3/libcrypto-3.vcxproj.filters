@@ -2460,9 +2460,6 @@
     <ClCompile Include="..\..\crypto\whrlpool\wp_block.c">
       <Filter>Source Files\crypto\whrlpool</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\crypto\bn\rsa_sup_mul.c">
-      <Filter>Source Files\crypto\bn</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\util\mkdef.pl">
