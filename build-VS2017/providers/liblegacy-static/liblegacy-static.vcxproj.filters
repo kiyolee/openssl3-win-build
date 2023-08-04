@@ -173,5 +173,14 @@
     <CustomBuild Include="..\..\..\crypto\md5\asm\md5-586.pl">
       <Filter>Source Files\asm\x86</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\rc4\asm\rc4-586.pl">
+      <Filter>Source Files\asm\x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\rc4\asm\rc4-md5-x86_64.pl">
+      <Filter>Source Files\asm\x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\rc4\asm\rc4-x86_64.pl">
+      <Filter>Source Files\asm\x64</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>

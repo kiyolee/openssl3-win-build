@@ -167,7 +167,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.1.1",
+    "full_version" => "3.1.2",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -218,10 +218,10 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\x64\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "1",
+    "patch" => "2",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
-    "perl_version" => "5.32.1",
+    "perl_version" => "5.38.0",
     "perlargv" => [
         "--prefix=C:\\Program Files\\OpenSSL-3",
         "--with-zlib-include=..\\zlib",
@@ -270,11 +270,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "30 May 2023",
+    "release_date" => "1 Aug 2023",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN64A-masm",
-    "version" => "3.1.1"
+    "version" => "3.1.2"
 );
 our %target = (
     "AR" => "lib",
@@ -1672,6 +1672,7 @@ our %unified_info = (
             "OPENSSL_USE_APPLINK",
             "PADLOCK_ASM",
             "POLY1305_ASM",
+            "RC4_ASM",
             "SHA1_ASM",
             "SHA256_ASM",
             "SHA512_ASM",
@@ -1723,7 +1724,8 @@ our %unified_info = (
             "X25519_ASM"
         ],
         "providers\\liblegacy.a" => [
-            "MD5_ASM"
+            "MD5_ASM",
+            "RC4_ASM"
         ],
         "test\\endecode_test" => [
             "STATIC_LEGACY"
@@ -9952,11 +9954,14 @@ our %unified_info = (
                 "crypto\\rc4\\libcrypto-lib-rc4-md5-x86_64.o",
                 "crypto\\rc4\\libcrypto-lib-rc4-x86_64.o",
                 "crypto\\rc4\\libcrypto-shlib-rc4-md5-x86_64.o",
-                "crypto\\rc4\\libcrypto-shlib-rc4-x86_64.o"
+                "crypto\\rc4\\libcrypto-shlib-rc4-x86_64.o",
+                "crypto\\rc4\\liblegacy-lib-rc4-md5-x86_64.o",
+                "crypto\\rc4\\liblegacy-lib-rc4-x86_64.o"
             ],
             "products" => {
                 "lib" => [
-                    "libcrypto"
+                    "libcrypto",
+                    "providers\\liblegacy.a"
                 ]
             }
         },
@@ -26640,6 +26645,12 @@ our %unified_info = (
         "crypto\\rc4\\libcrypto-shlib-rc4-x86_64.o" => [
             "crypto\\rc4\\rc4-x86_64.s"
         ],
+        "crypto\\rc4\\liblegacy-lib-rc4-md5-x86_64.o" => [
+            "crypto\\rc4\\rc4-md5-x86_64.s"
+        ],
+        "crypto\\rc4\\liblegacy-lib-rc4-x86_64.o" => [
+            "crypto\\rc4\\rc4-x86_64.s"
+        ],
         "crypto\\ripemd\\libcrypto-lib-rmd_dgst.o" => [
             ".\\crypto\\ripemd\\rmd_dgst.c"
         ],
@@ -29322,6 +29333,8 @@ our %unified_info = (
             "crypto\\md5\\liblegacy-lib-md5_dgst.o",
             "crypto\\md5\\liblegacy-lib-md5_one.o",
             "crypto\\md5\\liblegacy-lib-md5_sha1.o",
+            "crypto\\rc4\\liblegacy-lib-rc4-md5-x86_64.o",
+            "crypto\\rc4\\liblegacy-lib-rc4-x86_64.o",
             "providers\\common\\liblegacy-lib-provider_util.o",
             "providers\\implementations\\ciphers\\liblegacy-lib-cipher_blowfish.o",
             "providers\\implementations\\ciphers\\liblegacy-lib-cipher_blowfish_hw.o",

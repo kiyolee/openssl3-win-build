@@ -163,7 +163,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.1.1",
+    "full_version" => "3.1.2",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -214,10 +214,10 @@ our %config = (
     "openssl_sys_defines" => [],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\ARM64\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-asm no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "1",
+    "patch" => "2",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
-    "perl_version" => "5.32.1",
+    "perl_version" => "5.38.0",
     "perlargv" => [
         "--prefix=C:\\Program Files\\OpenSSL-3",
         "--with-zlib-include=..\\zlib",
@@ -266,11 +266,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned char",
-    "release_date" => "30 May 2023",
+    "release_date" => "1 Aug 2023",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN64-ARM",
-    "version" => "3.1.1"
+    "version" => "3.1.2"
 );
 our %target = (
     "AR" => "lib",
@@ -9820,11 +9820,14 @@ our %unified_info = (
                 "crypto\\rc4\\libcrypto-lib-rc4_enc.o",
                 "crypto\\rc4\\libcrypto-lib-rc4_skey.o",
                 "crypto\\rc4\\libcrypto-shlib-rc4_enc.o",
-                "crypto\\rc4\\libcrypto-shlib-rc4_skey.o"
+                "crypto\\rc4\\libcrypto-shlib-rc4_skey.o",
+                "crypto\\rc4\\liblegacy-lib-rc4_enc.o",
+                "crypto\\rc4\\liblegacy-lib-rc4_skey.o"
             ],
             "products" => {
                 "lib" => [
-                    "libcrypto"
+                    "libcrypto",
+                    "providers\\liblegacy.a"
                 ]
             }
         },
@@ -26307,6 +26310,12 @@ our %unified_info = (
         "crypto\\rc4\\libcrypto-shlib-rc4_skey.o" => [
             ".\\crypto\\rc4\\rc4_skey.c"
         ],
+        "crypto\\rc4\\liblegacy-lib-rc4_enc.o" => [
+            ".\\crypto\\rc4\\rc4_enc.c"
+        ],
+        "crypto\\rc4\\liblegacy-lib-rc4_skey.o" => [
+            ".\\crypto\\rc4\\rc4_skey.c"
+        ],
         "crypto\\ripemd\\libcrypto-lib-rmd_dgst.o" => [
             ".\\crypto\\ripemd\\rmd_dgst.c"
         ],
@@ -28910,6 +28919,8 @@ our %unified_info = (
             "crypto\\md5\\liblegacy-lib-md5_dgst.o",
             "crypto\\md5\\liblegacy-lib-md5_one.o",
             "crypto\\md5\\liblegacy-lib-md5_sha1.o",
+            "crypto\\rc4\\liblegacy-lib-rc4_enc.o",
+            "crypto\\rc4\\liblegacy-lib-rc4_skey.o",
             "providers\\common\\liblegacy-lib-provider_util.o",
             "providers\\implementations\\ciphers\\liblegacy-lib-cipher_blowfish.o",
             "providers\\implementations\\ciphers\\liblegacy-lib-cipher_blowfish_hw.o",

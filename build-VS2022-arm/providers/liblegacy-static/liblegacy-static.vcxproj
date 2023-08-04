@@ -102,6 +102,8 @@
     <ClCompile Include="..\..\..\crypto\md5\md5_one.c" />
     <ClCompile Include="..\..\..\crypto\md5\md5_sha1.c" />
     <ClCompile Include="..\..\..\crypto\mem_clr.c" />
+    <ClCompile Include="..\..\..\crypto\rc4\rc4_enc.c" />
+    <ClCompile Include="..\..\..\crypto\rc4\rc4_skey.c" />
     <ClCompile Include="..\..\..\providers\common\provider_util.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_blowfish.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_blowfish_hw.c" />
