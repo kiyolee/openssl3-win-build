@@ -46,6 +46,9 @@
     <Filter Include="Source Files\crypto\des">
       <UniqueIdentifier>{a77f2204-6446-420b-8ed8-8a84064374eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\crypto\rc4">
+      <UniqueIdentifier>{8240364c-069a-4666-9f4a-c56d49a23f6d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\providers\implementations\digests\ripemd_prov.c">
@@ -149,6 +152,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\crypto\des\fcrypt_b.c">
       <Filter>Source Files\crypto\des</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\rc4\rc4_enc.c">
+      <Filter>Source Files\crypto\rc4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\rc4\rc4_skey.c">
+      <Filter>Source Files\crypto\rc4</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
