@@ -167,7 +167,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.1.3",
+    "full_version" => "3.1.4",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -218,7 +218,7 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\x64\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "3",
+    "patch" => "4",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.38.0",
@@ -270,11 +270,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "19 Sep 2023",
+    "release_date" => "24 Oct 2023",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN64A-masm",
-    "version" => "3.1.3"
+    "version" => "3.1.4"
 );
 our %target = (
     "AR" => "lib",
@@ -8358,8 +8358,7 @@ our %unified_info = (
                 "crypto\\libcrypto-shlib-uid.o",
                 "crypto\\libcrypto-shlib-uplink-x86_64.o",
                 "crypto\\libcrypto-shlib-x86_64cpuid.o",
-                "crypto\\libssl-shlib-packet.o",
-                "crypto\\libssl-shlib-sparse_array.o"
+                "crypto\\libssl-shlib-packet.o"
             ],
             "products" => {
                 "bin" => [
@@ -22613,7 +22612,6 @@ our %unified_info = (
         ],
         "libssl" => [
             "crypto\\libssl-shlib-packet.o",
-            "crypto\\libssl-shlib-sparse_array.o",
             "libssl-shlib-libssl.res",
             "libssl.ld",
             "ssl\\libssl-shlib-bio_ssl.o",
@@ -26065,9 +26063,6 @@ our %unified_info = (
         ],
         "crypto\\libssl-shlib-packet.o" => [
             ".\\crypto\\packet.c"
-        ],
-        "crypto\\libssl-shlib-sparse_array.o" => [
-            ".\\crypto\\sparse_array.c"
         ],
         "crypto\\md4\\libcrypto-lib-md4_dgst.o" => [
             ".\\crypto\\md4\\md4_dgst.c"
