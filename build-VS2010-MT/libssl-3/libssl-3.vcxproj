@@ -111,7 +111,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\crypto\packet.c" />
-    <ClCompile Include="..\..\crypto\sparse_array.c" />
     <ClCompile Include="..\..\ssl\bio_ssl.c" />
     <ClCompile Include="..\..\ssl\d1_lib.c" />
     <ClCompile Include="..\..\ssl\d1_msg.c" />
