@@ -75,5 +75,11 @@
     <ClCompile Include="..\..\apps\lib\app_libctx.c">
       <Filter>Source Files\apps\lib</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\apps\lib\apps_opt_printf.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\log.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

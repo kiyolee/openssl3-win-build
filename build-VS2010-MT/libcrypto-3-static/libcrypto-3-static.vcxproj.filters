@@ -253,6 +253,15 @@
     <Filter Include="Source Files\crypto\ec\curve448\arch_64">
       <UniqueIdentifier>{591d339a-65f3-47ea-8f8c-c250f64496c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\crypto\hpke">
+      <UniqueIdentifier>{1e5c89f4-5970-4285-b95b-1588a1a2ad59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto\thread">
+      <UniqueIdentifier>{82459074-d4b5-4add-9e6d-72a1d03ffc1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto\thread\arch">
+      <UniqueIdentifier>{5d1e40fa-e8cd-4ea2-b81f-7fcc8174119c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\crypto\aes\aes_cfb.c">
@@ -2459,6 +2468,87 @@
     </ClCompile>
     <ClCompile Include="..\..\crypto\property\property_query.c">
       <Filter>Source Files\crypto\property</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\err\err_mark.c">
+      <Filter>Source Files\crypto\err</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\quic_vlint.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\time.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\bio\bss_dgram_pair.c">
+      <Filter>Source Files\crypto\bio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\hpke\hpke_util.c">
+      <Filter>Source Files\crypto\hpke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\sleep.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\comp\c_zstd.c">
+      <Filter>Source Files\crypto\comp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\comp\c_brotli.c">
+      <Filter>Source Files\crypto\comp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\thread\api.c">
+      <Filter>Source Files\crypto\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\thread\arch.c">
+      <Filter>Source Files\crypto\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\thread\internal.c">
+      <Filter>Source Files\crypto\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\thread\arch\thread_posix.c">
+      <Filter>Source Files\crypto\thread\arch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\thread\arch\thread_win.c">
+      <Filter>Source Files\crypto\thread\arch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\thread\arch\thread_none.c">
+      <Filter>Source Files\crypto\thread\arch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\hpke\hpke.c">
+      <Filter>Source Files\crypto\hpke</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\deterministic_nonce.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\modes\xts128gb.c">
+      <Filter>Source Files\crypto\modes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\params_idx.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\cmp\cmp_genm.c">
+      <Filter>Source Files\crypto\cmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\err\err_save.c">
+      <Filter>Source Files\crypto\err</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_group_ac.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_ind_iss.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_no_ass.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_no_rev_avail.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_single_use.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_soa_id.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\rand\rand_uniform.c">
+      <Filter>Source Files\crypto\rand</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

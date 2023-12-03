@@ -120,9 +120,6 @@
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_common.c">
       <Filter>Source Files\providers\implementations\ciphers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\crypto\ctype.c">
-      <Filter>Source Files\crypto</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\crypto\md5\md5_dgst.c">
       <Filter>Source Files\crypto\md5</Filter>
     </ClCompile>
@@ -132,9 +129,6 @@
     <ClCompile Include="..\..\..\crypto\md5\md5_sha1.c">
       <Filter>Source Files\crypto\md5</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\crypto\cpuid.c">
-      <Filter>Source Files\crypto</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\providers\prov_running.c">
       <Filter>Source Files\providers</Filter>
     </ClCompile>
@@ -142,6 +136,9 @@
       <Filter>Source Files\providers\common</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\providers\implementations\kdfs\pbkdf1.c">
+      <Filter>Source Files\providers\implementations\kdfs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\pvkkdf.c">
       <Filter>Source Files\providers\implementations\kdfs</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\crypto\mem_clr.c">

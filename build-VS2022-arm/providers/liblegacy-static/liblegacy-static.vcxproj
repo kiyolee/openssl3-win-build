@@ -94,8 +94,6 @@
     <Link />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\crypto\cpuid.c" />
-    <ClCompile Include="..\..\..\crypto\ctype.c" />
     <ClCompile Include="..\..\..\crypto\des\des_enc.c" />
     <ClCompile Include="..\..\..\crypto\des\fcrypt_b.c" />
     <ClCompile Include="..\..\..\crypto\md5\md5_dgst.c" />
@@ -129,6 +127,7 @@
     <ClCompile Include="..\..\..\providers\implementations\digests\ripemd_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\digests\wp_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\kdfs\pbkdf1.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\pvkkdf.c" />
     <ClCompile Include="..\..\..\providers\prov_running.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

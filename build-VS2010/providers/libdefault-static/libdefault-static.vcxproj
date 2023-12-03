@@ -114,6 +114,9 @@
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_ccm_hw.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm_siv.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm_siv_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm_siv_polyval.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_hw.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_ocb.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_ocb_hw.c" />
@@ -143,6 +146,8 @@
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_gcm.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_gcm_hw.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_xts.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_xts_hw.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_common.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_default.c" />
@@ -175,7 +180,9 @@
     <ClCompile Include="..\..\..\providers\implementations\exchange\ecdh_exch.c" />
     <ClCompile Include="..\..\..\providers\implementations\exchange\ecx_exch.c" />
     <ClCompile Include="..\..\..\providers\implementations\exchange\kdf_exch.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\argon2.c" />
     <ClCompile Include="..\..\..\providers\implementations\kdfs\hkdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\hmacdrbg_kdf.c" />
     <ClCompile Include="..\..\..\providers\implementations\kdfs\kbkdf.c" />
     <ClCompile Include="..\..\..\providers\implementations\kdfs\krb5kdf.c" />
     <ClCompile Include="..\..\..\providers\implementations\kdfs\pbkdf2.c" />
@@ -186,6 +193,9 @@
     <ClCompile Include="..\..\..\providers\implementations\kdfs\sskdf.c" />
     <ClCompile Include="..\..\..\providers\implementations\kdfs\tls1_prf.c" />
     <ClCompile Include="..\..\..\providers\implementations\kdfs\x942kdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kem\ecx_kem.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kem\ec_kem.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kem\kem_util.c" />
     <ClCompile Include="..\..\..\providers\implementations\kem\rsa_kem.c" />
     <ClCompile Include="..\..\..\providers\implementations\keymgmt\dh_kmgmt.c" />
     <ClCompile Include="..\..\..\providers\implementations\keymgmt\dsa_kmgmt.c" />
@@ -221,6 +231,7 @@
     <ClCompile Include="..\..\..\providers\implementations\signature\sm2_sig.c" />
     <ClCompile Include="..\..\..\providers\implementations\storemgmt\file_store.c" />
     <ClCompile Include="..\..\..\providers\implementations\storemgmt\file_store_any2obj.c" />
-    <ClCompile Include="..\..\..\ssl\s3_cbc.c" />
+    <ClCompile Include="..\..\..\providers\implementations\storemgmt\winstore_store.c" />
+    <ClCompile Include="..\..\..\ssl\record\methods\ssl3_cbc.c" />
   </ItemGroup>
 </Project>

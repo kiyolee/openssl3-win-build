@@ -115,6 +115,6 @@
     <ClCompile Include="..\..\..\providers\implementations\ciphers\ciphercommon_gcm_hw.c" />
     <ClCompile Include="..\..\..\providers\implementations\ciphers\ciphercommon_hw.c" />
     <ClCompile Include="..\..\..\providers\implementations\digests\digestcommon.c" />
-    <ClCompile Include="..\..\..\ssl\record\tls_pad.c" />
+    <ClCompile Include="..\..\..\ssl\record\methods\tls_pad.c" />
   </ItemGroup>
 </Project>

@@ -21,7 +21,7 @@ plan skip_all => "Not available in a no-deprecated build"
 plan tests => 1;
 
 #$ENV{OPENSSL_MODULES} = abs_path(bldtop_dir("providers"));
-$ENV{OPENSSL_MODULES} = shlib_dir();
+$ENV{OPENSSL_MODULES} = abs_path(shlib_dir());
 $ENV{OPENSSL_CONF} = abs_path(srctop_file("test", "default.cnf"));
 
 my $rsa_key = srctop_file("test", "certs", "ee-key.pem");

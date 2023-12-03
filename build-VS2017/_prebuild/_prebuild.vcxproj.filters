@@ -429,6 +429,18 @@
     <CopyFileToFolders Include="..\..\include\openssl\prov_ssl.h">
       <Filter>Header Files\include\openssl</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\include\openssl\e_ostime.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\include\openssl\hpke.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\include\openssl\quic.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\include\openssl\thread.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CopyFileToFolders>
     <CopyFileToFolders Include="..\..\ms\applink.c">
       <Filter>Source Files\ms</Filter>
     </CopyFileToFolders>

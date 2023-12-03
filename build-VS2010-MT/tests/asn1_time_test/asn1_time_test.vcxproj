@@ -90,6 +90,8 @@
     <Link />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\crypto\asn1\a_time.c" />
+    <ClCompile Include="..\..\..\crypto\ctype.c" />
     <ClCompile Include="..\..\..\ms\applink.c" />
     <ClCompile Include="..\..\..\test\asn1_time_test.c" />
   </ItemGroup>

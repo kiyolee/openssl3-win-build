@@ -429,6 +429,18 @@
     <CustomBuild Include="..\..\include\openssl\prov_ssl.h">
       <Filter>Header Files\include\openssl</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\..\include\openssl\e_ostime.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\include\openssl\hpke.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\include\openssl\quic.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\include\openssl\thread.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CustomBuild>
     <CustomBuild Include="..\..\ms\applink.c">
       <Filter>Source Files\ms</Filter>
     </CustomBuild>

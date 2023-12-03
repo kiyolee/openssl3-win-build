@@ -14,15 +14,15 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Source Files\ms">
-      <UniqueIdentifier>{dc4e0593-71f2-486a-a8b6-72026cc2a9ea}</UniqueIdentifier>
+      <UniqueIdentifier>{ffb355dc-550f-4d7c-a7d2-fb53cab1c467}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\test\evp_extra_test2.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\ms\applink.c">
       <Filter>Source Files\ms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\test\evp_extra_test2.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

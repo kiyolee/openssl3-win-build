@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\apps">
+      <UniqueIdentifier>{caabebf5-1407-40df-a691-f0523e70078c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\apps\lib">
+      <UniqueIdentifier>{c37a36d7-dcac-49b8-b1d4-27fcb5979594}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto">
+      <UniqueIdentifier>{9171b728-a3ce-48ca-84c2-261e7f0d95e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto\asn1">
+      <UniqueIdentifier>{94648196-4024-43de-a436-4cbb3e8d6cb8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\test\ca_internals_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\ca.c">
+      <Filter>Source Files\apps</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lib\app_x509.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lib\apps.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lib\apps_ui.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lib\engine.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lib\fmt.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lib\app_libctx.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lib\app_provider.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\apps\lib\app_rand.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\asn1\a_time.c">
+      <Filter>Source Files\crypto\asn1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\ctype.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

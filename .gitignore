@@ -41,5 +41,13 @@
 /build-*/tests/*/Release
 /build-*/tests/*/x64/Debug
 /build-*/tests/*/x64/Release
+/build-*/util/*/ARM/Debug
+/build-*/util/*/ARM/Release
+/build-*/util/*/ARM64/Debug
+/build-*/util/*/ARM64/Release
+/build-*/util/*/Debug
+/build-*/util/*/Release
+/build-*/util/*/x64/Debug
+/build-*/util/*/x64/Release
 /build-*/x64/Debug
 /build-*/x64/Release

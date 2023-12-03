@@ -18,14 +18,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\test\wpackettest.c">
+    <ClCompile Include="..\..\..\crypto\packet.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\crypto\packet.c">
+    <ClCompile Include="..\..\..\crypto\quic_vlint.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\ms\applink.c">
       <Filter>Source Files\ms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\test\wpackettest.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

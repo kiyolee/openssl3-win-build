@@ -67,6 +67,12 @@
     <Filter Include="Source Files\ssl">
       <UniqueIdentifier>{ce27ab74-9873-4309-b9d9-06d20a43f157}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ssl\record">
+      <UniqueIdentifier>{d40ce2fb-4a31-45ea-adc2-24d8899d2754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ssl\record\methods">
+      <UniqueIdentifier>{c6613d0b-1d82-4597-9a1c-40e534c8ae43}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\providers\common\provider_util.c">
@@ -429,20 +435,11 @@
     <ClCompile Include="..\..\..\providers\implementations\signature\sm2_sig.c">
       <Filter>Source Files\providers\implementations\signature</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\ssl\s3_cbc.c">
-      <Filter>Source Files\ssl</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\providers\implementations\encode_decode\decode_epki2pki.c">
       <Filter>Source Files\providers\implementations\encode_decode</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\providers\implementations\encode_decode\decode_spki2typespki.c">
       <Filter>Source Files\providers\implementations\encode_decode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\providers\implementations\digests\null_prov.c">
-      <Filter>Source Files\providers\implementations\digests</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\providers\implementations\digests\ripemd_prov.c">
-      <Filter>Source Files\providers\implementations\digests</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_ccm_hw.c">
       <Filter>Source Files\providers\implementations\ciphers</Filter>
@@ -455,6 +452,48 @@
     </ClCompile>
     <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_ccm.c">
       <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\digests\null_prov.c">
+      <Filter>Source Files\providers\implementations\digests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm_siv_polyval.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm_siv.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm_siv_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ssl\record\methods\ssl3_cbc.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\storemgmt\winstore_store.c">
+      <Filter>Source Files\providers\implementations\storemgmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\kem\ecx_kem.c">
+      <Filter>Source Files\providers\implementations\kem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\kem\kem_util.c">
+      <Filter>Source Files\providers\implementations\kem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\kem\ec_kem.c">
+      <Filter>Source Files\providers\implementations\kem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\digests\ripemd_prov.c">
+      <Filter>Source Files\providers\implementations\digests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_xts.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_xts_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\hmacdrbg_kdf.c">
+      <Filter>Source Files\providers\implementations\kdfs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\argon2.c">
+      <Filter>Source Files\providers\implementations\kdfs</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

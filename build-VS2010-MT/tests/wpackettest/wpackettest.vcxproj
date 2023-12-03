@@ -91,6 +91,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\crypto\packet.c" />
+    <ClCompile Include="..\..\..\crypto\quic_vlint.c" />
     <ClCompile Include="..\..\..\ms\applink.c" />
     <ClCompile Include="..\..\..\test\wpackettest.c" />
   </ItemGroup>

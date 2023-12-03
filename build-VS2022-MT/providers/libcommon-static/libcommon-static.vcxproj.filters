@@ -37,6 +37,9 @@
     <Filter Include="Source Files\providers\common\der">
       <UniqueIdentifier>{be1c4d19-5932-4ae7-ac41-4ba9173b7832}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ssl\record\methods">
+      <UniqueIdentifier>{a5f1bcf7-110d-4815-92a1-d4bc3ca576d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\providers\common\provider_err.c">
@@ -68,9 +71,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\providers\common\provider_ctx.c">
       <Filter>Source Files\providers\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\ssl\record\tls_pad.c">
-      <Filter>Source Files\ssl\record</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\providers\common\der\der_digests_gen.c">
       <Filter>Source Files\providers\common\der</Filter>
@@ -107,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\providers\common\der\der_wrap_gen.c">
       <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ssl\record\methods\tls_pad.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -91,6 +91,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\apps\lib\apps.c" />
+    <ClCompile Include="..\..\apps\lib\apps_opt_printf.c" />
     <ClCompile Include="..\..\apps\lib\apps_ui.c" />
     <ClCompile Include="..\..\apps\lib\app_libctx.c" />
     <ClCompile Include="..\..\apps\lib\app_params.c" />
@@ -102,6 +103,7 @@
     <ClCompile Include="..\..\apps\lib\engine_loader.c" />
     <ClCompile Include="..\..\apps\lib\fmt.c" />
     <ClCompile Include="..\..\apps\lib\http_server.c" />
+    <ClCompile Include="..\..\apps\lib\log.c" />
     <ClCompile Include="..\..\apps\lib\names.c" />
     <ClCompile Include="..\..\apps\lib\opt.c" />
     <ClCompile Include="..\..\apps\lib\s_cb.c" />

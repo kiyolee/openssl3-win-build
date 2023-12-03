@@ -24,5 +24,8 @@
     <ClCompile Include="..\..\..\ms\applink.c">
       <Filter>Source Files\ms</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\test\fake_rsaprov.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

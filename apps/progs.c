@@ -225,8 +225,14 @@ FUNCTION functions[] = {
     {FT_cipher, "camellia-256-ecb", enc_main, enc_options, NULL},
 #endif
     {FT_cipher, "base64", enc_main, enc_options, NULL},
-#ifdef ZLIB
+#ifndef OPENSSL_NO_ZLIB
     {FT_cipher, "zlib", enc_main, enc_options, NULL},
+#endif
+#ifndef OPENSSL_NO_BROTLI
+    {FT_cipher, "brotli", enc_main, enc_options, NULL},
+#endif
+#ifndef OPENSSL_NO_ZSTD
+    {FT_cipher, "zstd", enc_main, enc_options, NULL},
 #endif
 #ifndef OPENSSL_NO_DES
     {FT_cipher, "des", enc_main, enc_options, NULL},
