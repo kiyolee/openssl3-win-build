@@ -51,9 +51,6 @@ popd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\util\providers.num</AdditionalInputs>
     </CustomBuild>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\test\p_test.c" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{199F7B5C-806C-4B1E-BA44-0F8F1C3F6717}</ProjectGuid>
@@ -138,6 +135,9 @@ popd</Command>
       <ModuleDefinitionFile>$(OutDir)..\_work\static\p_test.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\test\p_test.c" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
