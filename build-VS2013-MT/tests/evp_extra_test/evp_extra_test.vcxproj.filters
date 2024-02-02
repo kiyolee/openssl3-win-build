@@ -16,13 +16,19 @@
     <Filter Include="Source Files\ms">
       <UniqueIdentifier>{9b36418a-3acb-4fd3-89d5-7a83bcf8227f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\providers">
+      <UniqueIdentifier>{b451e0cf-1d02-4dec-84e3-b8fc0877be55}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\test\evp_extra_test.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\ms\applink.c">
       <Filter>Source Files\ms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\legacyprov.c">
+      <Filter>Source Files\providers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\test\evp_extra_test.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\test\fake_rsaprov.c">
       <Filter>Source Files</Filter>

@@ -13,8 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\providers">
+      <UniqueIdentifier>{b451e0cf-1d02-4dec-84e3-b8fc0877be55}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\providers\legacyprov.c">
+      <Filter>Source Files\providers</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\..\test\evp_extra_test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
