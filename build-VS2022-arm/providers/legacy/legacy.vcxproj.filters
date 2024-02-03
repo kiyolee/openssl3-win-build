@@ -19,6 +19,9 @@
     <Filter Include="Source Files\providers">
       <UniqueIdentifier>{1e72df64-7be1-4cc9-a373-c02b90e130f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\crypto">
+      <UniqueIdentifier>{a09d3630-9478-42e5-9d6a-e6bac7b490ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\..\util\mkdef.pl">
@@ -28,6 +31,12 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\providers\legacyprov.c">
       <Filter>Source Files\providers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\cpuid.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\ctype.c">
+      <Filter>Source Files\crypto</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
