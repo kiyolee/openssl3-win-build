@@ -94,8 +94,6 @@
     <Link />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\crypto\cpuid.c" />
-    <ClCompile Include="..\..\..\crypto\ctype.c" />
     <ClCompile Include="..\..\..\crypto\des\des_enc.c" />
     <ClCompile Include="..\..\..\crypto\des\fcrypt_b.c" />
     <ClCompile Include="..\..\..\crypto\md5\md5_dgst.c" />
