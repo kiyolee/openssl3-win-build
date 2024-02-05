@@ -163,7 +163,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.12",
+    "full_version" => "3.0.13",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -215,7 +215,7 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files (x86)\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-shared no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "12",
+    "patch" => "13",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.38.0",
@@ -268,11 +268,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "24 Oct 2023",
+    "release_date" => "30 Jan 2024",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN32",
-    "version" => "3.0.12"
+    "version" => "3.0.13"
 );
 our %target = (
     "AR" => "lib",
@@ -832,6 +832,9 @@ our %unified_info = (
             }
         },
         "modules" => {
+            "test\\p_minimal" => {
+                "noinst" => "1"
+            },
             "test\\p_test" => {
                 "noinst" => "1"
             }
@@ -895,6 +898,9 @@ our %unified_info = (
                 "noinst" => "1"
             },
             "test\\asn1_internal_test" => {
+                "noinst" => "1"
+            },
+            "test\\asn1_stable_parse_test" => {
                 "noinst" => "1"
             },
             "test\\asn1_string_table_test" => {
@@ -1689,6 +1695,9 @@ our %unified_info = (
             "MD5_ASM",
             "RC4_ASM"
         ],
+        "test\\evp_extra_test" => [
+            "STATIC_LEGACY"
+        ],
         "test\\provider_internal_test" => [
             "PROVIDER_INIT_FUNCTION_NAME=p_test_init"
         ],
@@ -2439,6 +2448,9 @@ our %unified_info = (
         "doc\\html\\man3\\CMS_sign_receipt.html" => [
             ".\\doc\\man3\\CMS_sign_receipt.pod"
         ],
+        "doc\\html\\man3\\CMS_signed_get_attr.html" => [
+            ".\\doc\\man3\\CMS_signed_get_attr.pod"
+        ],
         "doc\\html\\man3\\CMS_uncompress.html" => [
             ".\\doc\\man3\\CMS_uncompress.pod"
         ],
@@ -2735,6 +2747,9 @@ our %unified_info = (
         ],
         "doc\\html\\man3\\EVP_PKEY_fromdata.html" => [
             ".\\doc\\man3\\EVP_PKEY_fromdata.pod"
+        ],
+        "doc\\html\\man3\\EVP_PKEY_get_attr.html" => [
+            ".\\doc\\man3\\EVP_PKEY_get_attr.pod"
         ],
         "doc\\html\\man3\\EVP_PKEY_get_default_digest_nid.html" => [
             ".\\doc\\man3\\EVP_PKEY_get_default_digest_nid.pod"
@@ -3798,6 +3813,9 @@ our %unified_info = (
         "doc\\html\\man3\\X509_ALGOR_dup.html" => [
             ".\\doc\\man3\\X509_ALGOR_dup.pod"
         ],
+        "doc\\html\\man3\\X509_ATTRIBUTE.html" => [
+            ".\\doc\\man3\\X509_ATTRIBUTE.pod"
+        ],
         "doc\\html\\man3\\X509_CRL_get0_by_serial.html" => [
             ".\\doc\\man3\\X509_CRL_get0_by_serial.pod"
         ],
@@ -3830,6 +3848,12 @@ our %unified_info = (
         ],
         "doc\\html\\man3\\X509_PUBKEY_new.html" => [
             ".\\doc\\man3\\X509_PUBKEY_new.pod"
+        ],
+        "doc\\html\\man3\\X509_REQ_get_attr.html" => [
+            ".\\doc\\man3\\X509_REQ_get_attr.pod"
+        ],
+        "doc\\html\\man3\\X509_REQ_get_extensions.html" => [
+            ".\\doc\\man3\\X509_REQ_get_extensions.pod"
         ],
         "doc\\html\\man3\\X509_SIG_get0.html" => [
             ".\\doc\\man3\\X509_SIG_get0.pod"
@@ -5030,6 +5054,9 @@ our %unified_info = (
         "doc\\man\\man3\\CMS_sign_receipt.3" => [
             ".\\doc\\man3\\CMS_sign_receipt.pod"
         ],
+        "doc\\man\\man3\\CMS_signed_get_attr.3" => [
+            ".\\doc\\man3\\CMS_signed_get_attr.pod"
+        ],
         "doc\\man\\man3\\CMS_uncompress.3" => [
             ".\\doc\\man3\\CMS_uncompress.pod"
         ],
@@ -5326,6 +5353,9 @@ our %unified_info = (
         ],
         "doc\\man\\man3\\EVP_PKEY_fromdata.3" => [
             ".\\doc\\man3\\EVP_PKEY_fromdata.pod"
+        ],
+        "doc\\man\\man3\\EVP_PKEY_get_attr.3" => [
+            ".\\doc\\man3\\EVP_PKEY_get_attr.pod"
         ],
         "doc\\man\\man3\\EVP_PKEY_get_default_digest_nid.3" => [
             ".\\doc\\man3\\EVP_PKEY_get_default_digest_nid.pod"
@@ -6389,6 +6419,9 @@ our %unified_info = (
         "doc\\man\\man3\\X509_ALGOR_dup.3" => [
             ".\\doc\\man3\\X509_ALGOR_dup.pod"
         ],
+        "doc\\man\\man3\\X509_ATTRIBUTE.3" => [
+            ".\\doc\\man3\\X509_ATTRIBUTE.pod"
+        ],
         "doc\\man\\man3\\X509_CRL_get0_by_serial.3" => [
             ".\\doc\\man3\\X509_CRL_get0_by_serial.pod"
         ],
@@ -6421,6 +6454,12 @@ our %unified_info = (
         ],
         "doc\\man\\man3\\X509_PUBKEY_new.3" => [
             ".\\doc\\man3\\X509_PUBKEY_new.pod"
+        ],
+        "doc\\man\\man3\\X509_REQ_get_attr.3" => [
+            ".\\doc\\man3\\X509_REQ_get_attr.pod"
+        ],
+        "doc\\man\\man3\\X509_REQ_get_extensions.3" => [
+            ".\\doc\\man3\\X509_REQ_get_extensions.pod"
         ],
         "doc\\man\\man3\\X509_SIG_get0.3" => [
             ".\\doc\\man3\\X509_SIG_get0.pod"
@@ -7181,6 +7220,10 @@ our %unified_info = (
             "libcrypto.a",
             "test\\libtestutil.a"
         ],
+        "test\\asn1_stable_parse_test" => [
+            "libcrypto",
+            "test\\libtestutil.a"
+        ],
         "test\\asn1_string_table_test" => [
             "libcrypto",
             "test\\libtestutil.a"
@@ -7703,6 +7746,8 @@ our %unified_info = (
         ],
         "test\\evp_extra_test" => [
             "libcrypto.a",
+            "providers\\libcommon.a",
+            "providers\\liblegacy.a",
             "test\\libtestutil.a"
         ],
         "test\\evp_extra_test2" => [
@@ -9585,6 +9630,7 @@ our %unified_info = (
         },
         "providers" => {
             "deps" => [
+                "providers\\evp_extra_test-bin-legacyprov.o",
                 "providers\\libcrypto-lib-baseprov.o",
                 "providers\\libcrypto-lib-defltprov.o",
                 "providers\\libcrypto-lib-nullprov.o",
@@ -9592,6 +9638,9 @@ our %unified_info = (
                 "providers\\libdefault.a"
             ],
             "products" => {
+                "bin" => [
+                    "test\\evp_extra_test"
+                ],
                 "dso" => [
                     "providers\\legacy"
                 ],
@@ -11101,6 +11150,9 @@ our %unified_info = (
         "doc\\html\\man3\\CMS_sign_receipt.html" => [
             ".\\doc\\man3\\CMS_sign_receipt.pod"
         ],
+        "doc\\html\\man3\\CMS_signed_get_attr.html" => [
+            ".\\doc\\man3\\CMS_signed_get_attr.pod"
+        ],
         "doc\\html\\man3\\CMS_uncompress.html" => [
             ".\\doc\\man3\\CMS_uncompress.pod"
         ],
@@ -11397,6 +11449,9 @@ our %unified_info = (
         ],
         "doc\\html\\man3\\EVP_PKEY_fromdata.html" => [
             ".\\doc\\man3\\EVP_PKEY_fromdata.pod"
+        ],
+        "doc\\html\\man3\\EVP_PKEY_get_attr.html" => [
+            ".\\doc\\man3\\EVP_PKEY_get_attr.pod"
         ],
         "doc\\html\\man3\\EVP_PKEY_get_default_digest_nid.html" => [
             ".\\doc\\man3\\EVP_PKEY_get_default_digest_nid.pod"
@@ -12460,6 +12515,9 @@ our %unified_info = (
         "doc\\html\\man3\\X509_ALGOR_dup.html" => [
             ".\\doc\\man3\\X509_ALGOR_dup.pod"
         ],
+        "doc\\html\\man3\\X509_ATTRIBUTE.html" => [
+            ".\\doc\\man3\\X509_ATTRIBUTE.pod"
+        ],
         "doc\\html\\man3\\X509_CRL_get0_by_serial.html" => [
             ".\\doc\\man3\\X509_CRL_get0_by_serial.pod"
         ],
@@ -12492,6 +12550,12 @@ our %unified_info = (
         ],
         "doc\\html\\man3\\X509_PUBKEY_new.html" => [
             ".\\doc\\man3\\X509_PUBKEY_new.pod"
+        ],
+        "doc\\html\\man3\\X509_REQ_get_attr.html" => [
+            ".\\doc\\man3\\X509_REQ_get_attr.pod"
+        ],
+        "doc\\html\\man3\\X509_REQ_get_extensions.html" => [
+            ".\\doc\\man3\\X509_REQ_get_extensions.pod"
         ],
         "doc\\html\\man3\\X509_SIG_get0.html" => [
             ".\\doc\\man3\\X509_SIG_get0.pod"
@@ -13639,6 +13703,9 @@ our %unified_info = (
         "doc\\man\\man3\\CMS_sign_receipt.3" => [
             ".\\doc\\man3\\CMS_sign_receipt.pod"
         ],
+        "doc\\man\\man3\\CMS_signed_get_attr.3" => [
+            ".\\doc\\man3\\CMS_signed_get_attr.pod"
+        ],
         "doc\\man\\man3\\CMS_uncompress.3" => [
             ".\\doc\\man3\\CMS_uncompress.pod"
         ],
@@ -13935,6 +14002,9 @@ our %unified_info = (
         ],
         "doc\\man\\man3\\EVP_PKEY_fromdata.3" => [
             ".\\doc\\man3\\EVP_PKEY_fromdata.pod"
+        ],
+        "doc\\man\\man3\\EVP_PKEY_get_attr.3" => [
+            ".\\doc\\man3\\EVP_PKEY_get_attr.pod"
         ],
         "doc\\man\\man3\\EVP_PKEY_get_default_digest_nid.3" => [
             ".\\doc\\man3\\EVP_PKEY_get_default_digest_nid.pod"
@@ -14998,6 +15068,9 @@ our %unified_info = (
         "doc\\man\\man3\\X509_ALGOR_dup.3" => [
             ".\\doc\\man3\\X509_ALGOR_dup.pod"
         ],
+        "doc\\man\\man3\\X509_ATTRIBUTE.3" => [
+            ".\\doc\\man3\\X509_ATTRIBUTE.pod"
+        ],
         "doc\\man\\man3\\X509_CRL_get0_by_serial.3" => [
             ".\\doc\\man3\\X509_CRL_get0_by_serial.pod"
         ],
@@ -15030,6 +15103,12 @@ our %unified_info = (
         ],
         "doc\\man\\man3\\X509_PUBKEY_new.3" => [
             ".\\doc\\man3\\X509_PUBKEY_new.pod"
+        ],
+        "doc\\man\\man3\\X509_REQ_get_attr.3" => [
+            ".\\doc\\man3\\X509_REQ_get_attr.pod"
+        ],
+        "doc\\man\\man3\\X509_REQ_get_extensions.3" => [
+            ".\\doc\\man3\\X509_REQ_get_extensions.pod"
         ],
         "doc\\man\\man3\\X509_SIG_get0.3" => [
             ".\\doc\\man3\\X509_SIG_get0.pod"
@@ -15977,6 +16056,9 @@ our %unified_info = (
             ".\\test\\generate_buildtest.pl",
             "whrlpool"
         ],
+        "test\\p_minimal.ld" => [
+            ".\\util\\providers.num"
+        ],
         "test\\p_test.ld" => [
             ".\\util\\providers.num"
         ],
@@ -16142,6 +16224,7 @@ our %unified_info = (
             "doc\\html\\man3\\CMS_get1_ReceiptRequest.html",
             "doc\\html\\man3\\CMS_sign.html",
             "doc\\html\\man3\\CMS_sign_receipt.html",
+            "doc\\html\\man3\\CMS_signed_get_attr.html",
             "doc\\html\\man3\\CMS_uncompress.html",
             "doc\\html\\man3\\CMS_verify.html",
             "doc\\html\\man3\\CMS_verify_receipt.html",
@@ -16241,6 +16324,7 @@ our %unified_info = (
             "doc\\html\\man3\\EVP_PKEY_encapsulate.html",
             "doc\\html\\man3\\EVP_PKEY_encrypt.html",
             "doc\\html\\man3\\EVP_PKEY_fromdata.html",
+            "doc\\html\\man3\\EVP_PKEY_get_attr.html",
             "doc\\html\\man3\\EVP_PKEY_get_default_digest_nid.html",
             "doc\\html\\man3\\EVP_PKEY_get_field_type.html",
             "doc\\html\\man3\\EVP_PKEY_get_group_name.html",
@@ -16595,6 +16679,7 @@ our %unified_info = (
             "doc\\html\\man3\\X509V3_get_d2i.html",
             "doc\\html\\man3\\X509V3_set_ctx.html",
             "doc\\html\\man3\\X509_ALGOR_dup.html",
+            "doc\\html\\man3\\X509_ATTRIBUTE.html",
             "doc\\html\\man3\\X509_CRL_get0_by_serial.html",
             "doc\\html\\man3\\X509_EXTENSION_set_object.html",
             "doc\\html\\man3\\X509_LOOKUP.html",
@@ -16606,6 +16691,8 @@ our %unified_info = (
             "doc\\html\\man3\\X509_NAME_get_index_by_NID.html",
             "doc\\html\\man3\\X509_NAME_print_ex.html",
             "doc\\html\\man3\\X509_PUBKEY_new.html",
+            "doc\\html\\man3\\X509_REQ_get_attr.html",
+            "doc\\html\\man3\\X509_REQ_get_extensions.html",
             "doc\\html\\man3\\X509_SIG_get0.html",
             "doc\\html\\man3\\X509_STORE_CTX_get_error.html",
             "doc\\html\\man3\\X509_STORE_CTX_new.html",
@@ -18030,6 +18117,12 @@ our %unified_info = (
             ".\\include",
             ".\\apps\\include"
         ],
+        "test\\asn1_stable_parse_test" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
+        ],
         "test\\asn1_string_table_test" => [
             "include",
             "apps\\include",
@@ -18711,8 +18804,12 @@ our %unified_info = (
         "test\\evp_extra_test" => [
             "include",
             "apps\\include",
+            "providers\\common\\include",
+            "providers\\implementations\\include",
             ".\\include",
-            ".\\apps\\include"
+            ".\\apps\\include",
+            ".\\providers\\common\\include",
+            ".\\providers\\implementations\\include"
         ],
         "test\\evp_extra_test2" => [
             "include",
@@ -19103,6 +19200,12 @@ our %unified_info = (
             "apps\\include",
             ".\\include",
             ".\\apps\\include"
+        ],
+        "test\\p_minimal" => [
+            "include",
+            ".",
+            ".\\include",
+            "."
         ],
         "test\\p_test" => [
             "include",
@@ -19758,6 +19861,7 @@ our %unified_info = (
             "doc\\man\\man3\\CMS_get1_ReceiptRequest.3",
             "doc\\man\\man3\\CMS_sign.3",
             "doc\\man\\man3\\CMS_sign_receipt.3",
+            "doc\\man\\man3\\CMS_signed_get_attr.3",
             "doc\\man\\man3\\CMS_uncompress.3",
             "doc\\man\\man3\\CMS_verify.3",
             "doc\\man\\man3\\CMS_verify_receipt.3",
@@ -19857,6 +19961,7 @@ our %unified_info = (
             "doc\\man\\man3\\EVP_PKEY_encapsulate.3",
             "doc\\man\\man3\\EVP_PKEY_encrypt.3",
             "doc\\man\\man3\\EVP_PKEY_fromdata.3",
+            "doc\\man\\man3\\EVP_PKEY_get_attr.3",
             "doc\\man\\man3\\EVP_PKEY_get_default_digest_nid.3",
             "doc\\man\\man3\\EVP_PKEY_get_field_type.3",
             "doc\\man\\man3\\EVP_PKEY_get_group_name.3",
@@ -20211,6 +20316,7 @@ our %unified_info = (
             "doc\\man\\man3\\X509V3_get_d2i.3",
             "doc\\man\\man3\\X509V3_set_ctx.3",
             "doc\\man\\man3\\X509_ALGOR_dup.3",
+            "doc\\man\\man3\\X509_ATTRIBUTE.3",
             "doc\\man\\man3\\X509_CRL_get0_by_serial.3",
             "doc\\man\\man3\\X509_EXTENSION_set_object.3",
             "doc\\man\\man3\\X509_LOOKUP.3",
@@ -20222,6 +20328,8 @@ our %unified_info = (
             "doc\\man\\man3\\X509_NAME_get_index_by_NID.3",
             "doc\\man\\man3\\X509_NAME_print_ex.3",
             "doc\\man\\man3\\X509_PUBKEY_new.3",
+            "doc\\man\\man3\\X509_REQ_get_attr.3",
+            "doc\\man\\man3\\X509_REQ_get_extensions.3",
             "doc\\man\\man3\\X509_SIG_get0.3",
             "doc\\man\\man3\\X509_STORE_CTX_get_error.3",
             "doc\\man\\man3\\X509_STORE_CTX_new.3",
@@ -20404,6 +20512,7 @@ our %unified_info = (
     },
     "modules" => [
         "providers\\legacy",
+        "test\\p_minimal",
         "test\\p_test"
     ],
     "programs" => [
@@ -20428,6 +20537,7 @@ our %unified_info = (
         "test\\asn1_dsa_internal_test",
         "test\\asn1_encode_test",
         "test\\asn1_internal_test",
+        "test\\asn1_stable_parse_test",
         "test\\asn1_string_table_test",
         "test\\asn1_time_test",
         "test\\asynciotest",
@@ -24246,6 +24356,9 @@ our %unified_info = (
         "providers\\common\\libdefault-lib-securitycheck_default.o" => [
             ".\\providers\\common\\securitycheck_default.c"
         ],
+        "providers\\evp_extra_test-bin-legacyprov.o" => [
+            ".\\providers\\legacyprov.c"
+        ],
         "providers\\implementations\\asymciphers\\libdefault-lib-rsa_enc.o" => [
             ".\\providers\\implementations\\asymciphers\\rsa_enc.c"
         ],
@@ -25075,6 +25188,12 @@ our %unified_info = (
         "test\\asn1_internal_test-bin-asn1_internal_test.o" => [
             ".\\test\\asn1_internal_test.c"
         ],
+        "test\\asn1_stable_parse_test" => [
+            "test\\asn1_stable_parse_test-bin-asn1_stable_parse_test.o"
+        ],
+        "test\\asn1_stable_parse_test-bin-asn1_stable_parse_test.o" => [
+            ".\\test\\asn1_stable_parse_test.c"
+        ],
         "test\\asn1_string_table_test" => [
             "test\\asn1_string_table_test-bin-asn1_string_table_test.o"
         ],
@@ -25858,6 +25977,7 @@ our %unified_info = (
             ".\\test\\errtest.c"
         ],
         "test\\evp_extra_test" => [
+            "providers\\evp_extra_test-bin-legacyprov.o",
             "test\\evp_extra_test-bin-evp_extra_test.o"
         ],
         "test\\evp_extra_test-bin-evp_extra_test.o" => [
@@ -26148,6 +26268,13 @@ our %unified_info = (
         ],
         "test\\ossl_store_test-bin-ossl_store_test.o" => [
             ".\\test\\ossl_store_test.c"
+        ],
+        "test\\p_minimal" => [
+            "test\\p_minimal-dso-p_minimal.o",
+            "test\\p_minimal.ld"
+        ],
+        "test\\p_minimal-dso-p_minimal.o" => [
+            ".\\test\\p_minimal.c"
         ],
         "test\\p_test" => [
             "test\\p_test-dso-p_test.o",
