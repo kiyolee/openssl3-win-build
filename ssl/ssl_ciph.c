@@ -675,6 +675,10 @@ static void ll_append_head(CIPHER_ORDER **head, CIPHER_ORDER *curr,
     *head = curr;
 }
 
+#if defined(_MSC_VER) && (1800 <= _MSC_VER && _MSC_VER < 1910) && defined(_M_X64) && defined(NDEBUG)
+#define VS2013_VS2015_WORKAROUND
+#endif
+
 static void ssl_cipher_collect_ciphers(const SSL_METHOD *ssl_method,
                                        int num_of_ciphers,
                                        uint32_t disabled_mkey,
@@ -728,11 +732,22 @@ static void ssl_cipher_collect_ciphers(const SSL_METHOD *ssl_method,
         co_list[0].prev = NULL;
 
         if (co_list_num > 1) {
+#ifdef VS2013_VS2015_WORKAROUND
+            CIPHER_ORDER* volatile p;
+            CIPHER_ORDER* volatile n;
+#endif
             co_list[0].next = &co_list[1];
 
             for (i = 1; i < co_list_num - 1; i++) {
+#ifdef VS2013_VS2015_WORKAROUND
+                p = &co_list[i - 1];
+                n = &co_list[i + 1];
+                co_list[i].prev = p;
+                co_list[i].next = n;
+#else
                 co_list[i].prev = &co_list[i - 1];
                 co_list[i].next = &co_list[i + 1];
+#endif
             }
 
             co_list[co_list_num - 1].prev = &co_list[co_list_num - 2];
