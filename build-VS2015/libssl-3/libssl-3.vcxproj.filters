@@ -40,6 +40,9 @@
     <Filter Include="Source Files\crypto\thread\arch">
       <UniqueIdentifier>{a5b8d595-6b4c-487a-a4fc-403f3b2cc122}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ssl\rio">
+      <UniqueIdentifier>{20010bcf-7168-4e51-ba73-81293249b877}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\ssl\ssl_err.c">
@@ -307,6 +310,45 @@
       <Filter>Source Files\ssl\quic</Filter>
     </ClCompile>
     <ClCompile Include="..\..\ssl\quic\quic_trace.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_srt_gen.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_srtm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_lcidm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_engine.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_port.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_types.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_rcidm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\qlog_event_helpers.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\rio\poll_immediate.c">
+      <Filter>Source Files\ssl\rio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\ctype.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\getenv.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\json_enc.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\qlog.c">
       <Filter>Source Files\ssl\quic</Filter>
     </ClCompile>
   </ItemGroup>

@@ -31,6 +31,9 @@
     <Filter Include="Source Files\ssl\quic">
       <UniqueIdentifier>{4d611ecc-f70b-4074-b730-64cdb2dcf653}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ssl\rio">
+      <UniqueIdentifier>{20010bcf-7168-4e51-ba73-81293249b877}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\ssl\ssl_err.c">
@@ -271,6 +274,39 @@
       <Filter>Source Files\ssl\quic</Filter>
     </ClCompile>
     <ClCompile Include="..\..\ssl\quic\quic_trace.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_srt_gen.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_srtm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_lcidm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_engine.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_port.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_types.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_rcidm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\qlog_event_helpers.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\rio\poll_immediate.c">
+      <Filter>Source Files\ssl\rio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\json_enc.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\qlog.c">
       <Filter>Source Files\ssl\quic</Filter>
     </ClCompile>
   </ItemGroup>

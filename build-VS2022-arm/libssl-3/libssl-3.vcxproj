@@ -114,6 +114,8 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\crypto\ctype.c" />
+    <ClCompile Include="..\..\crypto\getenv.c" />
     <ClCompile Include="..\..\crypto\packet.c" />
     <ClCompile Include="..\..\crypto\quic_vlint.c" />
     <ClCompile Include="..\..\crypto\thread\arch.c" />
@@ -130,14 +132,21 @@
     <ClCompile Include="..\..\ssl\pqueue.c" />
     <ClCompile Include="..\..\ssl\priority_queue.c" />
     <ClCompile Include="..\..\ssl\quic\cc_newreno.c" />
+    <ClCompile Include="..\..\ssl\quic\json_enc.c" />
+    <ClCompile Include="..\..\ssl\quic\qlog.c" />
+    <ClCompile Include="..\..\ssl\quic\qlog_event_helpers.c" />
     <ClCompile Include="..\..\ssl\quic\quic_ackm.c" />
     <ClCompile Include="..\..\ssl\quic\quic_cfq.c" />
     <ClCompile Include="..\..\ssl\quic\quic_channel.c" />
     <ClCompile Include="..\..\ssl\quic\quic_demux.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_engine.c" />
     <ClCompile Include="..\..\ssl\quic\quic_fc.c" />
     <ClCompile Include="..\..\ssl\quic\quic_fifd.c" />
     <ClCompile Include="..\..\ssl\quic\quic_impl.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_lcidm.c" />
     <ClCompile Include="..\..\ssl\quic\quic_method.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_port.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_rcidm.c" />
     <ClCompile Include="..\..\ssl\quic\quic_reactor.c" />
     <ClCompile Include="..\..\ssl\quic\quic_record_rx.c" />
     <ClCompile Include="..\..\ssl\quic\quic_record_shared.c" />
@@ -146,6 +155,8 @@
     <ClCompile Include="..\..\ssl\quic\quic_rstream.c" />
     <ClCompile Include="..\..\ssl\quic\quic_rx_depack.c" />
     <ClCompile Include="..\..\ssl\quic\quic_sf_list.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_srtm.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_srt_gen.c" />
     <ClCompile Include="..\..\ssl\quic\quic_sstream.c" />
     <ClCompile Include="..\..\ssl\quic\quic_statm.c" />
     <ClCompile Include="..\..\ssl\quic\quic_stream_map.c" />
@@ -155,6 +166,7 @@
     <ClCompile Include="..\..\ssl\quic\quic_tserver.c" />
     <ClCompile Include="..\..\ssl\quic\quic_txp.c" />
     <ClCompile Include="..\..\ssl\quic\quic_txpim.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_types.c" />
     <ClCompile Include="..\..\ssl\quic\quic_wire.c" />
     <ClCompile Include="..\..\ssl\quic\quic_wire_pkt.c" />
     <ClCompile Include="..\..\ssl\quic\uint_set.c" />
@@ -169,6 +181,7 @@
     <ClCompile Include="..\..\ssl\record\methods\tls_pad.c" />
     <ClCompile Include="..\..\ssl\record\rec_layer_d1.c" />
     <ClCompile Include="..\..\ssl\record\rec_layer_s3.c" />
+    <ClCompile Include="..\..\ssl\rio\poll_immediate.c" />
     <ClCompile Include="..\..\ssl\s3_enc.c" />
     <ClCompile Include="..\..\ssl\s3_lib.c" />
     <ClCompile Include="..\..\ssl\s3_msg.c" />
