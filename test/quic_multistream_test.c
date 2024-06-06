@@ -2376,6 +2376,7 @@ static const struct script_op script_10[] = {
 static const struct script_op script_11_child[] = {
     OP_C_ACCEPT_STREAM_WAIT (a)
     OP_C_READ_EXPECT        (a, "foo", 3)
+    OP_SLEEP                (10)
     OP_C_EXPECT_FIN         (a)
 
     OP_END
@@ -5913,7 +5914,7 @@ static ossl_unused int test_dyn_frame_types(int idx)
         }
 
     BIO_snprintf(script_name, sizeof(script_name),
-             "dyn script %d", idx);
+                 "dyn script %d", idx);
 
     return run_script(dyn_frame_types_script, script_name, 0, 0);
 }
@@ -5922,6 +5923,10 @@ OPT_TEST_DECLARE_USAGE("certfile privkeyfile\n")
 
 int setup_tests(void)
 {
+#if defined (_PUT_MODEL_)
+    return TEST_skip("QUIC is not supported by this build");
+#endif
+
     if (!test_skip_common_options()) {
         TEST_error("Error parsing test options\n");
         return 0;
