@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\apps">
+      <UniqueIdentifier>{2f117403-41e1-4613-b6cf-306f81cf8b48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\apps\lib">
+      <UniqueIdentifier>{b0345920-727a-4b2b-960a-1f2d6c8c2ccc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\apps\lib\apps.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\apps_ui.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\app_params.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\app_rand.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\columns.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\fmt.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\names.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\opt.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\s_cb.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\s_socket.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\win32_init.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\app_provider.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\app_x509.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\http_server.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\engine.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\engine_loader.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\tlssrp_depr.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\app_libctx.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\apps_opt_printf.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\apps\lib\log.c">
+      <Filter>Source Files\apps\lib</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

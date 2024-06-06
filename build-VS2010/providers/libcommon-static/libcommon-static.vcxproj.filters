@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\providers">
+      <UniqueIdentifier>{df9ec393-63cc-47b6-9370-be8544145bc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\common">
+      <UniqueIdentifier>{5de58615-8c23-407d-b157-d672b65fb98a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\implementations">
+      <UniqueIdentifier>{a242371a-5941-4785-ab9d-b2181377c434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\implementations\ciphers">
+      <UniqueIdentifier>{aae90898-88c8-48c5-b91f-58a36ec8b5b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\implementations\digests">
+      <UniqueIdentifier>{bcbb813c-0de5-4a46-b73b-d0ec3e7b8894}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ssl">
+      <UniqueIdentifier>{88f1fafb-360d-4ab2-9140-a08c04285809}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ssl\record">
+      <UniqueIdentifier>{4130aac6-a53d-4b6f-81bc-599d9902c5f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\common\der">
+      <UniqueIdentifier>{be1c4d19-5932-4ae7-ac41-4ba9173b7832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ssl\record\methods">
+      <UniqueIdentifier>{a5f1bcf7-110d-4815-92a1-d4bc3ca576d9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\providers\common\provider_err.c">
+      <Filter>Source Files\providers\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\ciphercommon_ccm_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\ciphercommon_ccm.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\ciphercommon_block.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\ciphercommon.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\ciphercommon_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\ciphercommon_gcm_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\ciphercommon_gcm.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\digests\digestcommon.c">
+      <Filter>Source Files\providers\implementations\digests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\provider_ctx.c">
+      <Filter>Source Files\providers\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_digests_gen.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_dsa_gen.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_dsa_key.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_dsa_sig.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_ec_key.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_ec_gen.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_ec_sig.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_ecx_gen.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_ecx_key.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_rsa_gen.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_rsa_key.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_wrap_gen.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ssl\record\methods\tls_pad.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
