@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\util">
+      <UniqueIdentifier>{6c781781-9691-4805-9718-24000c45ba41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers">
+      <UniqueIdentifier>{1e72df64-7be1-4cc9-a373-c02b90e130f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto">
+      <UniqueIdentifier>{a09d3630-9478-42e5-9d6a-e6bac7b490ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\asm">
+      <UniqueIdentifier>{966d6e44-70f7-4f2d-a9db-6657fc6cc2a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\asm\x86">
+      <UniqueIdentifier>{d16c549d-4d21-4cba-94bb-ad9042e1303c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\asm\x64">
+      <UniqueIdentifier>{0be7dce1-b243-44ee-859a-d85e9e65635c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\util\mkdef.pl">
+      <Filter>Source Files\util</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\x86_64cpuid.pl">
+      <Filter>Source Files\asm\x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\x86cpuid.pl">
+      <Filter>Source Files\asm\x86</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\providers\legacyprov.c">
+      <Filter>Source Files\providers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\cpuid.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\ctype.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

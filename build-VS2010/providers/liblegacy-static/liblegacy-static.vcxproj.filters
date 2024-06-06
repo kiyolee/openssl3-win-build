@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\providers">
+      <UniqueIdentifier>{051c85ab-9626-4b94-98bf-9ab8e0b01300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\implementations">
+      <UniqueIdentifier>{d3f2c9d6-6f42-45a0-b0b9-4127d2398dc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\implementations\digests">
+      <UniqueIdentifier>{269ab067-dc72-4003-ae4e-3754fb90b31f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\implementations\ciphers">
+      <UniqueIdentifier>{25f37c82-74b7-48c6-8441-17690ff8e3be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto">
+      <UniqueIdentifier>{94011921-4a30-4f91-b1b1-494bbe29748c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto\des">
+      <UniqueIdentifier>{805ac66d-a014-4c91-81d8-43eb6df0c4b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\asm">
+      <UniqueIdentifier>{c3212d5d-069b-4efc-9d2f-0352d6af6b31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\asm\x86">
+      <UniqueIdentifier>{8b794fff-2637-4bbe-b28b-079604a410bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\asm\x64">
+      <UniqueIdentifier>{8e982896-e7d1-407d-9259-39747aa513fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto\des\x64">
+      <UniqueIdentifier>{372e0bb6-8b1d-4045-a256-7adb88992593}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto\md5">
+      <UniqueIdentifier>{61eb8363-daba-4c2e-ada4-60590ff6809b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\common">
+      <UniqueIdentifier>{683624e9-695d-40f1-9163-a4f27a9c4e67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\implementations\kdfs">
+      <UniqueIdentifier>{6d4e3871-e2d9-4a12-8bbb-b6e96decfbaa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\providers\implementations\digests\ripemd_prov.c">
+      <Filter>Source Files\providers\implementations\digests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\digests\wp_prov.c">
+      <Filter>Source Files\providers\implementations\digests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\digests\md4_prov.c">
+      <Filter>Source Files\providers\implementations\digests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\digests\mdc2_prov.c">
+      <Filter>Source Files\providers\implementations\digests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_blowfish.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_blowfish_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_cast5.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_cast5_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_des.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_des_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_desx.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_desx_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_idea.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_idea_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_rc2.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_rc2_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_rc4.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_rc4_hmac_md5.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_rc4_hmac_md5_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_rc4_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_seed.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_seed_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_common.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\des\des_enc.c">
+      <Filter>Source Files\crypto\des\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\des\fcrypt_b.c">
+      <Filter>Source Files\crypto\des\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\md5\md5_dgst.c">
+      <Filter>Source Files\crypto\md5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\md5\md5_one.c">
+      <Filter>Source Files\crypto\md5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\crypto\md5\md5_sha1.c">
+      <Filter>Source Files\crypto\md5</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\prov_running.c">
+      <Filter>Source Files\providers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\provider_util.c">
+      <Filter>Source Files\providers\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\pbkdf1.c">
+      <Filter>Source Files\providers\implementations\kdfs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\pvkkdf.c">
+      <Filter>Source Files\providers\implementations\kdfs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\..\..\crypto\des\asm\crypt586.pl">
+      <Filter>Source Files\asm\x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\des\asm\des-586.pl">
+      <Filter>Source Files\asm\x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\md5\asm\md5-x86_64.pl">
+      <Filter>Source Files\asm\x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\md5\asm\md5-586.pl">
+      <Filter>Source Files\asm\x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\rc4\asm\rc4-586.pl">
+      <Filter>Source Files\asm\x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\rc4\asm\rc4-md5-x86_64.pl">
+      <Filter>Source Files\asm\x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\..\crypto\rc4\asm\rc4-x86_64.pl">
+      <Filter>Source Files\asm\x64</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
