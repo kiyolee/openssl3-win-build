@@ -172,7 +172,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.2.1",
+    "full_version" => "3.2.2",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -230,10 +230,10 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\x64\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-brotli no-brotli-dynamic no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-shared no-ssl3 no-ssl3-method no-tfo no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic no-zstd no-zstd-dynamic",
-    "patch" => "1",
+    "patch" => "2",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
-    "perl_version" => "5.38.0",
+    "perl_version" => "5.38.2",
     "perlargv" => [
         "--prefix=C:\\Program Files\\OpenSSL-3",
         "--with-zlib-include=..\\zlib",
@@ -283,11 +283,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "30 Jan 2024",
+    "release_date" => "4 Jun 2024",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN64A-masm",
-    "version" => "3.2.1"
+    "version" => "3.2.2"
 );
 our %target = (
     "AR" => "lib",
@@ -394,6 +394,7 @@ our @disablables = (
     "asan",
     "asm",
     "async",
+    "atexit",
     "autoalginit",
     "autoerrinit",
     "autoload-config",
@@ -4067,6 +4068,9 @@ our %unified_info = (
         "doc\\html\\man3\\SSL_set_session.html" => [
             ".\\doc\\man3\\SSL_set_session.pod"
         ],
+        "doc\\html\\man3\\SSL_set_session_secret_cb.html" => [
+            "doc\\man3\\SSL_set_session_secret_cb.pod"
+        ],
         "doc\\html\\man3\\SSL_set_shutdown.html" => [
             ".\\doc\\man3\\SSL_set_shutdown.pod"
         ],
@@ -4567,6 +4571,9 @@ our %unified_info = (
         ],
         "doc\\html\\man7\\OSSL_PROVIDER-null.html" => [
             ".\\doc\\man7\\OSSL_PROVIDER-null.pod"
+        ],
+        "doc\\html\\man7\\OSSL_STORE-winstore.html" => [
+            "doc\\man7\\OSSL_STORE-winstore.pod"
         ],
         "doc\\html\\man7\\RAND.html" => [
             ".\\doc\\man7\\RAND.pod"
@@ -6826,6 +6833,9 @@ our %unified_info = (
         "doc\\man\\man3\\SSL_set_session.3" => [
             ".\\doc\\man3\\SSL_set_session.pod"
         ],
+        "doc\\man\\man3\\SSL_set_session_secret_cb.3" => [
+            "doc\\man3\\SSL_set_session_secret_cb.pod"
+        ],
         "doc\\man\\man3\\SSL_set_shutdown.3" => [
             ".\\doc\\man3\\SSL_set_shutdown.pod"
         ],
@@ -7326,6 +7336,9 @@ our %unified_info = (
         ],
         "doc\\man\\man7\\OSSL_PROVIDER-null.7" => [
             ".\\doc\\man7\\OSSL_PROVIDER-null.pod"
+        ],
+        "doc\\man\\man7\\OSSL_STORE-winstore.7" => [
+            "doc\\man7\\OSSL_STORE-winstore.pod"
         ],
         "doc\\man\\man7\\RAND.7" => [
             ".\\doc\\man7\\RAND.pod"
@@ -8797,8 +8810,8 @@ our %unified_info = (
             "test\\libtestutil.a"
         ],
         "test\\sslapitest" => [
-            "libcrypto",
-            "libssl",
+            "libcrypto.a",
+            "libssl.a",
             "test\\libtestutil.a"
         ],
         "test\\sslbuffertest" => [
@@ -13592,6 +13605,9 @@ our %unified_info = (
         "doc\\html\\man3\\SSL_set_session.html" => [
             ".\\doc\\man3\\SSL_set_session.pod"
         ],
+        "doc\\html\\man3\\SSL_set_session_secret_cb.html" => [
+            "doc\\man3\\SSL_set_session_secret_cb.pod"
+        ],
         "doc\\html\\man3\\SSL_set_shutdown.html" => [
             ".\\doc\\man3\\SSL_set_shutdown.pod"
         ],
@@ -14092,6 +14108,9 @@ our %unified_info = (
         ],
         "doc\\html\\man7\\OSSL_PROVIDER-null.html" => [
             ".\\doc\\man7\\OSSL_PROVIDER-null.pod"
+        ],
+        "doc\\html\\man7\\OSSL_STORE-winstore.html" => [
+            "doc\\man7\\OSSL_STORE-winstore.pod"
         ],
         "doc\\html\\man7\\RAND.html" => [
             ".\\doc\\man7\\RAND.pod"
@@ -16298,6 +16317,9 @@ our %unified_info = (
         "doc\\man\\man3\\SSL_set_session.3" => [
             ".\\doc\\man3\\SSL_set_session.pod"
         ],
+        "doc\\man\\man3\\SSL_set_session_secret_cb.3" => [
+            "doc\\man3\\SSL_set_session_secret_cb.pod"
+        ],
         "doc\\man\\man3\\SSL_set_shutdown.3" => [
             ".\\doc\\man3\\SSL_set_shutdown.pod"
         ],
@@ -16798,6 +16820,9 @@ our %unified_info = (
         ],
         "doc\\man\\man7\\OSSL_PROVIDER-null.7" => [
             ".\\doc\\man7\\OSSL_PROVIDER-null.pod"
+        ],
+        "doc\\man\\man7\\OSSL_STORE-winstore.7" => [
+            "doc\\man7\\OSSL_STORE-winstore.pod"
         ],
         "doc\\man\\man7\\RAND.7" => [
             ".\\doc\\man7\\RAND.pod"
@@ -18048,6 +18073,7 @@ our %unified_info = (
             "doc\\html\\man3\\SSL_set_incoming_stream_policy.html",
             "doc\\html\\man3\\SSL_set_retry_verify.html",
             "doc\\html\\man3\\SSL_set_session.html",
+            "doc\\html\\man3\\SSL_set_session_secret_cb.html",
             "doc\\html\\man3\\SSL_set_shutdown.html",
             "doc\\html\\man3\\SSL_set_verify_result.html",
             "doc\\html\\man3\\SSL_shutdown.html",
@@ -18219,6 +18245,7 @@ our %unified_info = (
             "doc\\html\\man7\\OSSL_PROVIDER-default.html",
             "doc\\html\\man7\\OSSL_PROVIDER-legacy.html",
             "doc\\html\\man7\\OSSL_PROVIDER-null.html",
+            "doc\\html\\man7\\OSSL_STORE-winstore.html",
             "doc\\html\\man7\\RAND.html",
             "doc\\html\\man7\\RSA-PSS.html",
             "doc\\html\\man7\\X25519.html",
@@ -22170,6 +22197,7 @@ our %unified_info = (
             "doc\\man\\man3\\SSL_set_incoming_stream_policy.3",
             "doc\\man\\man3\\SSL_set_retry_verify.3",
             "doc\\man\\man3\\SSL_set_session.3",
+            "doc\\man\\man3\\SSL_set_session_secret_cb.3",
             "doc\\man\\man3\\SSL_set_shutdown.3",
             "doc\\man\\man3\\SSL_set_verify_result.3",
             "doc\\man\\man3\\SSL_shutdown.3",
@@ -22341,6 +22369,7 @@ our %unified_info = (
             "doc\\man\\man7\\OSSL_PROVIDER-default.7",
             "doc\\man\\man7\\OSSL_PROVIDER-legacy.7",
             "doc\\man\\man7\\OSSL_PROVIDER-null.7",
+            "doc\\man\\man7\\OSSL_STORE-winstore.7",
             "doc\\man\\man7\\RAND.7",
             "doc\\man\\man7\\RSA-PSS.7",
             "doc\\man\\man7\\X25519.7",
