@@ -163,7 +163,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.13",
+    "full_version" => "3.0.14",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -215,10 +215,10 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files (x86)\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-shared no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "13",
+    "patch" => "14",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
-    "perl_version" => "5.38.0",
+    "perl_version" => "5.38.2",
     "perlargv" => [
         "--prefix=C:\\Program Files (x86)\\OpenSSL-3",
         "--with-zlib-include=..\\zlib",
@@ -268,11 +268,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "30 Jan 2024",
+    "release_date" => "4 Jun 2024",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN32",
-    "version" => "3.0.13"
+    "version" => "3.0.14"
 );
 our %target = (
     "AR" => "lib",
@@ -377,6 +377,7 @@ our @disablables = (
     "asan",
     "asm",
     "async",
+    "atexit",
     "autoalginit",
     "autoerrinit",
     "autoload-config",
