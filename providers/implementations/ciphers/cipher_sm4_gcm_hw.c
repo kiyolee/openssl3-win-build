@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2022 The OpenSSL Project Authors. All Rights Reserved.
+ * Copyright 2021-2024 The OpenSSL Project Authors. All Rights Reserved.
  *
  * Licensed under the Apache License 2.0 (the "License").  You may not use
  * this file except in compliance with the License.  You can obtain a copy
@@ -20,7 +20,6 @@ static int sm4_gcm_initkey(PROV_GCM_CTX *ctx, const unsigned char *key,
     PROV_SM4_GCM_CTX *actx = (PROV_SM4_GCM_CTX *)ctx;
     SM4_KEY *ks = &actx->ks.ks;
 
-    ctx->ks = ks;
 # ifdef HWSM4_CAPABLE
     if (HWSM4_CAPABLE) {
         HWSM4_set_encrypt_key(key, ks);
