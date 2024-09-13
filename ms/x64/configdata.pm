@@ -172,7 +172,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.2.2",
+    "full_version" => "3.2.3",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -229,10 +229,10 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\x64\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-brotli no-brotli-dynamic no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-tfo no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib-dynamic no-zstd no-zstd-dynamic",
-    "patch" => "2",
+    "patch" => "3",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
-    "perl_version" => "5.38.2",
+    "perl_version" => "5.40.0",
     "perlargv" => [
         "--prefix=C:\\Program Files\\OpenSSL-3",
         "--with-zlib-include=..\\zlib",
@@ -281,11 +281,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "4 Jun 2024",
+    "release_date" => "3 Sep 2024",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN64A-masm",
-    "version" => "3.2.2"
+    "version" => "3.2.3"
 );
 our %target = (
     "AR" => "lib",
@@ -1371,6 +1371,9 @@ our %unified_info = (
                 "noinst" => "1"
             },
             "test\\event_queue_test" => {
+                "noinst" => "1"
+            },
+            "test\\evp_byname_test" => {
                 "noinst" => "1"
             },
             "test\\evp_extra_test" => {
@@ -4099,7 +4102,7 @@ our %unified_info = (
             ".\\doc\\man3\\SSL_set_session.pod"
         ],
         "doc\\html\\man3\\SSL_set_session_secret_cb.html" => [
-            "doc\\man3\\SSL_set_session_secret_cb.pod"
+            ".\\doc\\man3\\SSL_set_session_secret_cb.pod"
         ],
         "doc\\html\\man3\\SSL_set_shutdown.html" => [
             ".\\doc\\man3\\SSL_set_shutdown.pod"
@@ -4603,7 +4606,7 @@ our %unified_info = (
             ".\\doc\\man7\\OSSL_PROVIDER-null.pod"
         ],
         "doc\\html\\man7\\OSSL_STORE-winstore.html" => [
-            "doc\\man7\\OSSL_STORE-winstore.pod"
+            ".\\doc\\man7\\OSSL_STORE-winstore.pod"
         ],
         "doc\\html\\man7\\RAND.html" => [
             ".\\doc\\man7\\RAND.pod"
@@ -6864,7 +6867,7 @@ our %unified_info = (
             ".\\doc\\man3\\SSL_set_session.pod"
         ],
         "doc\\man\\man3\\SSL_set_session_secret_cb.3" => [
-            "doc\\man3\\SSL_set_session_secret_cb.pod"
+            ".\\doc\\man3\\SSL_set_session_secret_cb.pod"
         ],
         "doc\\man\\man3\\SSL_set_shutdown.3" => [
             ".\\doc\\man3\\SSL_set_shutdown.pod"
@@ -7368,7 +7371,7 @@ our %unified_info = (
             ".\\doc\\man7\\OSSL_PROVIDER-null.pod"
         ],
         "doc\\man\\man7\\OSSL_STORE-winstore.7" => [
-            "doc\\man7\\OSSL_STORE-winstore.pod"
+            ".\\doc\\man7\\OSSL_STORE-winstore.pod"
         ],
         "doc\\man\\man7\\RAND.7" => [
             ".\\doc\\man7\\RAND.pod"
@@ -8375,6 +8378,10 @@ our %unified_info = (
         "test\\event_queue_test" => [
             "libcrypto",
             "libssl.a",
+            "test\\libtestutil.a"
+        ],
+        "test\\evp_byname_test" => [
+            "libcrypto",
             "test\\libtestutil.a"
         ],
         "test\\evp_extra_test" => [
@@ -14579,7 +14586,7 @@ our %unified_info = (
             ".\\doc\\man3\\SSL_set_session.pod"
         ],
         "doc\\html\\man3\\SSL_set_session_secret_cb.html" => [
-            "doc\\man3\\SSL_set_session_secret_cb.pod"
+            ".\\doc\\man3\\SSL_set_session_secret_cb.pod"
         ],
         "doc\\html\\man3\\SSL_set_shutdown.html" => [
             ".\\doc\\man3\\SSL_set_shutdown.pod"
@@ -15083,7 +15090,7 @@ our %unified_info = (
             ".\\doc\\man7\\OSSL_PROVIDER-null.pod"
         ],
         "doc\\html\\man7\\OSSL_STORE-winstore.html" => [
-            "doc\\man7\\OSSL_STORE-winstore.pod"
+            ".\\doc\\man7\\OSSL_STORE-winstore.pod"
         ],
         "doc\\html\\man7\\RAND.html" => [
             ".\\doc\\man7\\RAND.pod"
@@ -17291,7 +17298,7 @@ our %unified_info = (
             ".\\doc\\man3\\SSL_set_session.pod"
         ],
         "doc\\man\\man3\\SSL_set_session_secret_cb.3" => [
-            "doc\\man3\\SSL_set_session_secret_cb.pod"
+            ".\\doc\\man3\\SSL_set_session_secret_cb.pod"
         ],
         "doc\\man\\man3\\SSL_set_shutdown.3" => [
             ".\\doc\\man3\\SSL_set_shutdown.pod"
@@ -17795,7 +17802,7 @@ our %unified_info = (
             ".\\doc\\man7\\OSSL_PROVIDER-null.pod"
         ],
         "doc\\man\\man7\\OSSL_STORE-winstore.7" => [
-            "doc\\man7\\OSSL_STORE-winstore.pod"
+            ".\\doc\\man7\\OSSL_STORE-winstore.pod"
         ],
         "doc\\man\\man7\\RAND.7" => [
             ".\\doc\\man7\\RAND.pod"
@@ -21445,6 +21452,12 @@ our %unified_info = (
             ".\\include",
             ".\\apps\\include"
         ],
+        "test\\evp_byname_test" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
+        ],
         "test\\evp_extra_test" => [
             "include",
             "apps\\include",
@@ -23669,6 +23682,7 @@ our %unified_info = (
         "test\\enginetest",
         "test\\errtest",
         "test\\event_queue_test",
+        "test\\evp_byname_test",
         "test\\evp_extra_test",
         "test\\evp_extra_test2",
         "test\\evp_fetch_prov_test",
@@ -33235,6 +33249,12 @@ our %unified_info = (
         ],
         "test\\event_queue_test-bin-event_queue_test.o" => [
             ".\\test\\event_queue_test.c"
+        ],
+        "test\\evp_byname_test" => [
+            "test\\evp_byname_test-bin-evp_byname_test.o"
+        ],
+        "test\\evp_byname_test-bin-evp_byname_test.o" => [
+            ".\\test\\evp_byname_test.c"
         ],
         "test\\evp_extra_test" => [
             "providers\\evp_extra_test-bin-legacyprov.o",
