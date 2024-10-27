@@ -216,7 +216,6 @@
     <ClCompile Include="..\..\..\providers\implementations\macs\kmac_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\macs\poly1305_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\macs\siphash_prov.c" />
-    <ClCompile Include="..\..\..\providers\implementations\rands\crngt.c" />
     <ClCompile Include="..\..\..\providers\implementations\rands\drbg.c" />
     <ClCompile Include="..\..\..\providers\implementations\rands\drbg_ctr.c" />
     <ClCompile Include="..\..\..\providers\implementations\rands\drbg_hash.c" />
@@ -226,6 +225,7 @@
     <ClCompile Include="..\..\..\providers\implementations\rands\seeding\rand_unix.c" />
     <ClCompile Include="..\..\..\providers\implementations\rands\seeding\rand_win.c" />
     <ClCompile Include="..\..\..\providers\implementations\rands\seed_src.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\seed_src_jitter.c" />
     <ClCompile Include="..\..\..\providers\implementations\rands\test_rng.c" />
     <ClCompile Include="..\..\..\providers\implementations\signature\dsa_sig.c" />
     <ClCompile Include="..\..\..\providers\implementations\signature\ecdsa_sig.c" />

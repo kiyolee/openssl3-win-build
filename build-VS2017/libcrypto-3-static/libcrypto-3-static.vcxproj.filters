@@ -262,6 +262,9 @@
     <Filter Include="Source Files\crypto\thread\arch">
       <UniqueIdentifier>{5d1e40fa-e8cd-4ea2-b81f-7fcc8174119c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\crypto\hashtable">
+      <UniqueIdentifier>{e0d5d026-771b-47aa-8d26-af5053edcb2d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\crypto\aes\aes_cfb.c">
@@ -2549,6 +2552,48 @@
     </ClCompile>
     <ClCompile Include="..\..\crypto\rand\rand_uniform.c">
       <Filter>Source Files\crypto\rand</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\hashtable\hashtable.c">
+      <Filter>Source Files\crypto\hashtable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\t_acert.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\x509aset.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\x509_acert.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\x_ietfatt.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\comp_methods.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_ac_tgt.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_sda.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_usernotice.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\defaults.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\indicator_core.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_battcons.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_iobo.c">
+      <Filter>Source Files\crypto\x509</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\x509\v3_audit_id.c">
+      <Filter>Source Files\crypto\x509</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

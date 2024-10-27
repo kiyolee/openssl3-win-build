@@ -441,6 +441,12 @@
     <CopyFileToFolders Include="..\..\include\openssl\thread.h">
       <Filter>Header Files\include\openssl</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\include\openssl\indicator.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\include\openssl\x509_acert.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CopyFileToFolders>
     <CopyFileToFolders Include="..\..\ms\applink.c">
       <Filter>Source Files\ms</Filter>
     </CopyFileToFolders>

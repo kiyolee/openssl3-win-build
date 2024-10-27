@@ -1,7 +1,7 @@
 setlocal
 
-set OPENSSL_VER=3.3.2
-set OPENSSL_VER_SED=3\.3\.2
+set OPENSSL_VER=3.4.0
+set OPENSSL_VER_SED=3\.4\.0
 set OPENSSL_BASE=openssl-%OPENSSL_VER%
 set OPENSSL_BASE_SED=openssl-%OPENSSL_VER_SED%
 set OPENSSL_DIR=..\%OPENSSL_BASE%
@@ -18,6 +18,7 @@ set _GEN_LIST_INCL=^
   include\openssl\bio.h ^
   include\openssl\cmp.h ^
   include\openssl\cms.h ^
+  include\openssl\comp.h ^
   include\openssl\conf.h ^
   include\openssl\configuration.h ^
   include\openssl\core_names.h ^
@@ -37,6 +38,7 @@ set _GEN_LIST_INCL=^
   include\openssl\ssl.h ^
   include\openssl\ui.h ^
   include\openssl\x509.h ^
+  include\openssl\x509_acert.h ^
   include\openssl\x509_vfy.h ^
   include\openssl\x509v3.h
 

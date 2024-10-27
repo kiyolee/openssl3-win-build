@@ -99,9 +99,6 @@
     <ClCompile Include="..\..\..\providers\implementations\rands\test_rng.c">
       <Filter>Source Files\providers\implementations\rands</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\providers\implementations\rands\crngt.c">
-      <Filter>Source Files\providers\implementations\rands</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\providers\implementations\rands\drbg.c">
       <Filter>Source Files\providers\implementations\rands</Filter>
     </ClCompile>
@@ -494,6 +491,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\providers\implementations\kdfs\argon2.c">
       <Filter>Source Files\providers\implementations\kdfs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\rands\seed_src_jitter.c">
+      <Filter>Source Files\providers\implementations\rands</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

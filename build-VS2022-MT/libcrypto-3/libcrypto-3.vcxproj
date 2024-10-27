@@ -324,6 +324,7 @@
     <ClCompile Include="..\..\crypto\comp\c_brotli.c" />
     <ClCompile Include="..\..\crypto\comp\c_zlib.c" />
     <ClCompile Include="..\..\crypto\comp\c_zstd.c" />
+    <ClCompile Include="..\..\crypto\comp_methods.c" />
     <ClCompile Include="..\..\crypto\conf\conf_api.c" />
     <ClCompile Include="..\..\crypto\conf\conf_def.c" />
     <ClCompile Include="..\..\crypto\conf\conf_err.c" />
@@ -355,6 +356,7 @@
     <ClCompile Include="..\..\crypto\ct\ct_vfy.c" />
     <ClCompile Include="..\..\crypto\ct\ct_x509v3.c" />
     <ClCompile Include="..\..\crypto\cversion.c" />
+    <ClCompile Include="..\..\crypto\defaults.c" />
     <ClCompile Include="..\..\crypto\der_writer.c" />
     <ClCompile Include="..\..\crypto\des\cbc_cksm.c" />
     <ClCompile Include="..\..\crypto\des\cbc_enc.c" />
@@ -581,6 +583,7 @@
     <ClCompile Include="..\..\crypto\ffc\ffc_params_generate.c" />
     <ClCompile Include="..\..\crypto\ffc\ffc_params_validate.c" />
     <ClCompile Include="..\..\crypto\getenv.c" />
+    <ClCompile Include="..\..\crypto\hashtable\hashtable.c" />
     <ClCompile Include="..\..\crypto\hmac\hmac.c" />
     <ClCompile Include="..\..\crypto\hpke\hpke.c" />
     <ClCompile Include="..\..\crypto\hpke\hpke_util.c" />
@@ -592,6 +595,7 @@
     <ClCompile Include="..\..\crypto\idea\i_ecb.c" />
     <ClCompile Include="..\..\crypto\idea\i_ofb64.c" />
     <ClCompile Include="..\..\crypto\idea\i_skey.c" />
+    <ClCompile Include="..\..\crypto\indicator_core.c" />
     <ClCompile Include="..\..\crypto\info.c" />
     <ClCompile Include="..\..\crypto\init.c" />
     <ClCompile Include="..\..\crypto\initthread.c" />
@@ -822,12 +826,16 @@
     <ClCompile Include="..\..\crypto\x509\pcy_map.c" />
     <ClCompile Include="..\..\crypto\x509\pcy_node.c" />
     <ClCompile Include="..\..\crypto\x509\pcy_tree.c" />
+    <ClCompile Include="..\..\crypto\x509\t_acert.c" />
     <ClCompile Include="..\..\crypto\x509\v3err.c" />
+    <ClCompile Include="..\..\crypto\x509\v3_ac_tgt.c" />
     <ClCompile Include="..\..\crypto\x509\v3_addr.c" />
     <ClCompile Include="..\..\crypto\x509\v3_admis.c" />
     <ClCompile Include="..\..\crypto\x509\v3_akeya.c" />
     <ClCompile Include="..\..\crypto\x509\v3_akid.c" />
     <ClCompile Include="..\..\crypto\x509\v3_asid.c" />
+    <ClCompile Include="..\..\crypto\x509\v3_audit_id.c" />
+    <ClCompile Include="..\..\crypto\x509\v3_battcons.c" />
     <ClCompile Include="..\..\crypto\x509\v3_bcons.c" />
     <ClCompile Include="..\..\crypto\x509\v3_bitst.c" />
     <ClCompile Include="..\..\crypto\x509\v3_conf.c" />
@@ -841,6 +849,7 @@
     <ClCompile Include="..\..\crypto\x509\v3_ind_iss.c" />
     <ClCompile Include="..\..\crypto\x509\v3_info.c" />
     <ClCompile Include="..\..\crypto\x509\v3_int.c" />
+    <ClCompile Include="..\..\crypto\x509\v3_iobo.c" />
     <ClCompile Include="..\..\crypto\x509\v3_ist.c" />
     <ClCompile Include="..\..\crypto\x509\v3_lib.c" />
     <ClCompile Include="..\..\crypto\x509\v3_ncons.c" />
@@ -854,11 +863,13 @@
     <ClCompile Include="..\..\crypto\x509\v3_prn.c" />
     <ClCompile Include="..\..\crypto\x509\v3_purp.c" />
     <ClCompile Include="..\..\crypto\x509\v3_san.c" />
+    <ClCompile Include="..\..\crypto\x509\v3_sda.c" />
     <ClCompile Include="..\..\crypto\x509\v3_single_use.c" />
     <ClCompile Include="..\..\crypto\x509\v3_skid.c" />
     <ClCompile Include="..\..\crypto\x509\v3_soa_id.c" />
     <ClCompile Include="..\..\crypto\x509\v3_sxnet.c" />
     <ClCompile Include="..\..\crypto\x509\v3_tlsf.c" />
+    <ClCompile Include="..\..\crypto\x509\v3_usernotice.c" />
     <ClCompile Include="..\..\crypto\x509\v3_utf8.c" />
     <ClCompile Include="..\..\crypto\x509\v3_utl.c" />
     <ClCompile Include="..\..\crypto\x509\by_dir.c" />
@@ -866,11 +877,13 @@
     <ClCompile Include="..\..\crypto\x509\t_crl.c" />
     <ClCompile Include="..\..\crypto\x509\t_req.c" />
     <ClCompile Include="..\..\crypto\x509\t_x509.c" />
+    <ClCompile Include="..\..\crypto\x509\x509aset.c" />
     <ClCompile Include="..\..\crypto\x509\x509cset.c" />
     <ClCompile Include="..\..\crypto\x509\x509name.c" />
     <ClCompile Include="..\..\crypto\x509\x509rset.c" />
     <ClCompile Include="..\..\crypto\x509\x509spki.c" />
     <ClCompile Include="..\..\crypto\x509\x509type.c" />
+    <ClCompile Include="..\..\crypto\x509\x509_acert.c" />
     <ClCompile Include="..\..\crypto\x509\x509_att.c" />
     <ClCompile Include="..\..\crypto\x509\x509_cmp.c" />
     <ClCompile Include="..\..\crypto\x509\x509_d2.c" />
@@ -892,6 +905,7 @@
     <ClCompile Include="..\..\crypto\x509\x_attrib.c" />
     <ClCompile Include="..\..\crypto\x509\x_crl.c" />
     <ClCompile Include="..\..\crypto\x509\x_exten.c" />
+    <ClCompile Include="..\..\crypto\x509\x_ietfatt.c" />
     <ClCompile Include="..\..\crypto\x509\x_name.c" />
     <ClCompile Include="..\..\crypto\x509\x_pubkey.c" />
     <ClCompile Include="..\..\crypto\x509\x_req.c" />

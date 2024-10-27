@@ -222,9 +222,6 @@
     <ClCompile Include="..\..\ssl\priority_queue.c">
       <Filter>Source Files\ssl</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\ssl\event_queue.c">
-      <Filter>Source Files\ssl</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\ssl\quic\quic_rx_depack.c">
       <Filter>Source Files\ssl\quic</Filter>
     </ClCompile>

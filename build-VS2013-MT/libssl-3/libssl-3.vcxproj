@@ -127,7 +127,6 @@
     <ClCompile Include="..\..\ssl\d1_lib.c" />
     <ClCompile Include="..\..\ssl\d1_msg.c" />
     <ClCompile Include="..\..\ssl\d1_srtp.c" />
-    <ClCompile Include="..\..\ssl\event_queue.c" />
     <ClCompile Include="..\..\ssl\methods.c" />
     <ClCompile Include="..\..\ssl\pqueue.c" />
     <ClCompile Include="..\..\ssl\priority_queue.c" />

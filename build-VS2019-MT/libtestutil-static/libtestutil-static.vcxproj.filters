@@ -84,5 +84,8 @@
     <ClCompile Include="..\..\test\testutil\fake_random.c">
       <Filter>Source Files\test\testutil</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\test\testutil\helper.c">
+      <Filter>Source Files\test\testutil</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -102,6 +102,7 @@
     <ClCompile Include="..\..\test\testutil\driver.c" />
     <ClCompile Include="..\..\test\testutil\fake_random.c" />
     <ClCompile Include="..\..\test\testutil\format_output.c" />
+    <ClCompile Include="..\..\test\testutil\helper.c" />
     <ClCompile Include="..\..\test\testutil\load.c" />
     <ClCompile Include="..\..\test\testutil\provider.c" />
     <ClCompile Include="..\..\test\testutil\testutil_init.c" />

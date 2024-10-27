@@ -441,6 +441,12 @@
     <CustomBuild Include="..\..\include\openssl\thread.h">
       <Filter>Header Files\include\openssl</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\..\include\openssl\indicator.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\include\openssl\x509_acert.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CustomBuild>
     <CustomBuild Include="..\..\ms\applink.c">
       <Filter>Source Files\ms</Filter>
     </CustomBuild>
