@@ -167,7 +167,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.0.15",
+    "full_version" => "3.0.16",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -218,7 +218,7 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\x64\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-ktls no-loadereng no-md2 no-msan no-rc5 no-sctp no-ssl3 no-ssl3-method no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib-dynamic",
-    "patch" => "15",
+    "patch" => "16",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
     "perl_version" => "5.40.0",
@@ -270,11 +270,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "3 Sep 2024",
+    "release_date" => "11 Feb 2025",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN64A-masm",
-    "version" => "3.0.15"
+    "version" => "3.0.16"
 );
 our %target = (
     "AR" => "lib",
@@ -935,6 +935,9 @@ our %unified_info = (
                 "noinst" => "1"
             },
             "test\\bio_prefix_text" => {
+                "noinst" => "1"
+            },
+            "test\\bio_pw_callback_test" => {
                 "noinst" => "1"
             },
             "test\\bio_readbuffer_test" => {
@@ -7306,6 +7309,10 @@ our %unified_info = (
             "test\\libtestutil.a"
         ],
         "test\\bio_prefix_text" => [
+            "libcrypto",
+            "test\\libtestutil.a"
+        ],
+        "test\\bio_pw_callback_test" => [
             "libcrypto",
             "test\\libtestutil.a"
         ],
@@ -19180,6 +19187,12 @@ our %unified_info = (
             ".\\include",
             ".\\apps\\include"
         ],
+        "test\\bio_pw_callback_test" => [
+            "include",
+            "apps\\include",
+            ".\\include",
+            ".\\apps\\include"
+        ],
         "test\\bio_readbuffer_test" => [
             "include",
             "apps\\include",
@@ -21564,6 +21577,7 @@ our %unified_info = (
         "test\\bio_enc_test",
         "test\\bio_memleak_test",
         "test\\bio_prefix_text",
+        "test\\bio_pw_callback_test",
         "test\\bio_readbuffer_test",
         "test\\bioprinttest",
         "test\\bn_internal_test",
@@ -29677,6 +29691,12 @@ our %unified_info = (
         "test\\bio_prefix_text-bin-bio_prefix_text.o" => [
             ".\\test\\bio_prefix_text.c"
         ],
+        "test\\bio_pw_callback_test" => [
+            "test\\bio_pw_callback_test-bin-bio_pw_callback_test.o"
+        ],
+        "test\\bio_pw_callback_test-bin-bio_pw_callback_test.o" => [
+            ".\\test\\bio_pw_callback_test.c"
+        ],
         "test\\bio_readbuffer_test" => [
             "test\\bio_readbuffer_test-bin-bio_readbuffer_test.o"
         ],
@@ -31482,7 +31502,7 @@ _____
                        # defined in one template stick around for the
                        # next, making them combinable
                        PACKAGE => 'OpenSSL::safe')
-            or die $Text::Template::ERROR;
+            or die $OpenSSL::Template::ERROR;
         close BUILDFILE;
         rename("$buildfile.new", $buildfile)
             or die "Trying to rename $buildfile.new to $buildfile: $!";
@@ -31504,7 +31524,7 @@ _____
                        # defined in one template stick around for the
                        # next, making them combinable
                        PACKAGE => 'OpenSSL::safe')
-            or die $Text::Template::ERROR;
+            or die $OpenSSL::Template::ERROR;
         close CONFIGURATION_H;
 
         # When using stat() on Windows, we can get it to perform better by
