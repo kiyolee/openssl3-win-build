@@ -158,7 +158,7 @@ _____
                        # defined in one template stick around for the
                        # next, making them combinable
                        PACKAGE => 'OpenSSL::safe')
-            or die $Text::Template::ERROR;
+            or die $OpenSSL::Template::ERROR;
         close BUILDFILE;
         rename("$buildfile.new", $buildfile)
             or die "Trying to rename $buildfile.new to $buildfile: $!";
@@ -180,7 +180,7 @@ _____
                        # defined in one template stick around for the
                        # next, making them combinable
                        PACKAGE => 'OpenSSL::safe')
-            or die $Text::Template::ERROR;
+            or die $OpenSSL::Template::ERROR;
         close CONFIGURATION_H;
 
         # When using stat() on Windows, we can get it to perform better by
