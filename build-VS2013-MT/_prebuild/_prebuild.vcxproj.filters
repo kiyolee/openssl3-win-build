@@ -168,9 +168,6 @@
     <CustomBuild Include="..\..\include\openssl\asn1.h">
       <Filter>Header Files\include\openssl</Filter>
     </CustomBuild>
-    <CustomBuild Include="..\..\include\openssl\asn1_mac.h">
-      <Filter>Header Files\include\openssl</Filter>
-    </CustomBuild>
     <CustomBuild Include="..\..\include\openssl\asn1err.h">
       <Filter>Header Files\include\openssl</Filter>
     </CustomBuild>
@@ -445,6 +442,12 @@
       <Filter>Header Files\include\openssl</Filter>
     </CustomBuild>
     <CustomBuild Include="..\..\include\openssl\x509_acert.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\include\openssl\byteorder.h">
+      <Filter>Header Files\include\openssl</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\..\include\openssl\ml_kem.h">
       <Filter>Header Files\include\openssl</Filter>
     </CustomBuild>
     <CustomBuild Include="..\..\ms\applink.c">

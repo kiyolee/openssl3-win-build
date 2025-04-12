@@ -96,6 +96,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\ms\applink.c" />
     <ClCompile Include="..\..\..\test\evp_extra_test2.c" />
+    <ClCompile Include="..\..\..\test\tls-provider.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

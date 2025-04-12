@@ -111,5 +111,17 @@
     <ClCompile Include="..\..\..\ssl\record\methods\tls_pad.c">
       <Filter>Source Files\ssl\record\methods</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_slh_dsa_gen.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_ml_dsa_gen.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_slh_dsa_key.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_ml_dsa_key.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

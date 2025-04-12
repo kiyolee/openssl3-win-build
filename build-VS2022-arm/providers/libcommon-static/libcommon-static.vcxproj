@@ -106,8 +106,12 @@
     <ClCompile Include="..\..\..\providers\common\der\der_ec_gen.c" />
     <ClCompile Include="..\..\..\providers\common\der\der_ec_key.c" />
     <ClCompile Include="..\..\..\providers\common\der\der_ec_sig.c" />
+    <ClCompile Include="..\..\..\providers\common\der\der_ml_dsa_gen.c" />
+    <ClCompile Include="..\..\..\providers\common\der\der_ml_dsa_key.c" />
     <ClCompile Include="..\..\..\providers\common\der\der_rsa_gen.c" />
     <ClCompile Include="..\..\..\providers\common\der\der_rsa_key.c" />
+    <ClCompile Include="..\..\..\providers\common\der\der_slh_dsa_gen.c" />
+    <ClCompile Include="..\..\..\providers\common\der\der_slh_dsa_key.c" />
     <ClCompile Include="..\..\..\providers\common\der\der_wrap_gen.c" />
     <ClCompile Include="..\..\..\providers\common\provider_ctx.c" />
     <ClCompile Include="..\..\..\providers\common\provider_err.c" />

@@ -43,12 +43,6 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(OutDir)include\openssl</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(OutDir)include\openssl</DestinationFolders>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="..\..\include\openssl\asn1_mac.h">
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(OutDir)include\openssl</DestinationFolders>
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(OutDir)include\openssl</DestinationFolders>
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(OutDir)include\openssl</DestinationFolders>
-      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(OutDir)include\openssl</DestinationFolders>
-    </CopyFileToFolders>
     <CopyFileToFolders Include="..\..\include\openssl\async.h">
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(OutDir)include\openssl</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(OutDir)include\openssl</DestinationFolders>
@@ -860,6 +854,18 @@
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(OutDir)include\openssl</DestinationFolders>
     </CopyFileToFolders>
     <CopyFileToFolders Include="..\..\include\openssl\x509_acert.h">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(OutDir)include\openssl</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(OutDir)include\openssl</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(OutDir)include\openssl</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(OutDir)include\openssl</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\include\openssl\byteorder.h">
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(OutDir)include\openssl</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(OutDir)include\openssl</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(OutDir)include\openssl</DestinationFolders>
+      <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">$(OutDir)include\openssl</DestinationFolders>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="..\..\include\openssl\ml_kem.h">
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">$(OutDir)include\openssl</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">$(OutDir)include\openssl</DestinationFolders>
       <DestinationFolders Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">$(OutDir)include\openssl</DestinationFolders>

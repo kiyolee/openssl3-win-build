@@ -36,9 +36,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\ssl\ssl_err.c">
-      <Filter>Source Files\ssl</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\ssl\ssl_lib.c">
       <Filter>Source Files\ssl</Filter>
     </ClCompile>
@@ -267,6 +264,9 @@
     <ClCompile Include="..\..\ssl\quic\quic_tls.c">
       <Filter>Source Files\ssl\quic</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_tls_api.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\ssl\quic\quic_thread_assist.c">
       <Filter>Source Files\ssl\quic</Filter>
     </ClCompile>
@@ -305,6 +305,18 @@
     </ClCompile>
     <ClCompile Include="..\..\ssl\quic\qlog.c">
       <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_obj.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_reactor_wait_ctx.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\rio\rio_notifier.c">
+      <Filter>Source Files\ssl\rio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\rio\poll_builder.c">
+      <Filter>Source Files\ssl\rio</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

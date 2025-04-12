@@ -149,6 +149,7 @@
     <ClCompile Include="..\..\apps\rsa.c" />
     <ClCompile Include="..\..\apps\rsautl.c" />
     <ClCompile Include="..\..\apps\sess_id.c" />
+    <ClCompile Include="..\..\apps\skeyutl.c" />
     <ClCompile Include="..\..\apps\smime.c" />
     <ClCompile Include="..\..\apps\speed.c" />
     <ClCompile Include="..\..\apps\spkac.c" />

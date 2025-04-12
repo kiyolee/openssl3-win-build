@@ -89,6 +89,7 @@ FUNCTION functions[] = {
     {FT_general, "s_time", s_time_main, s_time_options, NULL, NULL},
 #endif
     {FT_general, "sess_id", sess_id_main, sess_id_options, NULL, NULL},
+    {FT_general, "skeyutl", skeyutl_main, skeyutl_options, NULL, NULL},
     {FT_general, "smime", smime_main, smime_options, NULL, NULL},
     {FT_general, "speed", speed_main, speed_options, NULL, NULL},
     {FT_general, "spkac", spkac_main, spkac_options, NULL, NULL},

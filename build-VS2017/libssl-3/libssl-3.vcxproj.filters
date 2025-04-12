@@ -43,11 +43,14 @@
     <Filter Include="Source Files\ssl\rio">
       <UniqueIdentifier>{20010bcf-7168-4e51-ba73-81293249b877}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\crypto\hashtable">
+      <UniqueIdentifier>{cc1338e9-7ade-4643-82b4-908ba0736c6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto\siphash">
+      <UniqueIdentifier>{62a6170e-931f-4fca-8ec2-00cca84366a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\ssl\ssl_err.c">
-      <Filter>Source Files\ssl</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\ssl\ssl_lib.c">
       <Filter>Source Files\ssl</Filter>
     </ClCompile>
@@ -291,6 +294,9 @@
     <ClCompile Include="..\..\ssl\quic\quic_tls.c">
       <Filter>Source Files\ssl\quic</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_tls_api.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\crypto\thread\arch.c">
       <Filter>Source Files\crypto\thread</Filter>
     </ClCompile>
@@ -347,6 +353,24 @@
     </ClCompile>
     <ClCompile Include="..\..\ssl\quic\qlog.c">
       <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\hashtable\hashfunc.c">
+      <Filter>Source Files\crypto\hashtable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\siphash\siphash.c">
+      <Filter>Source Files\crypto\siphash</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_obj.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_reactor_wait_ctx.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\rio\rio_notifier.c">
+      <Filter>Source Files\ssl\rio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\rio\poll_builder.c">
+      <Filter>Source Files\ssl\rio</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

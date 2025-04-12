@@ -116,8 +116,10 @@
   <ItemGroup>
     <ClCompile Include="..\..\crypto\ctype.c" />
     <ClCompile Include="..\..\crypto\getenv.c" />
+    <ClCompile Include="..\..\crypto\hashtable\hashfunc.c" />
     <ClCompile Include="..\..\crypto\packet.c" />
     <ClCompile Include="..\..\crypto\quic_vlint.c" />
+    <ClCompile Include="..\..\crypto\siphash\siphash.c" />
     <ClCompile Include="..\..\crypto\thread\arch.c" />
     <ClCompile Include="..\..\crypto\thread\arch\thread_none.c" />
     <ClCompile Include="..\..\crypto\thread\arch\thread_posix.c" />
@@ -144,9 +146,11 @@
     <ClCompile Include="..\..\ssl\quic\quic_impl.c" />
     <ClCompile Include="..\..\ssl\quic\quic_lcidm.c" />
     <ClCompile Include="..\..\ssl\quic\quic_method.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_obj.c" />
     <ClCompile Include="..\..\ssl\quic\quic_port.c" />
     <ClCompile Include="..\..\ssl\quic\quic_rcidm.c" />
     <ClCompile Include="..\..\ssl\quic\quic_reactor.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_reactor_wait_ctx.c" />
     <ClCompile Include="..\..\ssl\quic\quic_record_rx.c" />
     <ClCompile Include="..\..\ssl\quic\quic_record_shared.c" />
     <ClCompile Include="..\..\ssl\quic\quic_record_tx.c" />
@@ -161,6 +165,7 @@
     <ClCompile Include="..\..\ssl\quic\quic_stream_map.c" />
     <ClCompile Include="..\..\ssl\quic\quic_thread_assist.c" />
     <ClCompile Include="..\..\ssl\quic\quic_tls.c" />
+    <ClCompile Include="..\..\ssl\quic\quic_tls_api.c" />
     <ClCompile Include="..\..\ssl\quic\quic_trace.c" />
     <ClCompile Include="..\..\ssl\quic\quic_tserver.c" />
     <ClCompile Include="..\..\ssl\quic\quic_txp.c" />
@@ -180,7 +185,9 @@
     <ClCompile Include="..\..\ssl\record\methods\tls_pad.c" />
     <ClCompile Include="..\..\ssl\record\rec_layer_d1.c" />
     <ClCompile Include="..\..\ssl\record\rec_layer_s3.c" />
+    <ClCompile Include="..\..\ssl\rio\poll_builder.c" />
     <ClCompile Include="..\..\ssl\rio\poll_immediate.c" />
+    <ClCompile Include="..\..\ssl\rio\rio_notifier.c" />
     <ClCompile Include="..\..\ssl\s3_enc.c" />
     <ClCompile Include="..\..\ssl\s3_lib.c" />
     <ClCompile Include="..\..\ssl\s3_msg.c" />
@@ -189,7 +196,6 @@
     <ClCompile Include="..\..\ssl\ssl_cert_comp.c" />
     <ClCompile Include="..\..\ssl\ssl_ciph.c" />
     <ClCompile Include="..\..\ssl\ssl_conf.c" />
-    <ClCompile Include="..\..\ssl\ssl_err.c" />
     <ClCompile Include="..\..\ssl\ssl_err_legacy.c" />
     <ClCompile Include="..\..\ssl\ssl_init.c" />
     <ClCompile Include="..\..\ssl\ssl_lib.c" />
