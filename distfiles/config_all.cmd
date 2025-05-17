@@ -12,7 +12,6 @@ set ZLIB_DIR=..\zlib
 set _GEN_LIST_INCL=^
   include\crypto\bn_conf.h ^
   include\crypto\dso_conf.h ^
-  include\internal\param_names.h ^
   include\openssl\asn1.h ^
   include\openssl\asn1t.h ^
   include\openssl\bio.h ^
@@ -20,7 +19,6 @@ set _GEN_LIST_INCL=^
   include\openssl\cms.h ^
   include\openssl\conf.h ^
   include\openssl\configuration.h ^
-  include\openssl\core_names.h ^
   include\openssl\crmf.h ^
   include\openssl\crypto.h ^
   include\openssl\ct.h ^
@@ -40,7 +38,11 @@ set _GEN_LIST_INCL=^
   include\openssl\x509_vfy.h ^
   include\openssl\x509v3.h
 
-set _GEN_LIST_CSRC=^
+set _GEN_LIST_PARAMNAMES_INCL=^
+  include\internal\param_names.h ^
+  include\openssl\core_names.h
+
+set _GEN_LIST_PARAMNAMES_CSRC=^
   crypto\params_idx.c
 
 set _GEN_LIST_PROV_INCL=^
@@ -63,7 +65,8 @@ set _GEN_LIST_PROV_CSRC=^
 
 set _GEN_LIST=^
   %_GEN_LIST_INCL% ^
-  %_GEN_LIST_CSRC% ^
+  %_GEN_LIST_PARAMNAMES_INCL% ^
+  %_GEN_LIST_PARAMNAMES_CSRC% ^
   %_GEN_LIST_PROV_INCL% ^
   %_GEN_LIST_PROV_CSRC% ^
   apps\progs.c apps\progs.h ^
@@ -129,8 +132,11 @@ popd
 goto :end
 
 :genfile
-for %%f in ( %_GEN_LIST_INCL% %_GEN_LIST_CSRC% ) do (
+for %%f in ( %_GEN_LIST_INCL% ) do (
   perl -I. -Mconfigdata %OPENSSL_DIR%\util\dofile.pl -omakefile %OPENSSL_DIR%\%%f.in > %%f
+)
+for %%f in ( %_GEN_LIST_PARAMNAMES_INCL% %_GEN_LIST_PARAMNAMES_CSRC% ) do (
+  perl -I. -I%OPENSSL_DIR%\util\perl -Mconfigdata "-MOpenSSL::paramnames" %OPENSSL_DIR%\util\dofile.pl -omakefile %OPENSSL_DIR%\%%f.in > %%f
 )
 for %%f in ( %_GEN_LIST_PROV_INCL% %_GEN_LIST_PROV_CSRC% ) do (
   perl -I. -I%OPENSSL_DIR%\providers\common\der -Mconfigdata -Moids_to_c %OPENSSL_DIR%\util\dofile.pl -omakefile %OPENSSL_DIR%\%%f.in > %%f
