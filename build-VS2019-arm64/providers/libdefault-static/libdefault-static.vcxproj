@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{9D0E9E97-378D-4D23-B5C7-0D77CD55EF23}</ProjectGuid>
+    <RootNamespace>libdefault-static</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\_props\providers-static.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\_props\providers-static.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link />
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\providers\common\bio_prov.c" />
+    <ClCompile Include="..\..\..\providers\common\capabilities.c" />
+    <ClCompile Include="..\..\..\providers\common\der\der_rsa_sig.c" />
+    <ClCompile Include="..\..\..\providers\common\der\der_sm2_gen.c" />
+    <ClCompile Include="..\..\..\providers\common\der\der_sm2_key.c" />
+    <ClCompile Include="..\..\..\providers\common\der\der_sm2_sig.c" />
+    <ClCompile Include="..\..\..\providers\common\digest_to_nid.c" />
+    <ClCompile Include="..\..\..\providers\common\provider_seeding.c" />
+    <ClCompile Include="..\..\..\providers\common\provider_util.c" />
+    <ClCompile Include="..\..\..\providers\common\securitycheck.c" />
+    <ClCompile Include="..\..\..\providers\common\securitycheck_default.c" />
+    <ClCompile Include="..\..\..\providers\implementations\asymciphers\rsa_enc.c" />
+    <ClCompile Include="..\..\..\providers\implementations\asymciphers\sm2_enc.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha1_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha256_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_ccm.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_ccm_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_gcm_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_ocb.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_ocb_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_siv.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_siv_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_wrp.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_xts.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_xts_fips.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_xts_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aria.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aria_ccm.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aria_ccm_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aria_gcm.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aria_gcm_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aria_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_camellia.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_camellia_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_chacha20.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_chacha20_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_chacha20_poly1305.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_chacha20_poly1305_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_cts.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_null.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_ccm.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_ccm_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_gcm.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_gcm_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_sm4_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_common.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_default.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_default_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_wrap.c" />
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_tdes_wrap_hw.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\blake2b_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\blake2s_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\blake2_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\md5_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\md5_sha1_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\null_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\ripemd_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\sha2_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\sha3_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\digests\sm3_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\decode_der2key.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\decode_epki2pki.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\decode_msblob2key.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\decode_pem2der.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\decode_pvk2key.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\decode_spki2typespki.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\encode_key2any.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\encode_key2blob.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\encode_key2ms.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\encode_key2text.c" />
+    <ClCompile Include="..\..\..\providers\implementations\encode_decode\endecoder_common.c" />
+    <ClCompile Include="..\..\..\providers\implementations\exchange\dh_exch.c" />
+    <ClCompile Include="..\..\..\providers\implementations\exchange\ecdh_exch.c" />
+    <ClCompile Include="..\..\..\providers\implementations\exchange\ecx_exch.c" />
+    <ClCompile Include="..\..\..\providers\implementations\exchange\kdf_exch.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\hkdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\kbkdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\krb5kdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\pbkdf2.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\pbkdf2_fips.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\pkcs12kdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\scrypt.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\sshkdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\sskdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\tls1_prf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kdfs\x942kdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\kem\rsa_kem.c" />
+    <ClCompile Include="..\..\..\providers\implementations\keymgmt\dh_kmgmt.c" />
+    <ClCompile Include="..\..\..\providers\implementations\keymgmt\dsa_kmgmt.c" />
+    <ClCompile Include="..\..\..\providers\implementations\keymgmt\ecx_kmgmt.c" />
+    <ClCompile Include="..\..\..\providers\implementations\keymgmt\ec_kmgmt.c" />
+    <ClCompile Include="..\..\..\providers\implementations\keymgmt\kdf_legacy_kmgmt.c" />
+    <ClCompile Include="..\..\..\providers\implementations\keymgmt\mac_legacy_kmgmt.c" />
+    <ClCompile Include="..\..\..\providers\implementations\keymgmt\rsa_kmgmt.c" />
+    <ClCompile Include="..\..\..\providers\implementations\macs\blake2b_mac.c" />
+    <ClCompile Include="..\..\..\providers\implementations\macs\blake2s_mac.c" />
+    <ClCompile Include="..\..\..\providers\implementations\macs\cmac_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\macs\gmac_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\macs\hmac_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\macs\kmac_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\macs\poly1305_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\macs\siphash_prov.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\crngt.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\drbg.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\drbg_ctr.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\drbg_hash.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\drbg_hmac.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\seeding\rand_cpu_x86.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\seeding\rand_tsc.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\seeding\rand_unix.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\seeding\rand_win.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\seed_src.c" />
+    <ClCompile Include="..\..\..\providers\implementations\rands\test_rng.c" />
+    <ClCompile Include="..\..\..\providers\implementations\signature\dsa_sig.c" />
+    <ClCompile Include="..\..\..\providers\implementations\signature\ecdsa_sig.c" />
+    <ClCompile Include="..\..\..\providers\implementations\signature\eddsa_sig.c" />
+    <ClCompile Include="..\..\..\providers\implementations\signature\mac_legacy_sig.c" />
+    <ClCompile Include="..\..\..\providers\implementations\signature\rsa_sig.c" />
+    <ClCompile Include="..\..\..\providers\implementations\signature\sm2_sig.c" />
+    <ClCompile Include="..\..\..\providers\implementations\storemgmt\file_store.c" />
+    <ClCompile Include="..\..\..\providers\implementations\storemgmt\file_store_any2obj.c" />
+    <ClCompile Include="..\..\..\ssl\s3_cbc.c" />
+  </ItemGroup>
+</Project>
