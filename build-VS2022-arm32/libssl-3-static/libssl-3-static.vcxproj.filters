@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\ssl">
+      <UniqueIdentifier>{b0ab8445-2bb6-4f82-b2a5-44f68c8f7f3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ssl\record">
+      <UniqueIdentifier>{07701199-8aa8-4fbf-83a0-dd845345d299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ssl\statem">
+      <UniqueIdentifier>{2b961571-3e98-4b5f-9667-8751229f693c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\crypto">
+      <UniqueIdentifier>{ed857bd2-1692-4b9d-a7e8-ad2eb5875ffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ssl\record\methods">
+      <UniqueIdentifier>{af5753d4-6dd8-48d9-bd1f-90e836de5c16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ssl\quic">
+      <UniqueIdentifier>{4d611ecc-f70b-4074-b730-64cdb2dcf653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ssl\rio">
+      <UniqueIdentifier>{20010bcf-7168-4e51-ba73-81293249b877}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\ssl\ssl_err.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_lib.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_rsa.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_sess.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_stat.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_txt.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_utst.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\t1_enc.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\t1_lib.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\t1_trce.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\tls_srp.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\bio_ssl.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\d1_lib.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\d1_srtp.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\s3_enc.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\s3_lib.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_asn1.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_cert.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_ciph.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_conf.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\d1_msg.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\methods.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\pqueue.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\s3_msg.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_init.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_mcnf.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\tls13_enc.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\record\rec_layer_s3.c">
+      <Filter>Source Files\ssl\record</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\record\rec_layer_d1.c">
+      <Filter>Source Files\ssl\record</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\statem\statem.c">
+      <Filter>Source Files\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\statem\statem_clnt.c">
+      <Filter>Source Files\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\statem\statem_dtls.c">
+      <Filter>Source Files\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\statem\statem_lib.c">
+      <Filter>Source Files\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\statem\statem_srvr.c">
+      <Filter>Source Files\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\statem\extensions.c">
+      <Filter>Source Files\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\statem\extensions_clnt.c">
+      <Filter>Source Files\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\statem\extensions_cust.c">
+      <Filter>Source Files\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\statem\extensions_srvr.c">
+      <Filter>Source Files\ssl\statem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\tls_depr.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_rsa_legacy.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_err_legacy.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\record\methods\dtls_meth.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\record\methods\ssl3_meth.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\record\methods\tls13_meth.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\record\methods\tls1_meth.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\record\methods\tlsany_meth.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\record\methods\tls_common.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\record\methods\tls_multib.c">
+      <Filter>Source Files\ssl\record\methods</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\ssl_cert_comp.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\cc_newreno.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_ackm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_demux.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_method.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_record_rx.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_record_shared.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_record_tx.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_record_util.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_statm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_wire.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_wire_pkt.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_impl.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\priority_queue.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\event_queue.c">
+      <Filter>Source Files\ssl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_rx_depack.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_fc.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\uint_set.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_cfq.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_fifd.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_rstream.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_sf_list.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_sstream.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_txpim.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_stream_map.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_txp.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_channel.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_reactor.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_tserver.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_tls.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_thread_assist.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_trace.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_srt_gen.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_srtm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_lcidm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_engine.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_port.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_types.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\quic_rcidm.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\qlog_event_helpers.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\rio\poll_immediate.c">
+      <Filter>Source Files\ssl\rio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\json_enc.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\ssl\quic\qlog.c">
+      <Filter>Source Files\ssl\quic</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
