@@ -177,7 +177,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.5.0",
+    "full_version" => "3.5.1",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -242,10 +242,10 @@ our %config = (
     "openssl_sys_defines" => [],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\ARM\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-asm no-brotli no-brotli-dynamic no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-demos no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-jitter no-fips-post no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-h3demo no-hqinterop no-jitter no-ktls no-loadereng no-md2 no-msan no-pie no-rc5 no-sctp no-shared no-ssl3 no-ssl3-method no-sslkeylog no-tfo no-trace no-ubsan no-unit-test no-uplink no-weak-ssl-ciphers no-zlib-dynamic no-zstd no-zstd-dynamic",
-    "patch" => "0",
+    "patch" => "1",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
-    "perl_version" => "5.40.0",
+    "perl_version" => "5.40.2",
     "perlargv" => [
         "--prefix=C:\\Program Files\\OpenSSL-3",
         "--with-zlib-include=..\\zlib",
@@ -296,11 +296,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned char",
-    "release_date" => "8 Apr 2025",
+    "release_date" => "1 Jul 2025",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN32-ARM",
-    "version" => "3.5.0"
+    "version" => "3.5.1"
 );
 our %target = (
     "AR" => "lib",
