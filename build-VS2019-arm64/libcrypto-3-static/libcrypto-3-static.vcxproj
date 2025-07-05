@@ -697,6 +697,7 @@
     <ClCompile Include="..\..\crypto\sparse_array.c" />
     <ClCompile Include="..\..\crypto\srp\srp_lib.c" />
     <ClCompile Include="..\..\crypto\srp\srp_vfy.c" />
+    <ClCompile Include="..\..\crypto\ssl_err.c" />
     <ClCompile Include="..\..\crypto\stack\stack.c" />
     <ClCompile Include="..\..\crypto\store\store_err.c" />
     <ClCompile Include="..\..\crypto\store\store_init.c" />

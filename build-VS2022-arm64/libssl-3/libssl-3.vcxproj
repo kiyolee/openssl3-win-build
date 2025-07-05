@@ -140,7 +140,6 @@
     <ClCompile Include="..\..\ssl\ssl_cert_comp.c" />
     <ClCompile Include="..\..\ssl\ssl_ciph.c" />
     <ClCompile Include="..\..\ssl\ssl_conf.c" />
-    <ClCompile Include="..\..\ssl\ssl_err.c" />
     <ClCompile Include="..\..\ssl\ssl_err_legacy.c" />
     <ClCompile Include="..\..\ssl\ssl_init.c" />
     <ClCompile Include="..\..\ssl\ssl_lib.c" />

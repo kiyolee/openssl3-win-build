@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2024 The OpenSSL Project Authors. All Rights Reserved.
+ * Copyright 2015-2025 The OpenSSL Project Authors. All Rights Reserved.
  *
  * Licensed under the Apache License 2.0 (the "License").  You may not use
  * this file except in compliance with the License.  You can obtain a copy
@@ -900,7 +900,9 @@ static EVP_PKEY *make_key_fromdata(char *keytype, OSSL_PARAM *params)
 
     if (!TEST_ptr(pctx = EVP_PKEY_CTX_new_from_name(testctx, keytype, testpropq)))
         goto err;
-    if (!TEST_int_gt(EVP_PKEY_fromdata_init(pctx), 0)
+    /* Check that premature EVP_PKEY_CTX_set_params() fails gracefully */
+    if (!TEST_int_eq(EVP_PKEY_CTX_set_params(pctx, params), 0)
+        || !TEST_int_gt(EVP_PKEY_fromdata_init(pctx), 0)
         || !TEST_int_gt(EVP_PKEY_fromdata(pctx, &tmp_pkey, EVP_PKEY_KEYPAIR,
                                           params), 0))
         goto err;
@@ -1867,6 +1869,46 @@ static int test_EVP_DigestVerifyInit(void)
     EVP_PKEY_free(pkey);
     return ret;
 }
+
+#ifndef OPENSSL_NO_EC
+static int test_ecdsa_digestsign_keccak(void)
+{
+    int ret = 0;
+    EVP_PKEY *pkey = NULL;
+    EVP_MD_CTX *ctx = NULL;
+    EVP_MD *md = NULL;
+
+    if (nullprov != NULL)
+        return TEST_skip("Test does not support a non-default library context");
+
+    pkey = load_example_ec_key();
+    if (!TEST_ptr(pkey))
+        goto err;
+
+    /* This would not work with FIPS provider so just use NULL libctx */
+    md = EVP_MD_fetch(NULL, "KECCAK-256", NULL);
+    if (!TEST_ptr(md))
+        goto err;
+
+    ctx = EVP_MD_CTX_new();
+    if (!TEST_ptr(ctx))
+        goto err;
+
+    /*
+     * Just check EVP_DigestSignInit_ex() works.
+     */
+    if (!TEST_true(EVP_DigestSignInit(ctx, NULL, md, NULL, pkey)))
+            goto err;
+
+    ret = 1;
+ err:
+    EVP_MD_CTX_free(ctx);
+    EVP_PKEY_free(pkey);
+    EVP_MD_free(md);
+
+    return ret;
+}
+#endif
 
 #ifndef OPENSSL_NO_SIPHASH
 /* test SIPHASH MAC via EVP_PKEY with non-default parameters and reinit */
@@ -2907,6 +2949,7 @@ static int test_empty_salt_info_HKDF(void)
     size_t outlen;
     int ret = 0;
     unsigned char salt[] = "";
+    unsigned char fake[] = "0123456789";
     unsigned char key[] = "012345678901234567890123456789";
     unsigned char info[] = "";
     const unsigned char expected[] = {
@@ -2923,6 +2966,8 @@ static int test_empty_salt_info_HKDF(void)
 
     if (!TEST_int_gt(EVP_PKEY_derive_init(pctx), 0)
             || !TEST_int_gt(EVP_PKEY_CTX_set_hkdf_md(pctx, EVP_sha256()), 0)
+            || !TEST_int_gt(EVP_PKEY_CTX_set1_hkdf_salt(pctx, fake,
+                                                        sizeof(fake) - 1), 0)
             || !TEST_int_gt(EVP_PKEY_CTX_set1_hkdf_salt(pctx, salt,
                                                         sizeof(salt) - 1), 0)
             || !TEST_int_gt(EVP_PKEY_CTX_set1_hkdf_key(pctx, key,
@@ -5903,6 +5948,9 @@ int setup_tests(void)
     ADD_TEST(test_EVP_set_default_properties);
     ADD_ALL_TESTS(test_EVP_DigestSignInit, 30);
     ADD_TEST(test_EVP_DigestVerifyInit);
+#ifndef OPENSSL_NO_EC
+    ADD_TEST(test_ecdsa_digestsign_keccak);
+#endif
 #ifndef OPENSSL_NO_SIPHASH
     ADD_TEST(test_siphash_digestsign);
 #endif

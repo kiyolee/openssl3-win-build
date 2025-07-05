@@ -675,8 +675,10 @@ static int digest_test_init(EVP_TEST *t, const char *alg)
     if ((digest = fetched_digest = EVP_MD_fetch(libctx, alg, propquery)) == NULL
         && (digest = EVP_get_digestbyname(alg)) == NULL)
         return 0;
-    if (!TEST_ptr(mdat = OPENSSL_zalloc(sizeof(*mdat))))
+    if (!TEST_ptr(mdat = OPENSSL_zalloc(sizeof(*mdat)))) {
+        EVP_MD_free(fetched_digest);
         return 0;
+    }
     t->data = mdat;
     mdat->digest = digest;
     mdat->fetched_digest = fetched_digest;
@@ -5068,7 +5070,9 @@ static int run_file_tests(int i)
     clear_test(t);
 
     free_key_list(public_keys);
+    public_keys = NULL;
     free_key_list(private_keys);
+    private_keys = NULL;
     BIO_free(t->s.key);
     c = t->s.errors;
     OPENSSL_free(t);

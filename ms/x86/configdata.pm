@@ -173,7 +173,7 @@ our %config = (
     ],
     "dynamic_engines" => "0",
     "ex_libs" => [],
-    "full_version" => "3.4.1",
+    "full_version" => "3.4.2",
     "includes" => [],
     "lflags" => [],
     "lib_defines" => [
@@ -235,10 +235,10 @@ our %config = (
     ],
     "openssldir" => "",
     "options" => "--prefix=C:\\Program Files (x86)\\OpenSSL-3 --with-zlib-include=..\\zlib --with-zlib-lib=..\\zlib\\build\\Release\\libz-static.lib enable-zlib no-acvp-tests no-afalgeng no-asan no-brotli no-brotli-dynamic no-buildtest-c++ no-crypto-mdebug no-crypto-mdebug-backtrace no-demos no-devcryptoeng no-dynamic-engine no-ec_nistp_64_gcc_128 no-egd no-external-tests no-fips no-fips-post no-fips-securitychecks no-fuzz-afl no-fuzz-libfuzzer no-h3demo no-jitter no-ktls no-loadereng no-md2 no-msan no-pie no-rc5 no-sctp no-ssl3 no-ssl3-method no-tfo no-trace no-ubsan no-unit-test no-weak-ssl-ciphers no-zlib-dynamic no-zstd no-zstd-dynamic",
-    "patch" => "1",
+    "patch" => "2",
     "perl_archname" => "MSWin32-x64-multi-thread",
     "perl_cmd" => "C:\\Strawberry\\perl\\bin\\perl.exe",
-    "perl_version" => "5.40.0",
+    "perl_version" => "5.40.2",
     "perlargv" => [
         "--prefix=C:\\Program Files (x86)\\OpenSSL-3",
         "--with-zlib-include=..\\zlib",
@@ -288,11 +288,11 @@ our %config = (
     "prerelease" => "",
     "processor" => "",
     "rc4_int" => "unsigned int",
-    "release_date" => "11 Feb 2025",
+    "release_date" => "1 Jul 2025",
     "shlib_version" => "3",
     "sourcedir" => ".",
     "target" => "VC-WIN32",
-    "version" => "3.4.1"
+    "version" => "3.4.2"
 );
 our %target = (
     "AR" => "lib",
@@ -9451,6 +9451,7 @@ our %unified_info = (
                 "crypto\\libcrypto-lib-self_test_core.o",
                 "crypto\\libcrypto-lib-sleep.o",
                 "crypto\\libcrypto-lib-sparse_array.o",
+                "crypto\\libcrypto-lib-ssl_err.o",
                 "crypto\\libcrypto-lib-threads_lib.o",
                 "crypto\\libcrypto-lib-threads_none.o",
                 "crypto\\libcrypto-lib-threads_pthread.o",
@@ -9507,6 +9508,7 @@ our %unified_info = (
                 "crypto\\libcrypto-shlib-self_test_core.o",
                 "crypto\\libcrypto-shlib-sleep.o",
                 "crypto\\libcrypto-shlib-sparse_array.o",
+                "crypto\\libcrypto-shlib-ssl_err.o",
                 "crypto\\libcrypto-shlib-threads_lib.o",
                 "crypto\\libcrypto-shlib-threads_none.o",
                 "crypto\\libcrypto-shlib-threads_pthread.o",
@@ -12110,7 +12112,6 @@ our %unified_info = (
                 "ssl\\libssl-lib-ssl_cert_comp.o",
                 "ssl\\libssl-lib-ssl_ciph.o",
                 "ssl\\libssl-lib-ssl_conf.o",
-                "ssl\\libssl-lib-ssl_err.o",
                 "ssl\\libssl-lib-ssl_err_legacy.o",
                 "ssl\\libssl-lib-ssl_init.o",
                 "ssl\\libssl-lib-ssl_lib.o",
@@ -12142,7 +12143,6 @@ our %unified_info = (
                 "ssl\\libssl-shlib-ssl_cert_comp.o",
                 "ssl\\libssl-shlib-ssl_ciph.o",
                 "ssl\\libssl-shlib-ssl_conf.o",
-                "ssl\\libssl-shlib-ssl_err.o",
                 "ssl\\libssl-shlib-ssl_err_legacy.o",
                 "ssl\\libssl-shlib-ssl_init.o",
                 "ssl\\libssl-shlib-ssl_lib.o",
@@ -25211,6 +25211,7 @@ our %unified_info = (
             "crypto\\libcrypto-shlib-self_test_core.o",
             "crypto\\libcrypto-shlib-sleep.o",
             "crypto\\libcrypto-shlib-sparse_array.o",
+            "crypto\\libcrypto-shlib-ssl_err.o",
             "crypto\\libcrypto-shlib-threads_lib.o",
             "crypto\\libcrypto-shlib-threads_none.o",
             "crypto\\libcrypto-shlib-threads_pthread.o",
@@ -25530,7 +25531,6 @@ our %unified_info = (
             "ssl\\libssl-shlib-ssl_cert_comp.o",
             "ssl\\libssl-shlib-ssl_ciph.o",
             "ssl\\libssl-shlib-ssl_conf.o",
-            "ssl\\libssl-shlib-ssl_err.o",
             "ssl\\libssl-shlib-ssl_err_legacy.o",
             "ssl\\libssl-shlib-ssl_init.o",
             "ssl\\libssl-shlib-ssl_lib.o",
@@ -28880,6 +28880,9 @@ our %unified_info = (
         "crypto\\libcrypto-lib-sparse_array.o" => [
             ".\\crypto\\sparse_array.c"
         ],
+        "crypto\\libcrypto-lib-ssl_err.o" => [
+            ".\\crypto\\ssl_err.c"
+        ],
         "crypto\\libcrypto-lib-threads_lib.o" => [
             ".\\crypto\\threads_lib.c"
         ],
@@ -29047,6 +29050,9 @@ our %unified_info = (
         ],
         "crypto\\libcrypto-shlib-sparse_array.o" => [
             ".\\crypto\\sparse_array.c"
+        ],
+        "crypto\\libcrypto-shlib-ssl_err.o" => [
+            ".\\crypto\\ssl_err.c"
         ],
         "crypto\\libcrypto-shlib-threads_lib.o" => [
             ".\\crypto\\threads_lib.c"
@@ -31591,6 +31597,7 @@ our %unified_info = (
             "crypto\\libcrypto-lib-self_test_core.o",
             "crypto\\libcrypto-lib-sleep.o",
             "crypto\\libcrypto-lib-sparse_array.o",
+            "crypto\\libcrypto-lib-ssl_err.o",
             "crypto\\libcrypto-lib-threads_lib.o",
             "crypto\\libcrypto-lib-threads_none.o",
             "crypto\\libcrypto-lib-threads_pthread.o",
@@ -31900,7 +31907,6 @@ our %unified_info = (
             "ssl\\libssl-lib-ssl_cert_comp.o",
             "ssl\\libssl-lib-ssl_ciph.o",
             "ssl\\libssl-lib-ssl_conf.o",
-            "ssl\\libssl-lib-ssl_err.o",
             "ssl\\libssl-lib-ssl_err_legacy.o",
             "ssl\\libssl-lib-ssl_init.o",
             "ssl\\libssl-lib-ssl_lib.o",
@@ -32850,9 +32856,6 @@ our %unified_info = (
         "ssl\\libssl-lib-ssl_conf.o" => [
             ".\\ssl\\ssl_conf.c"
         ],
-        "ssl\\libssl-lib-ssl_err.o" => [
-            ".\\ssl\\ssl_err.c"
-        ],
         "ssl\\libssl-lib-ssl_err_legacy.o" => [
             ".\\ssl\\ssl_err_legacy.c"
         ],
@@ -32945,9 +32948,6 @@ our %unified_info = (
         ],
         "ssl\\libssl-shlib-ssl_conf.o" => [
             ".\\ssl\\ssl_conf.c"
-        ],
-        "ssl\\libssl-shlib-ssl_err.o" => [
-            ".\\ssl\\ssl_err.c"
         ],
         "ssl\\libssl-shlib-ssl_err_legacy.o" => [
             ".\\ssl\\ssl_err_legacy.c"

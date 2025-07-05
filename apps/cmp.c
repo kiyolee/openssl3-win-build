@@ -1,5 +1,5 @@
 /*
- * Copyright 2007-2024 The OpenSSL Project Authors. All Rights Reserved.
+ * Copyright 2007-2025 The OpenSSL Project Authors. All Rights Reserved.
  * Copyright Nokia 2007-2019
  * Copyright Siemens AG 2015-2019
  *
@@ -938,7 +938,7 @@ static int set_name(const char *str,
                     OSSL_CMP_CTX *ctx, const char *desc)
 {
     if (str != NULL) {
-        X509_NAME *n = parse_name(str, MBSTRING_ASC, 1, desc);
+        X509_NAME *n = parse_name(str, MBSTRING_UTF8, 1, desc);
 
         if (n == NULL)
             return 0;
@@ -2452,6 +2452,7 @@ static int save_template(const char *file, const OSSL_CRMF_CERTTEMPLATE *tmpl)
                          bio, tmpl)) {
         CMP_err1("error saving certTemplate from genp: cannot write file %s",
                  file);
+        BIO_free(bio);
         return 0;
     } else {
         CMP_info1("stored certTemplate from genp to file '%s'", file);
@@ -2471,6 +2472,7 @@ static int save_keyspec(const char *file, const OSSL_CMP_ATAVS *keyspec)
 
     if (!ASN1_i2d_bio_of(OSSL_CMP_ATAVS, i2d_OSSL_CMP_ATAVS, bio, keyspec)) {
         CMP_err1("error saving keySpec from genp: cannot write file %s", file);
+        BIO_free(bio);
         return 0;
     } else {
         CMP_info1("stored keySpec from genp to file '%s'", file);

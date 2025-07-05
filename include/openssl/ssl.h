@@ -1,5 +1,5 @@
 /*
- * Copyright 1995-2024 The OpenSSL Project Authors. All Rights Reserved.
+ * Copyright 1995-2025 The OpenSSL Project Authors. All Rights Reserved.
  * Copyright (c) 2002, Oracle and/or its affiliates. All rights reserved
  * Copyright 2005 Nokia. All rights reserved.
  *
@@ -1868,8 +1868,8 @@ __owur int SSL_set_purpose(SSL *ssl, int purpose);
 __owur int SSL_CTX_set_trust(SSL_CTX *ctx, int trust);
 __owur int SSL_set_trust(SSL *ssl, int trust);
 
-__owur int SSL_set1_host(SSL *s, const char *hostname);
-__owur int SSL_add1_host(SSL *s, const char *hostname);
+__owur int SSL_set1_host(SSL *s, const char *host);
+__owur int SSL_add1_host(SSL *s, const char *host);
 __owur const char *SSL_get0_peername(SSL *s);
 void SSL_set_hostflags(SSL *s, unsigned int flags);
 

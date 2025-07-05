@@ -1,5 +1,5 @@
 /*
- * Copyright 1995-2024 The OpenSSL Project Authors. All Rights Reserved.
+ * Copyright 1995-2025 The OpenSSL Project Authors. All Rights Reserved.
  * Copyright (c) 2002, Oracle and/or its affiliates. All rights reserved
  * Copyright 2005 Nokia. All rights reserved.
  *
@@ -1095,52 +1095,55 @@ int SSL_set_trust(SSL *s, int trust)
     return X509_VERIFY_PARAM_set_trust(sc->param, trust);
 }
 
-int SSL_set1_host(SSL *s, const char *hostname)
+int SSL_set1_host(SSL *s, const char *host)
 {
     SSL_CONNECTION *sc = SSL_CONNECTION_FROM_SSL(s);
 
     if (sc == NULL)
         return 0;
 
-    /* If a hostname is provided and parses as an IP address,
-     * treat it as such. */
-    if (hostname != NULL
-        && X509_VERIFY_PARAM_set1_ip_asc(sc->param, hostname) == 1)
+    /* clear hostname(s) and IP address in any case, also if host parses as an IP address */
+    (void)X509_VERIFY_PARAM_set1_host(sc->param, NULL, 0);
+    (void)X509_VERIFY_PARAM_set1_ip(sc->param, NULL, 0);
+    if (host == NULL)
         return 1;
 
-    return X509_VERIFY_PARAM_set1_host(sc->param, hostname, 0);
+    /* If a host is provided and parses as an IP address, treat it as such. */
+    return X509_VERIFY_PARAM_set1_ip_asc(sc->param, host)
+        || X509_VERIFY_PARAM_set1_host(sc->param, host, 0);
 }
 
-int SSL_add1_host(SSL *s, const char *hostname)
+int SSL_add1_host(SSL *s, const char *host)
 {
     SSL_CONNECTION *sc = SSL_CONNECTION_FROM_SSL(s);
 
     if (sc == NULL)
         return 0;
 
-    /* If a hostname is provided and parses as an IP address,
-     * treat it as such. */
-    if (hostname) {
+    /* If a host is provided and parses as an IP address, treat it as such. */
+    if (host != NULL) {
         ASN1_OCTET_STRING *ip;
         char *old_ip;
 
-        ip = a2i_IPADDRESS(hostname);
-        if (ip) {
+        ip = a2i_IPADDRESS(host);
+        if (ip != NULL) {
             /* We didn't want it; only to check if it *is* an IP address */
             ASN1_OCTET_STRING_free(ip);
 
             old_ip = X509_VERIFY_PARAM_get1_ip_asc(sc->param);
-            if (old_ip) {
+            if (old_ip != NULL) {
                 OPENSSL_free(old_ip);
                 /* There can be only one IP address */
+                ERR_raise_data(ERR_LIB_SSL, ERR_R_PASSED_INVALID_ARGUMENT,
+                               "IP address was already set");
                 return 0;
             }
 
-            return X509_VERIFY_PARAM_set1_ip_asc(sc->param, hostname);
+            return X509_VERIFY_PARAM_set1_ip_asc(sc->param, host);
         }
     }
 
-    return X509_VERIFY_PARAM_add1_host(sc->param, hostname, 0);
+    return X509_VERIFY_PARAM_add1_host(sc->param, host, 0);
 }
 
 void SSL_set_hostflags(SSL *s, unsigned int flags)
@@ -4743,6 +4746,9 @@ int SSL_do_handshake(SSL *s)
         return ossl_quic_do_handshake(s);
 #endif
 
+    if (sc == NULL)
+        return -1;
+
     if (sc->handshake_func == NULL) {
         ERR_raise(ERR_LIB_SSL, SSL_R_CONNECTION_TYPE_NOT_SET);
         return -1;
@@ -6833,7 +6839,7 @@ int ssl_cache_cipherlist(SSL_CONNECTION *s, PACKET *cipher_suites, int sslv2form
     n = sslv2format ? SSLV2_CIPHER_LEN : TLS_CIPHER_LEN;
 
     if (PACKET_remaining(cipher_suites) == 0) {
-        SSLfatal(s, SSL_AD_ILLEGAL_PARAMETER, SSL_R_NO_CIPHERS_SPECIFIED);
+        SSLfatal(s, SSL_AD_DECODE_ERROR, SSL_R_NO_CIPHERS_SPECIFIED);
         return 0;
     }
 

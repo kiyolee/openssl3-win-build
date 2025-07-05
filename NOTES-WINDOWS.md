@@ -87,6 +87,11 @@ Quick start
        on the Universal CRT or
     - `perl Configure`              to let Configure figure out the platform
 
+    a. If you don't plan to develop OpenSSL yourself and don't need to rebuild,
+       in other words, if you always do a new build, turning off the build
+       dependency feature can speed up build times by up to 50%:
+       `perl Configure no-makedepend`
+
  6. `nmake`
 
  7. `nmake test`
@@ -114,7 +119,7 @@ Can be administratively set, and openssl will take the paths found there as the
 values for OPENSSLDIR, ENGINESDIR and MODULESDIR respectively.
 
 To enable the reading of registry keys from windows builds, add
-`-DOPENSSL_WINCTX=<string>`to the Configure command line.  This define is used
+`-DOSSL_WINCTX=<string>`to the Configure command line.  This define is used
 at build-time to construct library build specific registry key paths of the
 format:
 `\\HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432node\OpenSSL-<version>-<ctx>`

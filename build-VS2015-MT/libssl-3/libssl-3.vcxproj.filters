@@ -45,9 +45,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\ssl\ssl_err.c">
-      <Filter>Source Files\ssl</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\ssl\ssl_lib.c">
       <Filter>Source Files\ssl</Filter>
     </ClCompile>

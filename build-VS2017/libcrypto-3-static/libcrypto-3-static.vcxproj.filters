@@ -2595,6 +2595,9 @@
     <ClCompile Include="..\..\crypto\x509\v3_audit_id.c">
       <Filter>Source Files\crypto\x509</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\crypto\ssl_err.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\crypto\modes\asm\aesni-gcm-x86_64.pl">
