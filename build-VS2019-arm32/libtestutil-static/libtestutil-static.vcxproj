@@ -61,6 +61,7 @@
     <ClCompile Include="..\..\test\testutil\apps_shims.c" />
     <ClCompile Include="..\..\test\testutil\basic_output.c" />
     <ClCompile Include="..\..\test\testutil\cb.c" />
+    <ClCompile Include="..\..\test\testutil\compare.c" />
     <ClCompile Include="..\..\test\testutil\driver.c" />
     <ClCompile Include="..\..\test\testutil\fake_random.c" />
     <ClCompile Include="..\..\test\testutil\format_output.c" />
