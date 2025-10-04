@@ -123,5 +123,8 @@
     <ClCompile Include="..\..\..\providers\common\der\der_ml_dsa_key.c">
       <Filter>Source Files\providers\common\der</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\providers\common\der\der_hkdf_gen.c">
+      <Filter>Source Files\providers\common\der</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

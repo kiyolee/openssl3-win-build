@@ -2526,9 +2526,6 @@
     <ClCompile Include="..\..\crypto\modes\xts128gb.c">
       <Filter>Source Files\crypto\modes</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\crypto\params_idx.c">
-      <Filter>Source Files\crypto</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\crypto\cmp\cmp_genm.c">
       <Filter>Source Files\crypto\cmp</Filter>
     </ClCompile>
@@ -2683,6 +2680,21 @@
       <Filter>Source Files\crypto\slh_dsa</Filter>
     </ClCompile>
     <ClCompile Include="..\..\crypto\ssl_err.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\threads_common.c">
+      <Filter>Source Files\crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\evp\evp_pkey_type.c">
+      <Filter>Source Files\crypto\evp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\cms\cms_kem.c">
+      <Filter>Source Files\crypto\cms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\cms\cms_kemri.c">
+      <Filter>Source Files\crypto\cms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\crypto\array_alloc.c">
       <Filter>Source Files\crypto</Filter>
     </ClCompile>
   </ItemGroup>

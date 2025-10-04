@@ -121,6 +121,7 @@
     <ClCompile Include="..\..\crypto\aes\aes_ofb.c" />
     <ClCompile Include="..\..\crypto\aes\aes_wrap.c" />
     <ClCompile Include="..\..\crypto\aria\aria.c" />
+    <ClCompile Include="..\..\crypto\array_alloc.c" />
     <ClCompile Include="..\..\crypto\asn1\ameth_lib.c" />
     <ClCompile Include="..\..\crypto\asn1\asn1_err.c" />
     <ClCompile Include="..\..\crypto\asn1\asn1_gen.c" />
@@ -314,6 +315,8 @@
     <ClCompile Include="..\..\crypto\cms\cms_ess.c" />
     <ClCompile Include="..\..\crypto\cms\cms_io.c" />
     <ClCompile Include="..\..\crypto\cms\cms_kari.c" />
+    <ClCompile Include="..\..\crypto\cms\cms_kem.c" />
+    <ClCompile Include="..\..\crypto\cms\cms_kemri.c" />
     <ClCompile Include="..\..\crypto\cms\cms_lib.c" />
     <ClCompile Include="..\..\crypto\cms\cms_pwri.c" />
     <ClCompile Include="..\..\crypto\cms\cms_rsa.c" />
@@ -517,6 +520,7 @@
     <ClCompile Include="..\..\crypto\evp\evp_lib.c" />
     <ClCompile Include="..\..\crypto\evp\evp_pbe.c" />
     <ClCompile Include="..\..\crypto\evp\evp_pkey.c" />
+    <ClCompile Include="..\..\crypto\evp\evp_pkey_type.c" />
     <ClCompile Include="..\..\crypto\evp\evp_rand.c" />
     <ClCompile Include="..\..\crypto\evp\evp_utils.c" />
     <ClCompile Include="..\..\crypto\evp\exchange.c" />
@@ -659,7 +663,6 @@
     <ClCompile Include="..\..\crypto\params.c" />
     <ClCompile Include="..\..\crypto\params_dup.c" />
     <ClCompile Include="..\..\crypto\params_from_text.c" />
-    <ClCompile Include="..\..\crypto\params_idx.c" />
     <ClCompile Include="..\..\crypto\param_build.c" />
     <ClCompile Include="..\..\crypto\param_build_set.c" />
     <ClCompile Include="..\..\crypto\passphrase.c" />
@@ -807,6 +810,7 @@
     <ClCompile Include="..\..\crypto\store\store_register.c" />
     <ClCompile Include="..\..\crypto\store\store_result.c" />
     <ClCompile Include="..\..\crypto\store\store_strings.c" />
+    <ClCompile Include="..\..\crypto\threads_common.c" />
     <ClCompile Include="..\..\crypto\threads_lib.c" />
     <ClCompile Include="..\..\crypto\threads_none.c" />
     <ClCompile Include="..\..\crypto\threads_pthread.c" />
@@ -967,6 +971,19 @@ set ASM=nasm
 $(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\%(Filename).asm &amp;&amp; $(NASM) -f win32 -o $(IntDir)%(Filename).obj $(OutDir)_work\%(Filename).asm</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(OutDir)_work\%(Filename).asm;$(IntDir)%(Filename).obj</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)_work\%(Filename).asm;$(IntDir)%(Filename).obj</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\..\crypto\aes\asm\aes-cfb-avx512.pl">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
+set ASM=ml64
+$(PERL) %(FullPath) masm $(OutDir)_work\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\%(Filename).asm</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
+set ASM=ml64
+$(PERL) %(FullPath) masm $(OutDir)_work\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\%(Filename).asm</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)_work\%(Filename).asm;$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)_work\%(Filename).asm;$(IntDir)%(Filename).obj</Outputs>
     </CustomBuild>
     <CustomBuild Include="..\..\crypto\aes\asm\aes-x86_64.pl">
       <FileType>Document</FileType>
@@ -1686,6 +1703,32 @@ $(PERL) %(FullPath) win32n $(PERLASM_FLAGS_X86) $(OutDir)_work\%(Filename).asm &
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </CustomBuild>
     <CustomBuild Include="..\..\crypto\ec\asm\x25519-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
+set ASM=ml64
+$(PERL) %(FullPath) masm $(OutDir)_work\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\%(Filename).asm</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
+set ASM=ml64
+$(PERL) %(FullPath) masm $(OutDir)_work\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\%(Filename).asm</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)_work\%(Filename).asm;$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)_work\%(Filename).asm;$(IntDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\crypto\sm3\asm\sm3-x86_64.pl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
+set ASM=ml64
+$(PERL) %(FullPath) masm $(OutDir)_work\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\%(Filename).asm</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">mkdir $(OutDir)_work 2&gt;nul
+set ASM=ml64
+$(PERL) %(FullPath) masm $(OutDir)_work\%(Filename).asm &amp;&amp; ml64 /c /Cp /Cx /nologo /Zi /Fo$(IntDir)%(Filename).obj $(OutDir)_work\%(Filename).asm</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OutDir)_work\%(Filename).asm;$(IntDir)%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(OutDir)_work\%(Filename).asm;$(IntDir)%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\crypto\sm4\asm\sm4-x86_64.pl">
       <FileType>Document</FileType>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">mkdir $(OutDir)_work 2&gt;nul
 set ASM=ml64

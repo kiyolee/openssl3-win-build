@@ -28,8 +28,8 @@
     <Filter Include="Source Files\crypto">
       <UniqueIdentifier>{94011921-4a30-4f91-b1b1-494bbe29748c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\crypto\property">
-      <UniqueIdentifier>{3da89b8b-9051-431a-a6b7-f7959106d9f1}</UniqueIdentifier>
+    <Filter Include="Source Files\crypto\des">
+      <UniqueIdentifier>{805ac66d-a014-4c91-81d8-43eb6df0c4b5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\crypto\md5">
       <UniqueIdentifier>{61eb8363-daba-4c2e-ada4-60590ff6809b}</UniqueIdentifier>
@@ -43,11 +43,11 @@
     <Filter Include="Source Files\crypto\bn">
       <UniqueIdentifier>{27303303-46af-4877-b648-60a280eea85b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\crypto\des">
-      <UniqueIdentifier>{a77f2204-6446-420b-8ed8-8a84064374eb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\crypto\rc4">
       <UniqueIdentifier>{8240364c-069a-4666-9f4a-c56d49a23f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\providers\implementations\skeymgmt">
+      <UniqueIdentifier>{e644a37e-b993-44ac-9a51-bc05ecdf571c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +155,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\crypto\rc4\rc4_skey.c">
       <Filter>Source Files\crypto\rc4</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\skeymgmt\generic.c">
+      <Filter>Source Files\providers\implementations\skeymgmt</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

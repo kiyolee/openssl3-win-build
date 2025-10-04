@@ -130,6 +130,7 @@ copy $(TargetPath) $(OutDir)static\openssl.exe 2&gt;nul</Command>
     <ClCompile Include="..\..\apps\ca.c" />
     <ClCompile Include="..\..\apps\ciphers.c" />
     <ClCompile Include="..\..\apps\cmp.c" />
+    <ClCompile Include="..\..\apps\configutl.c" />
     <ClCompile Include="..\..\apps\lib\cmp_mock_srv.c" />
     <ClCompile Include="..\..\apps\cms.c" />
     <ClCompile Include="..\..\apps\crl.c" />

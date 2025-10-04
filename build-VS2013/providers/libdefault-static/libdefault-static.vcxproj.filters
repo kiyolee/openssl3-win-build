@@ -414,9 +414,6 @@
     <ClCompile Include="..\..\..\providers\implementations\kdfs\x942kdf.c">
       <Filter>Source Files\providers\implementations\kdfs</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\providers\implementations\kdfs\pbkdf2_fips.c">
-      <Filter>Source Files\providers\implementations\kdfs</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\providers\implementations\keymgmt\ecx_kmgmt.c">
       <Filter>Source Files\providers\implementations\keymgmt</Filter>
     </ClCompile>
@@ -536,6 +533,21 @@
     </ClCompile>
     <ClCompile Include="..\..\..\providers\implementations\skeymgmt\generic.c">
       <Filter>Source Files\providers\implementations\skeymgmt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha_etm.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha1_etm_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha256_etm_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_cbc_hmac_sha512_etm_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\providers\implementations\ciphers\cipher_aes_cfb_hw.c">
+      <Filter>Source Files\providers\implementations\ciphers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

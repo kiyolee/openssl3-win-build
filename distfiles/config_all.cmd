@@ -1,7 +1,7 @@
 setlocal
 
-set OPENSSL_VER=3.5.4
-set OPENSSL_VER_SED=3\.5\.4
+set OPENSSL_VER=3.6.0
+set OPENSSL_VER_SED=3\.6\.0
 set OPENSSL_BASE=openssl-%OPENSSL_VER%
 set OPENSSL_BASE_SED=openssl-%OPENSSL_VER_SED%
 set OPENSSL_DIR=..\%OPENSSL_BASE%
@@ -41,28 +41,97 @@ set _GEN_LIST_INCL=^
   include\openssl\x509v3.h
 
 set _GEN_LIST_PARAMNAMES_INCL=^
-  include\internal\param_names.h ^
   include\openssl\core_names.h
 
 set _GEN_LIST_PARAMNAMES_CSRC=^
-  crypto\params_idx.c
+  providers\implementations\asymciphers\rsa_enc.c ^
+  providers\implementations\asymciphers\sm2_enc.c ^
+  providers\implementations\ciphers\cipher_chacha20_poly1305.c ^
+  providers\implementations\ciphers\ciphercommon.c ^
+  providers\implementations\ciphers\ciphercommon_ccm.c ^
+  providers\implementations\ciphers\ciphercommon_gcm.c ^
+  providers\implementations\digests\blake2_prov.c ^
+  providers\implementations\digests\digestcommon.c ^
+  providers\implementations\digests\sha3_prov.c ^
+  providers\implementations\encode_decode\decode_der2key.c ^
+  providers\implementations\encode_decode\decode_epki2pki.c ^
+  providers\implementations\encode_decode\decode_pem2der.c ^
+  providers\implementations\encode_decode\decode_pvk2key.c ^
+  providers\implementations\encode_decode\decode_spki2typespki.c ^
+  providers\implementations\encode_decode\encode_key2any.c ^
+  providers\implementations\encode_decode\encode_key2ms.c ^
+  providers\implementations\exchange\dh_exch.c ^
+  providers\implementations\exchange\ecdh_exch.c ^
+  providers\implementations\exchange\ecx_exch.c ^
+  providers\implementations\kdfs\argon2.c ^
+  providers\implementations\kdfs\hkdf.c ^
+  providers\implementations\kdfs\hmacdrbg_kdf.c ^
+  providers\implementations\kdfs\kbkdf.c ^
+  providers\implementations\kdfs\krb5kdf.c ^
+  providers\implementations\kdfs\pbkdf1.c ^
+  providers\implementations\kdfs\pbkdf2.c ^
+  providers\implementations\kdfs\pkcs12kdf.c ^
+  providers\implementations\kdfs\pvkkdf.c ^
+  providers\implementations\kdfs\scrypt.c ^
+  providers\implementations\kdfs\sshkdf.c ^
+  providers\implementations\kdfs\sskdf.c ^
+  providers\implementations\kdfs\tls1_prf.c ^
+  providers\implementations\kdfs\x942kdf.c ^
+  providers\implementations\kem\ec_kem.c ^
+  providers\implementations\kem\ecx_kem.c ^
+  providers\implementations\kem\ml_kem_kem.c ^
+  providers\implementations\kem\rsa_kem.c ^
+  providers\implementations\keymgmt\ecx_kmgmt.c ^
+  providers\implementations\keymgmt\lms_kmgmt.c ^
+  providers\implementations\keymgmt\ml_dsa_kmgmt.c ^
+  providers\implementations\keymgmt\ml_kem_kmgmt.c ^
+  providers\implementations\keymgmt\mlx_kmgmt.c ^
+  providers\implementations\keymgmt\slh_dsa_kmgmt.c ^
+  providers\implementations\keymgmt\template_kmgmt.c ^
+  providers\implementations\macs\cmac_prov.c ^
+  providers\implementations\macs\gmac_prov.c ^
+  providers\implementations\macs\hmac_prov.c ^
+  providers\implementations\macs\kmac_prov.c ^
+  providers\implementations\macs\poly1305_prov.c ^
+  providers\implementations\macs\siphash_prov.c ^
+  providers\implementations\rands\drbg_ctr.c ^
+  providers\implementations\rands\drbg_hash.c ^
+  providers\implementations\rands\drbg_hmac.c ^
+  providers\implementations\rands\fips_crng_test.c ^
+  providers\implementations\rands\seed_src.c ^
+  providers\implementations\rands\seed_src_jitter.c ^
+  providers\implementations\rands\test_rng.c ^
+  providers\implementations\signature\dsa_sig.c ^
+  providers\implementations\signature\ecdsa_sig.c ^
+  providers\implementations\signature\eddsa_sig.c ^
+  providers\implementations\signature\ml_dsa_sig.c ^
+  providers\implementations\signature\rsa_sig.c ^
+  providers\implementations\signature\slh_dsa_sig.c ^
+  providers\implementations\signature\sm2_sig.c ^
+  providers\implementations\skeymgmt\generic.c ^
+  providers\implementations\storemgmt\file_store.c ^
+  providers\implementations\storemgmt\file_store_any2obj.c ^
+  providers\implementations\storemgmt\winstore_store.c
 
 set _GEN_LIST_PROV_INCL=^
   providers\common\include\prov\der_digests.h ^
   providers\common\include\prov\der_dsa.h ^
   providers\common\include\prov\der_ec.h ^
   providers\common\include\prov\der_ecx.h ^
+  providers\common\include\prov\der_hkdf.h ^
   providers\common\include\prov\der_ml_dsa.h ^
   providers\common\include\prov\der_rsa.h ^
   providers\common\include\prov\der_slh_dsa.h ^
   providers\common\include\prov\der_sm2.h ^
-  providers\common\include\prov\der_wrap.h
+  providers\common\include\prov\der_wrap.h ^
+  providers\implementations\include\prov\blake2_params.inc
 
 set _GEN_LIST_PROV_CSRC=^
   providers\common\der\der_digests_gen.c ^
   providers\common\der\der_dsa_gen.c ^
   providers\common\der\der_ec_gen.c ^
   providers\common\der\der_ecx_gen.c ^
+  providers\common\der\der_hkdf_gen.c ^
   providers\common\der\der_ml_dsa_gen.c ^
   providers\common\der\der_rsa_gen.c ^
   providers\common\der\der_slh_dsa_gen.c ^

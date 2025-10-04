@@ -189,6 +189,9 @@
     <ClCompile Include="..\..\apps\skeyutl.c">
       <Filter>Source Files\apps</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\apps\configutl.c">
+      <Filter>Source Files\apps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\ms\openssl3.rc">

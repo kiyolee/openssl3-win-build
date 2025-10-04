@@ -24,6 +24,7 @@ FUNCTION functions[] = {
 #ifndef OPENSSL_NO_CMS
     {FT_general, "cms", cms_main, cms_options, NULL, NULL},
 #endif
+    {FT_general, "configutl", configutl_main, configutl_options, NULL, NULL},
     {FT_general, "crl", crl_main, crl_options, NULL, NULL},
     {FT_general, "crl2pkcs7", crl2pkcs7_main, crl2pkcs7_options, NULL, NULL},
     {FT_general, "dgst", dgst_main, dgst_options, NULL, NULL},
@@ -52,9 +53,7 @@ FUNCTION functions[] = {
     {FT_general, "gendsa", gendsa_main, gendsa_options, NULL, NULL},
 #endif
     {FT_general, "genpkey", genpkey_main, genpkey_options, NULL, NULL},
-#ifndef OPENSSL_NO_RSA
     {FT_general, "genrsa", genrsa_main, genrsa_options, NULL, NULL},
-#endif
     {FT_general, "help", help_main, help_options, NULL, NULL},
     {FT_general, "info", info_main, info_options, NULL, NULL},
     {FT_general, "kdf", kdf_main, kdf_options, NULL, NULL},
@@ -76,7 +75,7 @@ FUNCTION functions[] = {
     {FT_general, "rehash", rehash_main, rehash_options, NULL, NULL},
     {FT_general, "req", req_main, req_options, NULL, NULL},
     {FT_general, "rsa", rsa_main, rsa_options, NULL, NULL},
-#if !defined(OPENSSL_NO_DEPRECATED_3_0) && !defined(OPENSSL_NO_RSA)
+#if !defined(OPENSSL_NO_DEPRECATED_3_0)
     {FT_general, "rsautl", rsautl_main, rsautl_options, "pkeyutl", "3.0"},
 #endif
 #ifndef OPENSSL_NO_SOCK

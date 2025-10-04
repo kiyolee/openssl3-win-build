@@ -75,6 +75,7 @@
     <ClCompile Include="..\..\crypto\aes\aes_ofb.c" />
     <ClCompile Include="..\..\crypto\aes\aes_wrap.c" />
     <ClCompile Include="..\..\crypto\aria\aria.c" />
+    <ClCompile Include="..\..\crypto\array_alloc.c" />
     <ClCompile Include="..\..\crypto\asn1\ameth_lib.c" />
     <ClCompile Include="..\..\crypto\asn1\asn1_err.c" />
     <ClCompile Include="..\..\crypto\asn1\asn1_gen.c" />
@@ -254,6 +255,8 @@
     <ClCompile Include="..\..\crypto\cms\cms_ess.c" />
     <ClCompile Include="..\..\crypto\cms\cms_io.c" />
     <ClCompile Include="..\..\crypto\cms\cms_kari.c" />
+    <ClCompile Include="..\..\crypto\cms\cms_kem.c" />
+    <ClCompile Include="..\..\crypto\cms\cms_kemri.c" />
     <ClCompile Include="..\..\crypto\cms\cms_lib.c" />
     <ClCompile Include="..\..\crypto\cms\cms_pwri.c" />
     <ClCompile Include="..\..\crypto\cms\cms_rsa.c" />
@@ -450,6 +453,7 @@
     <ClCompile Include="..\..\crypto\evp\evp_lib.c" />
     <ClCompile Include="..\..\crypto\evp\evp_pbe.c" />
     <ClCompile Include="..\..\crypto\evp\evp_pkey.c" />
+    <ClCompile Include="..\..\crypto\evp\evp_pkey_type.c" />
     <ClCompile Include="..\..\crypto\evp\evp_rand.c" />
     <ClCompile Include="..\..\crypto\evp\evp_utils.c" />
     <ClCompile Include="..\..\crypto\evp\exchange.c" />
@@ -593,7 +597,6 @@
     <ClCompile Include="..\..\crypto\params.c" />
     <ClCompile Include="..\..\crypto\params_dup.c" />
     <ClCompile Include="..\..\crypto\params_from_text.c" />
-    <ClCompile Include="..\..\crypto\params_idx.c" />
     <ClCompile Include="..\..\crypto\param_build.c" />
     <ClCompile Include="..\..\crypto\param_build_set.c" />
     <ClCompile Include="..\..\crypto\passphrase.c" />
@@ -740,6 +743,7 @@
     <ClCompile Include="..\..\crypto\store\store_register.c" />
     <ClCompile Include="..\..\crypto\store\store_result.c" />
     <ClCompile Include="..\..\crypto\store\store_strings.c" />
+    <ClCompile Include="..\..\crypto\threads_common.c" />
     <ClCompile Include="..\..\crypto\threads_lib.c" />
     <ClCompile Include="..\..\crypto\threads_none.c" />
     <ClCompile Include="..\..\crypto\threads_pthread.c" />

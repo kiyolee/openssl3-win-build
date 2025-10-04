@@ -254,7 +254,7 @@ static int tls_dump_gets(BIO *bio, char *buf, int size)
 
 static int tls_dump_puts(BIO *bio, const char *str)
 {
-    return tls_dump_write(bio, str, strlen(str));
+    return tls_dump_write(bio, str, (int)strlen(str));
 }
 
 
@@ -624,7 +624,7 @@ int mempacket_test_inject(BIO *bio, const char *in, int inl, int pktnum,
          */
         if (duprec && i != 2) {
             memcpy(thispkt->data, in + len, inl - len);
-            thispkt->len = inl - len;
+            thispkt->len = inl - (int)len;
         } else {
             memcpy(thispkt->data, in, inl);
             thispkt->len = inl;
@@ -752,7 +752,7 @@ static int mempacket_test_gets(BIO *bio, char *buf, int size)
 
 static int mempacket_test_puts(BIO *bio, const char *str)
 {
-    return mempacket_test_write(bio, str, strlen(str));
+    return mempacket_test_write(bio, str, (int)strlen(str));
 }
 
 static int always_retry_new(BIO *bi);
@@ -1419,7 +1419,7 @@ int create_ssl_connection_ex(SSL *serverssl, SSL *clientssl, int want,
      */
     for (i = 0; i < 2; i++) {
         if (SSL_read_ex(clientssl, &buf, sizeof(buf), &readbytes) > 0) {
-            if (!TEST_ulong_eq(readbytes, 0))
+            if (!TEST_size_t_eq(readbytes, 0))
                 return 0;
         } else if (!TEST_int_eq(SSL_get_error(clientssl, 0),
                                 SSL_ERROR_WANT_READ)) {

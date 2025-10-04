@@ -131,6 +131,7 @@
     <ClCompile Include="..\..\..\providers\implementations\digests\wp_prov.c" />
     <ClCompile Include="..\..\..\providers\implementations\kdfs\pbkdf1.c" />
     <ClCompile Include="..\..\..\providers\implementations\kdfs\pvkkdf.c" />
+    <ClCompile Include="..\..\..\providers\implementations\skeymgmt\generic.c" />
     <ClCompile Include="..\..\..\providers\prov_running.c" />
   </ItemGroup>
   <ItemGroup>
